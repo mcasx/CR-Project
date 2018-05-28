@@ -28,9 +28,11 @@ begin
                 if reset = '1' then
                     output <= (others => "0000");
                 elsif rising_edge(clk) then
-                    if enable(i) = '1' then
-                        output(i) <= input(i) + output(i);
-                    end if;     
+                    for j in 0 to NUM_PARALLEL-1 loop
+                        if enable(j) = '1' then
+                            output(i) <= input(j*NUM_FEATURES + i) + output(i);
+                        end if;
+                    end loop; 
                 end if;
             end process;
     end generate SumGen;
