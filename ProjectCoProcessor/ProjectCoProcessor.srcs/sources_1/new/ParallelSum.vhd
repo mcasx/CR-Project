@@ -5,12 +5,15 @@ use work.projectPackage.ALL;
 
 entity ParallelSum is
     generic(
-        NUM_FEATURES: integer := 4
+        NUM_FEATURES: integer := 4;
+        NUM_PARALLEL: integer := 2
     );
     port(
-        input1: in point_array(NUM_FEATURES-1 downto 0);
-        input2: in point_array(NUM_FEATURES-1 downto 0);
-        output: out point_array(NUM_FEATURES-1 downto 0)
+        clk: in std_logic;
+        reset: in std_logic;
+        enable: in std_logic_vector(NUM_PARALLEL-1 downto 0);
+        input: in point_array(NUM_FEATURES*NUM_PARALLEL-1 downto 0);
+        output: inout point_array(NUM_FEATURES-1 downto 0)
     );
 end ParallelSum;
 
@@ -20,9 +23,15 @@ signal s_output: point_array(NUM_FEATURES-1 downto 0);
 
 begin
     SumGen:  for i in 0 to NUM_FEATURES-1 generate
-            process(input1, input2)
+            process(clk, reset)
             begin
-                output(i) <= input1(i) + input2(i);
+                if reset = '1' then
+                    output <= (others => "0000");
+                elsif rising_edge(clk) then
+                    if enable(i) = '1' then
+                        output(i) <= input(i) + output(i);
+                    end if;     
+                end if;
             end process;
     end generate SumGen;
 end Behavioral;

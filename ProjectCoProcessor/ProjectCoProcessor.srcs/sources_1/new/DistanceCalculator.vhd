@@ -5,17 +5,20 @@ use work.projectPackage.ALL;
 
 entity DistanceCalculator is
     port(
-           feature: in point;
-           centroid_feature: in point;
-           distance: out integer
+        clk: in std_logic;   
+        feature: in point;
+        centroid_feature: in point;
+        distance: out integer
     );
 end DistanceCalculator;
 
 architecture Behavioral of DistanceCalculator is
 
 begin
-    process(feature, centroid_feature)
+    process(clk)
     begin
-        distance <= to_integer(abs(feature - centroid_feature));
+        if rising_edge(clk) then
+            distance <= to_integer(abs(feature - centroid_feature));
+        end if;
     end process;
 end Behavioral;
