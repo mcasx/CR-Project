@@ -7,7 +7,7 @@ entity PickSmallest is
         NUM_CENTROIDS: integer := 2
     );
     port(
-        distances: in REAL_array(NUM_CENTROIDS-1 downto 0);
+        distances: in int_array(NUM_CENTROIDS-1 downto 0);
         centroid: out integer
     );
 end PickSmallest;
@@ -18,7 +18,7 @@ begin
     process(distances)
     variable x: integer:= 0;
     begin
-        for i in 1 to NUM_CENTROIDS loop
+        for i in 0 to NUM_CENTROIDS-1 loop
             if(distances(i) < distances(x)) then
                 x := i;
             end if;

@@ -9,9 +9,9 @@ entity CentroidHandler is
         NUM_FEATURES: integer := 4
     );
     port(
-        features: in REAL_array(NUM_PICK_CENTROIDS*NUM_FEATURES-1 downto 0);
+        features: in point_array(NUM_PICK_CENTROIDS*NUM_FEATURES-1 downto 0);
         centroids: in INT_array(NUM_PICK_CENTROIDS-1 downto 0);
-        features_out: out REAL_array(NUM_CENTROIDS*NUM_FEATURES-1 downto 0);
+        features_out: out point_array(NUM_CENTROIDS*NUM_FEATURES-1 downto 0);
         amount_centroids: out INT_array(NUM_CENTROIDS-1 downto 0)
     );
 end CentroidHandler;
@@ -35,5 +35,8 @@ begin
                         distance => s_distances(i)
                     );
         end generate ParallelSum_GEN;
-    process(features, centroids)
+        
+    --process(features, centroids)
+    
+    --end process;
 end Behavioral;

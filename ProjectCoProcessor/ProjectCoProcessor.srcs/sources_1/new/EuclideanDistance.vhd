@@ -7,16 +7,16 @@ entity EuclideanDistance is
         NUM_FEATURES: integer := 4
     );
     port(
-           features: in REAL_array(NUM_FEATURES-1 downto 0);
-           centroid_features: in REAL_array(NUM_FEATURES-1 downto 0);
-           distance: out real
+           features: in point_array(NUM_FEATURES-1 downto 0);
+           centroid_features: in point_array(NUM_FEATURES-1 downto 0);
+           distance: out integer
     );
 end EuclideanDistance;
 
 architecture Behavioral of EuclideanDistance is
 
-signal s_distance: REAL_array(NUM_FEATURES-1 downto 0);
-signal s_total_distance: real;
+signal s_distance: int_array(NUM_FEATURES-1 downto 0);
+signal s_total_distance: integer;
 
 begin
     DistanceCalculator_GEN:  for i in 0 to NUM_FEATURES-1 generate
@@ -31,8 +31,8 @@ begin
     adder: entity work.Adder(Behavioral)
         port map(
             distances => s_distance,
-            total_distance => s_total_distance
+            total_distance => distance
         );
         
-    distance <= s_total_distance**(1/2);
+    distance <= s_total_distance;
 end Behavioral;

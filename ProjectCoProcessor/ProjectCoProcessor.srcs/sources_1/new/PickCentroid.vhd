@@ -8,16 +8,16 @@ entity PickCentroid is
         NUM_CENTROIDS: integer := 2
     );
     port(
-        features_in: in REAL_array(NUM_FEATURES-1 downto 0);
-        centroids: in REAL_array(NUM_CENTROIDS*NUM_FEATURES-1 downto 0);
+        features_in: in point_array(NUM_FEATURES-1 downto 0);
+        centroids: in point_array(NUM_CENTROIDS*NUM_FEATURES-1 downto 0);
         centroid: out integer;
-        features_out: out REAL_array(NUM_FEATURES-1 downto 0)
+        features_out: out point_array(NUM_FEATURES-1 downto 0)
     );
 end PickCentroid;
 
 architecture Behavioral of PickCentroid is
 
-signal s_distances: REAL_array(NUM_CENTROIDS-1 downto 0);
+signal s_distances: int_array(NUM_CENTROIDS-1 downto 0);
 
 begin
     EuclideanDistance_GEN:  for i in 0 to NUM_CENTROIDS-1 generate
