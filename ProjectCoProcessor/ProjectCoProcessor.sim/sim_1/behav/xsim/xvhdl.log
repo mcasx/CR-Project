@@ -1,0 +1,16 @@
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/xarez/Documents/CR-Project/ProjectCoProcessor/ProjectCoProcessor.srcs/sources_1/new/projectPackage.vhd" into library xil_defaultlib
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/xarez/Documents/CR-Project/ProjectCoProcessor/ProjectCoProcessor.srcs/sources_1/new/Adder.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity Adder
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/xarez/Documents/CR-Project/ProjectCoProcessor/ProjectCoProcessor.srcs/sources_1/new/DistanceCalculator.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity DistanceCalculator
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/xarez/Documents/CR-Project/ProjectCoProcessor/ProjectCoProcessor.srcs/sources_1/new/EuclideanDistance.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity EuclideanDistance
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/xarez/Documents/CR-Project/ProjectCoProcessor/ProjectCoProcessor.srcs/sources_1/new/PickSmallest.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity PickSmallest
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/xarez/Documents/CR-Project/ProjectCoProcessor/ProjectCoProcessor.srcs/sources_1/new/PickCentroid.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity PickCentroid
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/xarez/Documents/CR-Project/ProjectCoProcessor/ProjectCoProcessor.srcs/sources_1/new/TestPickCentroid.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity TestPickCentroid
+ERROR: [VRFC 10-2666] formal port clk has no actual or default value [/home/xarez/Documents/CR-Project/ProjectCoProcessor/ProjectCoProcessor.srcs/sources_1/new/TestPickCentroid.vhd:51]
+ERROR: [VRFC 10-1504] unit behavioral ignored due to previous errors [/home/xarez/Documents/CR-Project/ProjectCoProcessor/ProjectCoProcessor.srcs/sources_1/new/TestPickCentroid.vhd:40]
+INFO: [VRFC 10-240] VHDL file /home/xarez/Documents/CR-Project/ProjectCoProcessor/ProjectCoProcessor.srcs/sources_1/new/TestPickCentroid.vhd ignored due to errors
