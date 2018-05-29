@@ -1,3 +1,13 @@
 *.wdf
 *.wpc
 *.vhd
+*.log
+*.pb
+*.tcl
+*.wdb
+*.prj
+*.jou
+*.wdf
+*.xml
+*.log
+*.sh
