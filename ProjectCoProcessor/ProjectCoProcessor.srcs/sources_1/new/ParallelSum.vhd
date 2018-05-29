@@ -12,27 +12,38 @@ entity ParallelSum is
         clk: in std_logic;
         reset: in std_logic;
         enable: in std_logic_vector(NUM_PARALLEL-1 downto 0);
+        finished: in std_logic;
         input: in point_array(NUM_FEATURES*NUM_PARALLEL-1 downto 0);
-        output: inout point_array(NUM_FEATURES-1 downto 0)
+        output: out point_array(NUM_FEATURES-1 downto 0)
     );
 end ParallelSum;
 
 architecture Behavioral of ParallelSum is
 
-signal s_output: point_array(NUM_FEATURES-1 downto 0);
-
 begin
     SumGen:  for i in 0 to NUM_FEATURES-1 generate
             process(clk, reset)
+            variable s_output: point;
+            variable s_count: integer := 0;
+            variable hasFinished: std_logic := '0';
             begin
-                if reset = '1' then
-                    output <= (others => "0000");
-                elsif rising_edge(clk) then
-                    for j in 0 to NUM_PARALLEL-1 loop
-                        if enable(j) = '1' then
-                            output(i) <= input(j*NUM_FEATURES + i) + output(i);
-                        end if;
-                    end loop; 
+                if rising_edge(clk) then
+                    if reset = '1' or hasFinished = '1' then
+                        s_output := (others => '0');
+                        s_count := 0;
+                        hasFinished := '0';
+                    else
+                        for j in 0 to NUM_PARALLEL-1 loop
+                            if enable(j) = '1' then
+                                s_output := s_output + input(j*NUM_FEATURES + i);
+                                s_count := s_count + 1;
+                            end if;
+                            if finished = '1' then
+                                output(i) <= s_output;
+                                hasFinished := '1';
+                            end if;
+                        end loop;
+                    end if;
                 end if;
             end process;
     end generate SumGen;
