@@ -1,0 +1,12 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../ProjectCoProcessor.srcs/sources_1/new/projectPackage.vhd" \
+"../../../../ProjectCoProcessor.srcs/sources_1/new/Adder.vhd" \
+"../../../../ProjectCoProcessor.srcs/sources_1/new/DistanceCalculator.vhd" \
+"../../../../ProjectCoProcessor.srcs/sources_1/new/EuclideanDistance.vhd" \
+"../../../../ProjectCoProcessor.srcs/sources_1/new/PickSmallest.vhd" \
+"../../../../ProjectCoProcessor.srcs/sources_1/new/PickCentroid.vhd" \
+"../../../../ProjectCoProcessor.srcs/sources_1/new/TestPickCentroid.vhd" \
+
+# Do not sort compile order
+nosort

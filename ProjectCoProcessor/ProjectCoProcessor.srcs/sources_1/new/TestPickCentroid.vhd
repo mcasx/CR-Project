@@ -34,7 +34,9 @@ use work.projectPackage.all;
 --use UNISIM.VComponents.all;
 
 entity TestPickCentroid is
-   Port (led: out std_logic_vector(0 downto 0));
+   Port (led: out std_logic_vector(0 downto 0);
+         clk: in std_logic;
+         reset: in std_logic);
 end TestPickCentroid;
 
 architecture Behavioral of TestPickCentroid is
@@ -51,6 +53,8 @@ begin
     pick: entity work.PickCentroid
         port map
         (
+            reset => reset,
+            clk => clk,
             features_in => point1,
             centroids => s_centroids,
             centroid => out_centroid
