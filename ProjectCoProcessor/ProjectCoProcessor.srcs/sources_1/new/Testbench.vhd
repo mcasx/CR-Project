@@ -21,35 +21,51 @@ end component;
 
 signal s_clk: std_logic := '0';
 signal s_reset: std_logic := '1';
-signal s_centroid: integer := 0;
-signal s_enable: std_logic_vector(2-1 downto 0):= ('0', '0');
+--signal s_centroid: integer := 0;
+--signal s_enable: std_logic_vector(2-1 downto 0):= ('0', '0');
 signal s_finished: std_logic:= '0';
-signal s_input: point_array(4*2-1 downto 0):= (to_signed(1,16), to_signed(2,16), to_signed(3,16), to_signed(4,16), to_signed(50,16), to_signed(51,16), to_signed(52,16), to_signed(53,16));
-signal s_output: point_array(3 downto 0);
+--signal s_input: point_array(4*2-1 downto 0):= (to_signed(1,16), to_signed(2,16), to_signed(3,16), to_signed(4,16), to_signed(50,16), to_signed(51,16), to_signed(52,16), to_signed(53,16));
+signal s_centroids: point_array(4*2-1 downto 0):= (to_signed(1,16), to_signed(2,16), to_signed(3,16), to_signed(4,16), to_signed(50,16), to_signed(51,16), to_signed(52,16), to_signed(53,16));
+signal s_point: point_array(to_signed(4,16), to_signed(5,16), to_signed(6,16), to_signed(7,16));
+signal s_output: point_array(7 downto 0);
+
 
 begin
-    UUT: ParallelSum port map(
-        clk => s_clk,
-        reset => s_reset,
-        enable => s_enable,
-        finished => s_finished,
-        input => s_input,
-        output => s_output
-    );
+--    UUT: ParallelSum port map(
+--        clk => s_clk,
+--        reset => s_reset,
+--        enable => s_enable,
+--        finished => s_finished,
+--        input => s_input,
+--        output => s_output
+--    );
+
+    top_level: entity work.TopLevel
+        Generic map(
+            NUM_FEATURES => 2;
+            NUM_CENTROIDS => 2;
+            NUM_PARALLEL => 1
+        );
+        
+        port map(
+            clk => s_clk,
+            reset=> s_reset,
+            point_features => s_points,
+            centroid_features=> s_centroids,
+            new_centroids => s_output,
+            finished => s_finished
+        );
+    
+    
     stimulus: process
     begin
         wait for 100ns;
         s_reset <= '0';
-        s_enable <= ('1', '0');
         wait for 20 ns;
-        s_enable <= ('1', '1');
         wait for 20 ns;
-        s_enable <= ('0', '1');
         wait for 20 ns;
-        s_enable <= ('0', '0');
         s_finished <= '1';
         wait for 20 ns;
-        s_finished <= '0';
     end process;
     
     clk: process

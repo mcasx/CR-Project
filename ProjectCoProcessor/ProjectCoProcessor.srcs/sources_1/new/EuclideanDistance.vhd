@@ -31,6 +31,9 @@ begin
     end generate DistanceCalculator_GEN;
     
     adder: entity work.Adder(Behavioral)
+        generic map(
+            NUM_FEATURES => NUM_FEATURES
+        )
         port map(
             clk => clk,
             distances => s_distance,

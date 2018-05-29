@@ -42,14 +42,14 @@ end TestPickCentroid;
 architecture Behavioral of TestPickCentroid is
     
 signal point1: point_array := (to_signed(4,16), to_signed(4,16), to_signed(4,16), to_signed(4,16));
-signal centroid1: point_array := (to_signed(5,16), to_signed(5,16), to_signed(5,16), to_signed(5,16));
-signal centroid2: point_array := (to_signed(11,16), to_signed(11,16), to_signed(11,16), to_signed(11,16));
+signal centroid0: point_array := (to_signed(5,16), to_signed(5,16), to_signed(5,16), to_signed(5,16));
+signal centroid1: point_array := (to_signed(11,16), to_signed(11,16), to_signed(11,16), to_signed(11,16));
 signal s_centroids: point_array(7 downto 0);
 signal out_centroid: integer;    
 
 begin
 
-    s_centroids <= centroid1 & centroid2; 
+    s_centroids <= (centroid1 & centroid0); 
     pick: entity work.PickCentroid
         port map
         (

@@ -12,8 +12,7 @@ entity PickCentroid is
         reset: in std_logic;
         features_in: in point_array(NUM_FEATURES-1 downto 0);
         centroids: in point_array(NUM_CENTROIDS*NUM_FEATURES-1 downto 0);
-        centroid: out integer;
-        features_out: out point_array(NUM_FEATURES-1 downto 0)
+        centroid: out integer
     );
 end PickCentroid;
 
@@ -23,7 +22,11 @@ signal s_distances: int_array(NUM_CENTROIDS-1 downto 0);
 
 begin
     EuclideanDistance_GEN:  for i in 0 to NUM_CENTROIDS-1 generate
-            EuclideanDistanceX: entity work.EuclideanDistance 
+            EuclideanDistanceX: entity work.EuclideanDistance
+                generic map
+                    (
+                        NUM_FEATURES => NUM_FEATURES
+                    )
                 port map(
                     clk => clk,
                     reset => reset,
@@ -34,11 +37,14 @@ begin
     end generate EuclideanDistance_GEN;
     
     PickSmallest: entity work.PickSmallest
+        generic map
+        (
+            NUM_CENTROIDS => NUM_CENTROIDS
+        )
         port map(
             clk => clk,
             distances => s_distances,
             centroid => centroid
         );
-    
-    features_out <= features_in;
+   
 end Behavioral;
