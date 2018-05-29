@@ -1,6 +1,5 @@
 *.wdf
 *.wpc
-*.vhd
 *.log
 *.pb
 *.tcl
