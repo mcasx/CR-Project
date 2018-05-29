@@ -16,16 +16,16 @@ end Adder;
 
 architecture Behavioral of Adder is
 
-signal s_total_distance: integer := 0;
-
 begin
     process(clk)
+    variable s_total_distance: integer := 0;
     begin
         if rising_edge(clk) then
+            s_total_distance := 0;
             for i in 0 to NUM_FEATURES-1 loop
-                s_total_distance <= s_total_distance + distances(i);
+                s_total_distance := s_total_distance + distances(i);
             end loop;
+            total_distance <= s_total_distance;
         end if;
     end process;
-    total_distance <= s_total_distance;
 end Behavioral;

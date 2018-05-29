@@ -8,33 +8,35 @@ entity Testbench is
 end Testbench;
 
 architecture Behavioral of Testbench is
-component EuclideanDistance is
+component PickCentroid is
     port(
         clk: in std_logic;
-        reset: in std_logic;     
-        features: in point_array(3 downto 0);
-        centroid_features: in point_array(3 downto 0);
-        distance: out integer
+        reset: in std_logic;
+        features_in: in point_array(4-1 downto 0);
+        centroids: in point_array(2*4-1 downto 0);
+        centroid: out integer;
+        features_out: out point_array(4-1 downto 0)
     );
 end component;
 
 signal s_clk: std_logic := '0';
-signal s_reset: std_logic := '0';
-signal s_distance: integer := 0;
-signal s_point1: point_array := (to_signed(4,16), to_signed(4,16), to_signed(4,16), to_signed(4,16));
-signal s_centroid1: point_array := (to_signed(5,16), to_signed(5,16), to_signed(5,16), to_signed(5,16));
+signal s_reset: std_logic := '1';
+signal s_centroid: integer := 0;
+signal s_point1: point_array(3 downto 0) := (to_signed(4,16), to_signed(4,16), to_signed(4,16), to_signed(4,16));
+signal s_centroids: point_array(7 downto 0) := (to_signed(11,16), to_signed(11,16), to_signed(11,16), to_signed(11,16), to_signed(5,16), to_signed(5,16), to_signed(5,16), to_signed(5,16));
+signal s_features_out: point_array(3 downto 0);
 
 begin
-    UUT: EuclideanDistance port map(
-        clk => s_clk, 
+    UUT: PickCentroid port map(
+        clk => s_clk,
         reset => s_reset,
-        features => s_point1,
-        centroid_features => s_centroid1,
-        distance => s_distance
+        features_in => s_point1,
+        centroids => s_centroids,
+        centroid => s_centroid,
+        features_out => s_features_out
     );
     stimulus: process
     begin
-        s_reset <= '1';
         wait for 100ns;
         s_reset <= '0';
     end process;
