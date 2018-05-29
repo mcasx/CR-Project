@@ -117,9 +117,9 @@ begin
         port map(
             clk => clk,
             reset => reset,
-            enable => s_enable_ordered((i+1)*NUM_CENTROIDS-1 downto i*NUM_CENTROIDS),
+            enable => s_enable_ordered((i+1)*NUM_PARALLEL-1 downto i*NUM_PARALLEL),
             finished => s_finished,
-            input => s_features_buffered((i+1)*NUM_FEATURES-1 DOWNTO i*NUM_FEATURES),
+            input => s_features_buffered,
             output => new_centroids((i+1)*NUM_FEATURES-1 downto i*NUM_FEATURES)
         );
     

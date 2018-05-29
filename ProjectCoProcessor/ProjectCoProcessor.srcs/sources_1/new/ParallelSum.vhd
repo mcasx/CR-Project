@@ -39,7 +39,7 @@ begin
                                 s_count := s_count + 1;
                             end if;
                             if finished = '1' then
-                                output(i) <= s_output;
+                                output(i) <= s_output / s_count;
                                 hasFinished := '1';
                             end if;
                         end loop;

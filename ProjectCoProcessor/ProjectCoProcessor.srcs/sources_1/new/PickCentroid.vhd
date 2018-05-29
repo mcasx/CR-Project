@@ -12,7 +12,7 @@ entity PickCentroid is
         reset: in std_logic;
         features_in: in point_array(NUM_FEATURES-1 downto 0);
         centroids: in point_array(NUM_CENTROIDS*NUM_FEATURES-1 downto 0);
-        centroid: out integer
+        centroid: out integer := -1
     );
 end PickCentroid;
 

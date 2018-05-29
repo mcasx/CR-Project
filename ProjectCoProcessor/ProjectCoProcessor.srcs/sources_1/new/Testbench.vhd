@@ -26,7 +26,7 @@ signal s_reset: std_logic := '1';
 signal s_finished: std_logic:= '0';
 --signal s_input: point_array(4*2-1 downto 0):= (to_signed(1,16), to_signed(2,16), to_signed(3,16), to_signed(4,16), to_signed(50,16), to_signed(51,16), to_signed(52,16), to_signed(53,16));
 signal s_centroids: point_array(4*2-1 downto 0):= (to_signed(1,16), to_signed(2,16), to_signed(3,16), to_signed(4,16), to_signed(50,16), to_signed(51,16), to_signed(52,16), to_signed(53,16));
-signal s_point: point_array(to_signed(4,16), to_signed(5,16), to_signed(6,16), to_signed(7,16));
+signal s_point: point_array(7 downto 0) := (to_signed(4,16), to_signed(5,16), to_signed(6,16), to_signed(7,16), to_signed(33,16), to_signed(29,16), to_signed(30,16), to_signed(35,16));
 signal s_output: point_array(7 downto 0);
 
 
@@ -41,16 +41,15 @@ begin
 --    );
 
     top_level: entity work.TopLevel
-        Generic map(
-            NUM_FEATURES => 2;
-            NUM_CENTROIDS => 2;
-            NUM_PARALLEL => 1
-        );
-        
+        generic map(
+            NUM_FEATURES => 4,
+            NUM_CENTROIDS => 2,
+            NUM_PARALLEL => 2
+        )
         port map(
             clk => s_clk,
             reset=> s_reset,
-            point_features => s_points,
+            point_features => s_point,
             centroid_features=> s_centroids,
             new_centroids => s_output,
             finished => s_finished

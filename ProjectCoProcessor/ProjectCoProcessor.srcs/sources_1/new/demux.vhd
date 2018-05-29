@@ -15,5 +15,12 @@ end demux;
 architecture Behavioral of demux is
 
 begin
-     enable <= (centroid => '1', others => '0'); 
+     process(centroid)
+     begin
+        if(centroid < 0) then
+            enable <= (others => '0');
+         else
+            enable <= (centroid => '1', others => '0');
+        end if;
+     end process; 
 end Behavioral;
