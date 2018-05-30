@@ -25,9 +25,12 @@ signal s_reset: std_logic := '1';
 --signal s_enable: std_logic_vector(2-1 downto 0):= ('0', '0');
 signal s_finished: std_logic:= '0';
 --signal s_input: point_array(4*2-1 downto 0):= (to_signed(1,16), to_signed(2,16), to_signed(3,16), to_signed(4,16), to_signed(50,16), to_signed(51,16), to_signed(52,16), to_signed(53,16));
-signal s_centroids: point_array(4*2-1 downto 0):= (to_signed(1,16), to_signed(2,16), to_signed(3,16), to_signed(4,16), to_signed(50,16), to_signed(51,16), to_signed(52,16), to_signed(53,16));
-signal s_point: point_array(4*2-1 downto 0) := (to_signed(4,16), to_signed(5,16), to_signed(6,16), to_signed(7,16), to_signed(33,16), to_signed(29,16), to_signed(30,16), to_signed(35,16));
-signal s_output: point_array(4*2-1 downto 0);
+--signal s_centroids: point_array(4*2-1 downto 0):= (to_signed(1,16), to_signed(2,16), to_signed(3,16), to_signed(4,16), to_signed(50,16), to_signed(51,16), to_signed(52,16), to_signed(53,16));
+--signal s_point: point_array(4*2-1 downto 0) := (to_signed(4,16), to_signed(5,16), to_signed(6,16), to_signed(7,16), to_signed(33,16), to_signed(29,16), to_signed(30,16), to_signed(35,16));
+--signal s_output: point_array(4*2-1 downto 0);
+signal s_centroids: std_logic_vector(4*2*point'length-1 downto 0):= std_logic_vector(to_signed(1,point'length) & to_signed(2,point'length) & to_signed(3,point'length) & to_signed(4,point'length) & to_signed(50,point'length) & to_signed(51,point'length) & to_signed(52,point'length) & to_signed(53,point'length));
+signal s_point: std_logic_vector(4*2*point'length-1 downto 0) := std_logic_vector(to_signed(4,point'length) & to_signed(5,point'length) & to_signed(6,point'length) & to_signed(7,point'length) & to_signed(33,point'length) & to_signed(29,point'length) & to_signed(30,point'length) & to_signed(35,point'length));
+signal s_output: std_logic_vector(4*2*point'length-1 downto 0);
 
 
 begin

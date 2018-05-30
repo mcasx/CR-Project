@@ -22,6 +22,7 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use work.projectPackage.all;
+use IEEE.numeric_std.all;
 -- Uncomment the following library declaration if using
 -- arithmetic functions with Signed or Unsigned values
 --use IEEE.NUMERIC_STD.ALL;
@@ -36,14 +37,14 @@ entity TopLevel is
         NUM_FEATURES: integer := 4;
         NUM_CENTROIDS: integer := 2;
         NUM_PARALLEL: integer := 8
-    );
+        );
     Port (
         clk: in std_logic;
         reset: in std_logic;
         finished: in std_logic;
-        point_features: in point_array(NUM_FEATURES*NUM_PARALLEL-1 downto 0);
-        centroid_features: in point_array(NUM_FEATURES*NUM_CENTROIDS-1 downto 0);
-        new_centroids: out point_array(NUM_FEATURES*NUM_CENTROIDS-1 downto 0)
+        point_features: in std_logic_vector(NUM_FEATURES*NUM_PARALLEL*32-1 downto 0);
+        centroid_features: in std_logic_vector(NUM_FEATURES*NUM_CENTROIDS*32-1 downto 0);
+        new_centroids: out std_logic_vector(NUM_FEATURES*NUM_CENTROIDS*32-1 downto 0)
     );
     
 end TopLevel;
@@ -55,9 +56,24 @@ architecture Behavioral of TopLevel is
     signal s_enable: std_logic_vector(NUM_PARALLEL*NUM_CENTROIDS-1 DOWNTO 0);
     signal s_enable_ordered: std_logic_vector(NUM_PARALLEL*NUM_CENTROIDS-1 DOWNTO 0); 
     signal s_finished: std_logic;
+    
+    signal s_point_features: point_array(NUM_FEATURES*NUM_PARALLEL-1 downto 0);
+    signal s_centroid_features: point_array(NUM_FEATURES*NUM_CENTROIDS-1 downto 0);
+    signal s_new_centroids: point_array(NUM_FEATURES*NUM_CENTROIDS-1 downto 0);
       
 begin
 
+    gen_signals_centroids: 
+    for i in 0 to NUM_FEATURES*NUM_CENTROIDS-1 generate
+            s_centroid_features(i) <= signed(centroid_features(32*(i+1)-1 downto i*32));
+            new_centroids(32*(i+1)-1 downto i*32) <= std_logic_vector(s_new_centroids(i));
+    end generate;
+    
+    gen_signals_points:
+    for i in 0 to NUM_FEATURES*NUM_PARALLEL-1 generate
+                s_point_features(i) <= signed(point_features(32*(i+1)-1 downto 32*i));
+    end generate;
+    
     pick_centroid_demux_gen: for i in 0 to NUM_PARALLEL-1 generate
         pick_centroid_x: entity work.PickCentroid
             generic map(
@@ -67,8 +83,8 @@ begin
             port map(
                 clk => clk,
                 reset => reset,
-                features_in => point_features((i+1)*NUM_FEATURES-1 DOWNTO i*NUM_FEATURES),
-                centroids => centroid_features,
+                features_in => s_point_features((i+1)*NUM_FEATURES-1 DOWNTO i*NUM_FEATURES),
+                centroids => s_centroid_features,
                 centroid => s_centroids(i)   
             );
             
@@ -91,7 +107,7 @@ begin
         )
         port map(
             clk => clk,
-            input => point_features,
+            input => s_point_features,
             finished => finished,
             finished_out => s_finished,
             output => s_features_buffered
@@ -116,7 +132,7 @@ begin
                 enable => s_enable_ordered((i+1)*NUM_PARALLEL-1 downto i*NUM_PARALLEL),
                 finished => s_finished,
                 input => s_features_buffered,
-                output => new_centroids((i+1)*NUM_FEATURES-1 downto i*NUM_FEATURES)
+                output => s_new_centroids((i+1)*NUM_FEATURES-1 downto i*NUM_FEATURES)
             );
     
     end generate;

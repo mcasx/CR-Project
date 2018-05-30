@@ -20,7 +20,13 @@ begin
         if(centroid < 0) then
             enable <= (others => '0');
          else
-            enable <= (centroid => '1', others => '0');
+            for i in 0 to NUM_CENTROIDS-1 loop
+                if centroid = i then
+                    enable(i) <= '1';
+                else
+                    enable(i) <= '0';
+                end if;
+            end loop;
         end if;
      end process; 
 end Behavioral;
