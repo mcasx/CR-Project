@@ -7,8 +7,7 @@ entity EuclideanDistance is
         NUM_FEATURES: integer := 4
     );
     port(
-       clk: in std_logic;
-       reset: in std_logic;     
+       clk: in std_logic;  
        features: in point_array(NUM_FEATURES-1 downto 0);
        centroid_features: in point_array(NUM_FEATURES-1 downto 0);
        distance: out integer

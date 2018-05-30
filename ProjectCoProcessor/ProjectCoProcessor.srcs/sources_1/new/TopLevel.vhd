@@ -99,29 +99,25 @@ begin
     
     
     parallel_sum_gen: for i in 0 to NUM_CENTROIDS-1 generate
-        process(s_enable(i))
-        begin
-            for i in 0 to NUM_PARALLEL-1 loop
-                for j in 0 to NUM_CENTROIDS-1 loop
-                    s_enable_ordered(j+ i*NUM_PARALLEL) <= s_enable(j*NUM_CENTROIDS + i);
-                end loop;
-            end loop;
-        end process;
+
+        order_signals_gen: for j in 0 to NUM_PARALLEL-1 generate
+                s_enable_ordered(j+ i*NUM_PARALLEL) <= s_enable(j*NUM_CENTROIDS + i);
+        end generate;
     
     
-    parallel_sum_x: entity work.ParallelSum
-        generic map(
-            NUM_FEATURES => NUM_FEATURES,
-            NUM_PARALLEL => NUM_PARALLEL
-        )
-        port map(
-            clk => clk,
-            reset => reset,
-            enable => s_enable_ordered((i+1)*NUM_PARALLEL-1 downto i*NUM_PARALLEL),
-            finished => s_finished,
-            input => s_features_buffered,
-            output => new_centroids((i+1)*NUM_FEATURES-1 downto i*NUM_FEATURES)
-        );
+        parallel_sum_x: entity work.ParallelSum
+            generic map(
+                NUM_FEATURES => NUM_FEATURES,
+                NUM_PARALLEL => NUM_PARALLEL
+            )
+            port map(
+                clk => clk,
+                reset => reset,
+                enable => s_enable_ordered((i+1)*NUM_PARALLEL-1 downto i*NUM_PARALLEL),
+                finished => s_finished,
+                input => s_features_buffered,
+                output => new_centroids((i+1)*NUM_FEATURES-1 downto i*NUM_FEATURES)
+            );
     
     end generate;
 

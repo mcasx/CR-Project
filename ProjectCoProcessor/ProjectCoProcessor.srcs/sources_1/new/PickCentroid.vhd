@@ -29,7 +29,6 @@ begin
                     )
                 port map(
                     clk => clk,
-                    reset => reset,
                     features => features_in,
                     centroid_features => centroids((i+1)*NUM_FEATURES-1 downto i*NUM_FEATURES),
                     distance => s_distances(i)
@@ -43,6 +42,7 @@ begin
         )
         port map(
             clk => clk,
+            reset => reset,
             distances => s_distances,
             centroid => centroid
         );

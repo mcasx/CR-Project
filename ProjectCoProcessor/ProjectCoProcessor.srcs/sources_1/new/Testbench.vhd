@@ -26,8 +26,8 @@ signal s_reset: std_logic := '1';
 signal s_finished: std_logic:= '0';
 --signal s_input: point_array(4*2-1 downto 0):= (to_signed(1,16), to_signed(2,16), to_signed(3,16), to_signed(4,16), to_signed(50,16), to_signed(51,16), to_signed(52,16), to_signed(53,16));
 signal s_centroids: point_array(4*2-1 downto 0):= (to_signed(1,16), to_signed(2,16), to_signed(3,16), to_signed(4,16), to_signed(50,16), to_signed(51,16), to_signed(52,16), to_signed(53,16));
-signal s_point: point_array(7 downto 0) := (to_signed(4,16), to_signed(5,16), to_signed(6,16), to_signed(7,16), to_signed(33,16), to_signed(29,16), to_signed(30,16), to_signed(35,16));
-signal s_output: point_array(7 downto 0);
+signal s_point: point_array(4*2-1 downto 0) := (to_signed(4,16), to_signed(5,16), to_signed(6,16), to_signed(7,16), to_signed(33,16), to_signed(29,16), to_signed(30,16), to_signed(35,16));
+signal s_output: point_array(4*2-1 downto 0);
 
 
 begin
@@ -61,10 +61,10 @@ begin
         wait for 100ns;
         s_reset <= '0';
         wait for 20 ns;
-        wait for 20 ns;
-        wait for 20 ns;
+        s_point <= (to_signed(4,16), to_signed(5,16), to_signed(6,16), to_signed(7,16), to_signed(33,16), to_signed(32,16), to_signed(30,16), to_signed(39,16));
         s_finished <= '1';
         wait for 20 ns;
+        s_finished <= '0';
     end process;
     
     clk: process
