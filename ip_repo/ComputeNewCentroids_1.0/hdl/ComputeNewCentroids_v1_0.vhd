@@ -6,6 +6,12 @@ entity ComputeNewCentroids_v1_0 is
 	generic (
 		-- Users to add parameters here
 
+        
+        NUM_FEATURES: integer := 4;
+        NUM_CENTROIDS: integer := 2;
+        NUM_PARALLEL: integer := 8;
+        
+
 		-- User parameters ends
 		-- Do not modify the parameters beyond this line
 
@@ -148,22 +154,7 @@ architecture arch_imp of ComputeNewCentroids_v1_0 is
 		);
 	end component ComputeNewCentroids_v1_0_S_AXI_INTR;
 
-    component TopLevel is
-    Generic(
-        NUM_FEATURES: integer := 4;
-        NUM_CENTROIDS: integer := 2;
-        NUM_PARALLEL: integer := 8
-        );
-    Port (
-        clk: in std_logic;
-        reset: in std_logic;
-        finished: in std_logic;
-        point_features: in std_logic_vector(NUM_FEATURES*NUM_PARALLEL*32-1 downto 0);
-        centroid_features: in std_logic_vector(NUM_FEATURES*NUM_CENTROIDS*32-1 downto 0);
-        new_centroids: out std_logic_vector(NUM_FEATURES*NUM_CENTROIDS*32-1 downto 0)
-    );
     
-    end component;
 begin
 
 -- Instantiation of Axi Bus Interface S00_AXI
@@ -234,19 +225,7 @@ ComputeNewCentroids_v1_0_S_AXI_INTR_inst : ComputeNewCentroids_v1_0_S_AXI_INTR
 
 	-- Add user logic here
 
-TopLevel_inst: TopLevel
-    Generic map(
-        NUM_FEATURES => 4,
-        NUM_CENTROIDS => 2,
-        NUM_PARALLEL => 8
-    )
-    port map(
-        clk => s00_axi_aclk,
-        reset => s00_axi_aresetn,
-        
-        
-        
-    );
+
 
 	-- User logic ends
 

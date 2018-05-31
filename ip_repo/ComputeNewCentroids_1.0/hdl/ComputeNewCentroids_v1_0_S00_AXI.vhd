@@ -5,7 +5,10 @@ use ieee.numeric_std.all;
 entity ComputeNewCentroids_v1_0_S00_AXI is
 	generic (
 		-- Users to add parameters here
-
+        NUM_FEATURES: integer := 4;
+        NUM_CENTROIDS: integer := 2;
+        NUM_PARALLEL: integer := 10;
+        
 		-- User parameters ends
 		-- Do not modify the parameters beyond this line
 
@@ -117,7 +120,25 @@ architecture arch_imp of ComputeNewCentroids_v1_0_S00_AXI is
 	signal reg_data_out	:std_logic_vector(C_S_AXI_DATA_WIDTH-1 downto 0);
 	signal byte_index	: integer;
 	signal aw_en	: std_logic;
+	
+	component TopLevel is
+        Generic(
+            NUM_FEATURES: integer := 4;
+            NUM_CENTROIDS: integer := 2;
+            NUM_PARALLEL: integer := 8
+            );
+        Port (
+            clk: in std_logic;
+            reset: in std_logic;
+            finished: in std_logic;
+            point_features: in std_logic_vector(NUM_FEATURES*NUM_PARALLEL*32-1 downto 0);
+            centroid_features: in std_logic_vector(NUM_FEATURES*NUM_CENTROIDS*32-1 downto 0);
+            new_centroids: out std_logic_vector(NUM_FEATURES*NUM_CENTROIDS*32-1 downto 0)
+        );
+        
+        end component;
 
+    signal s_new_centroids: std_logic_vector(NUM_FEATURES*NUM_CENTROIDS*32-1 downto 0);
 begin
 	-- I/O Connections assignments
 
@@ -345,7 +366,7 @@ begin
 	-- and the slave is ready to accept the read address.
 	slv_reg_rden <= axi_arready and S_AXI_ARVALID and (not axi_rvalid) ;
 
-	process (slv_reg0, slv_reg1, slv_reg2, slv_reg3, axi_araddr, S_AXI_ARESETN, slv_reg_rden)
+	process (slv_reg0, s_new_centroids, slv_reg2, slv_reg3, axi_araddr, S_AXI_ARESETN, slv_reg_rden)
 	variable loc_addr :std_logic_vector(OPT_MEM_ADDR_BITS downto 0);
 	begin
 	    -- Address decoding for reading registers
@@ -354,7 +375,7 @@ begin
 	      when b"00" =>
 	        reg_data_out <= slv_reg0;
 	      when b"01" =>
-	        reg_data_out <= slv_reg1;
+	        reg_data_out <= s_new_centroids;
 	      when b"10" =>
 	        reg_data_out <= slv_reg2;
 	      when b"11" =>
@@ -384,6 +405,21 @@ begin
 
 
 	-- Add user logic here
+
+    TopLevel_inst: TopLevel
+        Generic map(
+            NUM_FEATURES => NUM_FEATURES,
+            NUM_CENTROIDS => NUM_CENTROIDS,
+            NUM_PARALLEL => NUM_PARALLEL
+        )
+        port map(
+            clk => S_AXI_ACLK,
+            reset => S_AXI_ARESETN,
+            centroid_features => slv_reg0(NUM_FEATURES*NUM_CENTROIDS*32-1 downto 0),
+            point_features => slv_reg0(NUM_FEATURES*NUM_CENTROIDS*32 + NUM_FEATURES*NUM_PARALLEL*32-1 downto NUM_FEATURES*NUM_CENTROIDS*32),
+            finished => slv_reg0(NUM_FEATURES*NUM_CENTROIDS*32 + NUM_FEATURES*NUM_PARALLEL*32),
+            new_centroids => s_new_centroids
+        );
 
 	-- User logic ends
 
