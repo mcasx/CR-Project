@@ -17,7 +17,7 @@ entity StreamCopIPCore_v1_0_M00_AXIS is
 	port (
 		-- Users to add ports here
         validData   : in  std_logic;
-        swappedData : in  std_logic_vector(C_M_AXIS_TDATA_WIDTH-1 downto 0);
+        new_centroids : in  std_logic_vector(C_M_AXIS_TDATA_WIDTH-1 downto 0);
         readEnable  : out std_logic;
 		-- User ports ends
 		-- Do not modify the ports beyond this line
@@ -37,14 +37,22 @@ entity StreamCopIPCore_v1_0_M00_AXIS is
 		-- TREADY indicates that the slave can accept a transfer in the current cycle.
 		M_AXIS_TREADY	: in std_logic
 	);
+
 end StreamCopIPCore_v1_0_M00_AXIS;
 
 architecture implementation of StreamCopIPCore_v1_0_M00_AXIS is
+signal s_count: integer := 0;
 begin
     M_AXIS_TVALID <= validData;
     M_AXIS_TLAST  <= '0';
     M_AXIS_TSTRB  <= (others => '1');
-    M_AXIS_TDATA  <= swappedData;
     
-    readEnable    <= validData and M_AXIS_TREADY;    
+    process(M_AXIS_TREADY)
+    begin
+        s_count <= s_count + 1;
+        M_AXIS_TDATA  <= new_centroids(s_count*32-1 downto (s_count-1)*32-1);
+    end process;
+    readEnable    <= validData and M_AXIS_TREADY;
+    
+        
 end implementation;

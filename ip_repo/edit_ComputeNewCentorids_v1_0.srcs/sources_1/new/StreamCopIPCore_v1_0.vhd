@@ -157,8 +157,6 @@ begin
         );
 
     
-
-    
 	-- User logic ends
 
 end Structural;
