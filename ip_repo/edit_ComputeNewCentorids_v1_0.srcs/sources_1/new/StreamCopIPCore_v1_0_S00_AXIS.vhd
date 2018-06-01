@@ -8,7 +8,9 @@ use UNISIM.VCOMPONENTS.ALL;
 entity StreamCopIPCore_v1_0_S00_AXIS is
 	generic (
 		-- Users to add parameters here
-
+        NUM_FEATURES: integer := 2;
+        NUM_CENTROIDS: integer := 4;
+        NUM_PARALLEL: integer := 32;
 		-- User parameters ends
 		-- Do not modify the parameters beyond this line
 
@@ -18,7 +20,8 @@ entity StreamCopIPCore_v1_0_S00_AXIS is
 	port (
 		-- Users to add ports here
         validData   : out std_logic;
-        swappedData : out std_logic_vector(C_S_AXIS_TDATA_WIDTH-1 downto 0);
+        point_features: out std_logic_vector(NUM_FEATURES*NUM_PARALLEL*32-1 downto 0);
+        centroid_features: out std_logic_vector(NUM_FEATURES*NUM_CENTROIDS*32-1 downto 0);
         readEnable  : in  std_logic;
 		-- User ports ends
 		-- Do not modify the ports beyond this line
@@ -41,67 +44,67 @@ entity StreamCopIPCore_v1_0_S00_AXIS is
 end StreamCopIPCore_v1_0_S00_AXIS;
 
 architecture Behavioral of StreamCopIPCore_v1_0_S00_AXIS is
+
+    type TState is (S0, S1, S2); 
+    signal s_currentState, s_nextState: TState; 
+
     signal s_ready    : std_logic;
     signal s_validOut : std_logic;
-    signal s_dataOut  : std_logic_vector(31 downto 0); 
+    signal s_point_features: std_logic_vector(NUM_FEATURES*NUM_PARALLEL*32-1 downto 0);
+    signal s_centroid_features: std_logic_vector(NUM_FEATURES*NUM_CENTROIDS*32-1 downto 0);
+    signal i, j: integer := 0;
+
 begin
-    s_ready <= (not s_validOut) or readEnable;
-    
-    process(S_AXIS_ACLK)
-	begin
-        if (rising_edge (S_AXIS_ACLK)) then
-	        if (S_AXIS_ARESETN = '0') then
-	           s_validOut <= '0';
-	           s_dataOut  <= (others => '0');
-       
-            elsif (S_AXIS_TVALID = '1') then
-	           if (s_ready = '1') then
-                    s_validOut <= '1';
-	                s_dataOut  <= S_AXIS_TDATA(7 downto 0)   & S_AXIS_TDATA(15 downto 8) &
-	                              S_AXIS_TDATA(23 downto 16) & S_AXIS_TDATA(31 downto 24);
-	           end if;
-	      
-	        elsif (readEnable = '1') then
-	           s_validOut <= '0';               
+    sync_proc: process(S_AXIS_ACLK)
+        begin
+            if (rising_edge(S_AXIS_ACLK)) then
+                if (S_AXIS_ARESETN = '0') then
+                    i <= 0;
+                    j <= 0;
+                    s_ready <= '1';
+                    s_validOut <= '0';
+                    s_currentState <= S0;
+                else
+                    s_currentState <= s_nextState;
+                end if;
             end if;
-        end if;
-    end process;
-
-	validData     <= s_validOut;
-	swappedData   <= s_dataOut;
-	S_AXIS_TREADY <= s_ready;
-end Behavioral;
-
-
---architecture Structural of StreamCopIPCore_v1_0_S00_AXIS is
---    component fifo_generator_0
---        port(clk   : in  std_logic;
---             srst  : in  std_logic;
---             din   : in  std_logic_vector(31 downto 0);
---             wr_en : in  std_logic;
---             rd_en : in  std_logic;
---             dout  : out std_logic_vector(31 downto 0);
---             full  : out std_logic;
---             empty : out std_logic);
---    end component;
-
---    signal s_reset         : std_logic;
---    signal s_full, s_empty : std_logic;
---    signal s_dataIn        : std_logic_vector(31 downto 0); 
---begin
---    s_reset  <= not S_AXIS_ARESETN;
---    s_dataIn <= S_AXIS_TDATA(7 downto 0) & S_AXIS_TDATA(15 downto 8) & S_AXIS_TDATA(23 downto 16) & S_AXIS_TDATA(31 downto 24);
+        end process;
+        
+    comb_proc: process(s_currentState, S_AXIS_TVALID,S_AXIS_ARESETN)
+        begin
+            case (s_currentState) is
+            when S0 =>
+                if (S_AXIS_TVALID='0') then
+                    s_nextState <= S0;
+                elsif (i = NUM_FEATURES*NUM_CENTROIDS-1) then
+                    s_centroid_features((i+1)*32-1 downto i*32) <= S_AXIS_TDATA;
+                    s_nextState <= S1;
+                else
+                    s_centroid_features((i+1)*32-1 downto i*32) <= S_AXIS_TDATA;
+                    i <= i+1;
+                    s_nextState <= S0;
+                end if;
+            
+            when S1 =>
+                if (S_AXIS_TVALID='0') then
+                    s_validOut <= '0';
+                    s_nextState <= S1;
+                elsif (j = NUM_FEATURES*NUM_PARALLEL-1) then
+                    j <= 0;
+                    s_validOut <= '1';
+                    s_point_features((j+1)*32-1 downto j*32) <= S_AXIS_TDATA;
+                    s_nextState <= S1;
+                else
+                    s_validOut <= '0';
+                    s_point_features((j+1)*32-1 downto j*32) <= S_AXIS_TDATA;
+                    j <= j+1;
+                    s_nextState <= S1;
+                end if;
+            end case;
+        end process;
     
---    fifo_inst : fifo_generator_0
---        port map(clk   => S_AXIS_ACLK,
---                 srst  => s_reset,
---                 din   => s_dataIn,
---                 wr_en => S_AXIS_TVALID,
---                 rd_en => readEnable,
---                 dout  => swappedData,
---                 full  => s_full,
---                 empty => s_empty);
-      
---      S_AXIS_TREADY <= not s_full;
---      validData     <= not s_empty; 
---end Structural;
+    S_AXIS_TREADY <= '1';
+    validData <= s_validOut;
+    centroid_features <= s_centroid_features;
+    point_features <= s_point_features;
+end Behavioral;

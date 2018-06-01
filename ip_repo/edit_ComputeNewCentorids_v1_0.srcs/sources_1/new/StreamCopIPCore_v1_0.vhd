@@ -61,7 +61,8 @@ architecture Structural of StreamCopIPCore_v1_0 is
 		S_AXIS_TLAST	: in  std_logic;
 		S_AXIS_TVALID	: in  std_logic;
 		validData       : out std_logic;
-        swappedData     : out std_logic_vector(C_S_AXIS_TDATA_WIDTH-1 downto 0);
+        point_features: out std_logic_vector(NUM_FEATURES*NUM_PARALLEL*32-1 downto 0);
+        centroid_features: out std_logic_vector(NUM_FEATURES*NUM_CENTROIDS*32-1 downto 0);
         readEnable      : in  std_logic
 		);
 	end component StreamCopIPCore_v1_0_S00_AXIS;
@@ -114,7 +115,8 @@ begin
             S_AXIS_TLAST	=> s00_axis_tlast,
             S_AXIS_TVALID	=> s00_axis_tvalid,
             validData       => s_validData,
-            swappedData     => s_swappedData,
+            centroid_features => s_centroid_features,
+            point_features => s_point_features,
             readEnable      => s_readEnable
         );
 
@@ -146,11 +148,11 @@ begin
             NUM_PARALLEL => NUM_PARALLEL
         )
         port map(
-            clk => S_AXIS_ACLK,
-            reset => S_AXIS_ARESETN,
-            finished => s_finished;
-            point_features => s_point_features;
-            centroid_features => s_centroid_features;
+            clk => s00_axis_aclk,
+            reset => s00_axis_aresetn,
+            finished => s_finished,
+            point_features => s_point_features,
+            centroid_features => s_centroid_features,
             new_centroids => s_new_centroids
         );
 
