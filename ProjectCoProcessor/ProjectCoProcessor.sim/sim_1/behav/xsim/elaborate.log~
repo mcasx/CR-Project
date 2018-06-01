@@ -1,0 +1,21 @@
+Vivado Simulator 2017.4
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: /home/david/Apps/Vivado/2017.4/bin/unwrapped/lnx64.o/xelab -wto 3184575ba5ad4a08b9bfbf5723c17e64 --incr --debug typical --relax --mt 8 -L xil_defaultlib -L secureip --snapshot TestBenchPickCentorid_behav xil_defaultlib.TestBenchPickCentorid -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package xil_defaultlib.projectpackage
+Compiling architecture behavioral of entity xil_defaultlib.DistanceCalculator [distancecalculator_default]
+Compiling architecture behavioral of entity xil_defaultlib.Adder [adder_default]
+Compiling architecture behavioral of entity xil_defaultlib.EuclideanDistance [euclideandistance_default]
+Compiling architecture behavioral of entity xil_defaultlib.PickSmallest [picksmallest_default]
+Compiling architecture behavioral of entity xil_defaultlib.PickCentroid [pickcentroid_default]
+Compiling architecture behavioral of entity xil_defaultlib.testbenchpickcentorid
+Built simulation snapshot TestBenchPickCentorid_behav

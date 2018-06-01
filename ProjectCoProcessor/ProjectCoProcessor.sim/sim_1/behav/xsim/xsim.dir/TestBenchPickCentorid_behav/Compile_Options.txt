@@ -1,0 +1,1 @@
+-wto "3184575ba5ad4a08b9bfbf5723c17e64" --incr --debug "typical" --relax --mt "8" -L "xil_defaultlib" -L "secureip" --snapshot "TestBenchPickCentorid_behav" "xil_defaultlib.TestBenchPickCentorid" -log "elaborate.log" 
