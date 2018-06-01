@@ -9,6 +9,7 @@ entity PickSmallest is
     port(
         clk: in std_logic;
         reset: in std_logic;
+        enable: in std_logic;
         distances: in int_array(NUM_CENTROIDS-1 downto 0);
         centroid: out integer
     );
@@ -22,6 +23,8 @@ begin
     begin
         if rising_edge(clk) then
             if reset = '1' then
+                centroid <= -1;
+            elsif enable = '0' then
                 centroid <= -1;
             else
                 for i in 0 to NUM_CENTROIDS-1 loop

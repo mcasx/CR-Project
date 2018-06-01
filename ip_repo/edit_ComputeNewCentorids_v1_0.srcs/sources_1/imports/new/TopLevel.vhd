@@ -41,6 +41,8 @@ entity TopLevel is
     Port (
         clk: in std_logic;
         reset: in std_logic;
+        enable: in std_logic;
+        pickCentroidEnable: in std_logic_vector(NUM_PARALLEL-1 downto 0);
         finished: in std_logic;
         point_features: in std_logic_vector(NUM_FEATURES*NUM_PARALLEL*32-1 downto 0);
         centroid_features: in std_logic_vector(NUM_FEATURES*NUM_CENTROIDS*32-1 downto 0);
@@ -83,6 +85,7 @@ begin
             port map(
                 clk => clk,
                 reset => reset,
+                enable => pickCentroidEnable(i),
                 features_in => s_point_features((i+1)*NUM_FEATURES-1 DOWNTO i*NUM_FEATURES),
                 centroids => s_centroid_features,
                 centroid => s_centroids(i)   
@@ -129,6 +132,7 @@ begin
             port map(
                 clk => clk,
                 reset => reset,
+                slave_enable => enable,
                 enable => s_enable_ordered((i+1)*NUM_PARALLEL-1 downto i*NUM_PARALLEL),
                 finished => s_finished,
                 input => s_features_buffered,

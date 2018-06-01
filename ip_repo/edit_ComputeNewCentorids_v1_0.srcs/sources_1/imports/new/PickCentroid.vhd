@@ -10,6 +10,7 @@ entity PickCentroid is
     port(
         clk: in std_logic;
         reset: in std_logic;
+        enable: in std_logic;
         features_in: in point_array(NUM_FEATURES-1 downto 0);
         centroids: in point_array(NUM_CENTROIDS*NUM_FEATURES-1 downto 0);
         centroid: out integer := -1
@@ -43,6 +44,7 @@ begin
         port map(
             clk => clk,
             reset => reset,
+            enable => enable,
             distances => s_distances,
             centroid => centroid
         );

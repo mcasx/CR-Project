@@ -63,7 +63,7 @@ architecture Structural of StreamCopIPCore_v1_0 is
 		validData       : out std_logic;
         point_features: out std_logic_vector(NUM_FEATURES*NUM_PARALLEL*32-1 downto 0);
         centroid_features: out std_logic_vector(NUM_FEATURES*NUM_CENTROIDS*32-1 downto 0);
-        readEnable      : in  std_logic
+        enables      : out  std_logic_vector(NUM_PARALLEL-1 downto 0)
 		);
 	end component StreamCopIPCore_v1_0_S00_AXIS;
 
@@ -98,6 +98,7 @@ architecture Structural of StreamCopIPCore_v1_0 is
     signal s_point_features: std_logic_vector(NUM_FEATURES*NUM_PARALLEL*32-1 downto 0);
     signal s_centroid_features: std_logic_vector(NUM_FEATURES*NUM_CENTROIDS*32-1 downto 0);
     signal s_new_centroids: std_logic_vector(NUM_FEATURES*NUM_CENTROIDS*32-1 downto 0);
+    signal s_pickCentroidEnables: std_logic_vector(NUM_PARALLEL-1 downto 0);
     
     
 begin
@@ -117,7 +118,7 @@ begin
             validData       => s_validData,
             centroid_features => s_centroid_features,
             point_features => s_point_features,
-            readEnable      => s_readEnable
+            enables      => s_pickCentroidEnables
         );
 
     -- Instantiation of Axi Bus Interface M00_AXIS
@@ -150,7 +151,9 @@ begin
         port map(
             clk => s00_axis_aclk,
             reset => s00_axis_aresetn,
-            finished => s_finished,
+            enable => s_validData,
+            pickCentroidEnable => s_pickCentroidEnables,
+            finished => s00_axis_tlast,
             point_features => s_point_features,
             centroid_features => s_centroid_features,
             new_centroids => s_new_centroids

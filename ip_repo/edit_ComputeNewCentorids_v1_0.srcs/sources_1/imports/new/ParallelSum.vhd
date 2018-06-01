@@ -11,6 +11,7 @@ entity ParallelSum is
     port(
         clk: in std_logic;
         reset: in std_logic;
+        slave_enable: in std_logic;
         enable: in std_logic_vector(NUM_PARALLEL-1 downto 0);
         finished: in std_logic;
         input: in point_array(NUM_FEATURES*NUM_PARALLEL-1 downto 0);
@@ -32,7 +33,7 @@ begin
                         s_output := (others => '0');
                         s_count := 0;
                         hasFinished := '0';
-                    else
+                    elsif slave_enable = '1' then
                         for j in 0 to NUM_PARALLEL-1 loop
                             if enable(j) = '1' then
                                 s_output := s_output + input(j*NUM_FEATURES + i);

@@ -22,7 +22,7 @@ entity StreamCopIPCore_v1_0_S00_AXIS is
         validData   : out std_logic;
         point_features: out std_logic_vector(NUM_FEATURES*NUM_PARALLEL*32-1 downto 0);
         centroid_features: out std_logic_vector(NUM_FEATURES*NUM_CENTROIDS*32-1 downto 0);
-        readEnable  : in  std_logic;
+        enables : out std_logic_vector(NUM_PARALLEL-1 downto 0);
 		-- User ports ends
 		-- Do not modify the ports beyond this line
 
@@ -52,6 +52,7 @@ architecture Behavioral of StreamCopIPCore_v1_0_S00_AXIS is
     signal s_validOut : std_logic;
     signal s_point_features: std_logic_vector(NUM_FEATURES*NUM_PARALLEL*32-1 downto 0);
     signal s_centroid_features: std_logic_vector(NUM_FEATURES*NUM_CENTROIDS*32-1 downto 0);
+    signal s_enables: std_logic_vector(NUM_PARALLEL-1 downto 0) := (others => '0');
     signal i, j: integer := 0;
 
 begin
@@ -61,6 +62,7 @@ begin
                 if (S_AXIS_ARESETN = '0') then
                     i <= 0;
                     j <= 0;
+                    s_enables <= (others => '0');
                     s_ready <= '1';
                     s_validOut <= '0';
                     s_currentState <= S0;
@@ -89,7 +91,8 @@ begin
                 if (S_AXIS_TVALID='0') then
                     s_validOut <= '0';
                     s_nextState <= S1;
-                elsif (j = NUM_FEATURES*NUM_PARALLEL-1) then
+                elsif (S_AXIS_TLAST = '1') then
+                    s_enables(j-1 downto 0) <= (others => '1');
                     j <= 0;
                     s_validOut <= '1';
                     s_point_features((j+1)*32-1 downto j*32) <= S_AXIS_TDATA;
@@ -104,6 +107,7 @@ begin
         end process;
     
     S_AXIS_TREADY <= '1';
+    enables <= s_enables;
     validData <= s_validOut;
     centroid_features <= s_centroid_features;
     point_features <= s_point_features;
