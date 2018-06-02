@@ -6,46 +6,41 @@ use work.projectPackage.ALL;
 entity ParallelSum is
     generic(
         NUM_FEATURES: integer := 4;
-        NUM_PARALLEL: integer := 2
+        NUM_PARALLEL: integer := 2;
+        NUM_CENTROIDS: integer := 2;
     );
     port(
         clk: in std_logic;
         reset: in std_logic;
         slave_enable: in std_logic;
-        enable: in std_logic_vector(NUM_PARALLEL-1 downto 0);
         finished: in std_logic;
+        centroids: in int_array(NUM_PARALLEL-1 downto 0);
         input: in point_array(NUM_FEATURES*NUM_PARALLEL-1 downto 0);
-        output: out point_array(NUM_FEATURES-1 downto 0)
+        output: out point_array(NUM_FEATURES*NUM_CENTROIDS-1 downto 0)
     );
 end ParallelSum;
 
 architecture Behavioral of ParallelSum is
 
+    signal s_output: point_array(NUM_FEATURES*NUM_CENTROIDS-1 downto 0);
+    signal s_count: int_array(NUM_CENTROIDS-1 downto 0);
+
 begin
-    SumGen:  for i in 0 to NUM_FEATURES-1 generate
-            process(clk, reset)
-            variable s_output: point;
-            variable s_count: integer := 0;
-            variable hasFinished: std_logic := '0';
-            begin
-                if rising_edge(clk) then
-                    if reset = '1' or hasFinished = '1' then
-                        s_output := (others => '0');
-                        s_count := 0;
-                        hasFinished := '0';
-                    elsif slave_enable = '1' then
-                        for j in 0 to NUM_PARALLEL-1 loop
-                            if enable(j) = '1' then
-                                s_output := s_output + input(j*NUM_FEATURES + i);
-                                s_count := s_count + 1;
-                            end if;
-                            if finished = '1' then
-                                output(i) <= s_output / s_count;
-                                hasFinished := '1';
-                            end if;
-                        end loop;
-                    end if;
-                end if;
-            end process;
-    end generate SumGen;
+    process(clk, reset, slave_enable)
+    begin
+        if(rising_edge(clk)) then
+            if(reset = '1') then
+                s_output <= (others => "0000");
+                s_count <= (others => 0);
+            elsif(slave_enable = '1') then
+                for i in 0 to NUM_PARALLEL-1 loop
+                    for j in 0 to NUM_FEATURES-1 loop
+                        s_count(centroids(i)) <= s_count(centroids(i)) + 1;
+                        s_output(centroids(i)*NUM_FEATURES + j) <= s_output(centroids(i)*NUM_FEATURES + j)+ input(i*NUM_FEATURES + j);
+                        output(centroids(i)*NUM_FEATURES + j) <= s_output(centroids(i)*NUM_FEATURES + j)/s_count(centroids(i));
+                    end loop;
+                end loop;
+            end if;
+        end if;
+    end process;
 end Behavioral;
