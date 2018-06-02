@@ -130,29 +130,29 @@ begin
             );
 
 
-    parallel_sum_gen: for i in 0 to NUM_CENTROIDS-1 generate
-        order_signals_gen: for j in 0 to NUM_PARALLEL-1 generate
-                s_enable_ordered(j+ i*NUM_PARALLEL) <= s_enable(j*NUM_CENTROIDS + i);
-        end generate;
+    --parallel_sum_gen: for i in 0 to NUM_CENTROIDS-1 generate
+--        order_signals_gen: for j in 0 to NUM_PARALLEL-1 generate
+--                s_enable_ordered(j+ i*NUM_PARALLEL) <= s_enable(j*NUM_CENTROIDS + i);
+--        end generate;
     
     
-        parallel_sum_x: entity work.ParallelSum
-            generic map(
-                NUM_FEATURES => NUM_FEATURES,
-                NUM_PARALLEL => NUM_PARALLEL,
-                NUM_CENTROIDS => NUM_CENTROIDS
-            )
-            port map(
-                clk => clk,
-                reset => reset,
-                slave_enable => enable,
-                --enable => s_enable_ordered((i+1)*NUM_PARALLEL-1 downto i*NUM_PARALLEL),
-                centroids => s_centroids,
-                finished => s_finished,
-                input => s_features_buffered,
-                output => s_new_centroids((i+1)*NUM_CENTROIDS*NUM_FEATURES-1 downto i*NUM_FEATURES*NUM_CENTROIDS)
-            );
+    parallel_sum_x: entity work.ParallelSum
+        generic map(
+            NUM_FEATURES => NUM_FEATURES,
+            NUM_PARALLEL => NUM_PARALLEL,
+            NUM_CENTROIDS => NUM_CENTROIDS
+        )
+        port map(
+            clk => clk,
+            reset => reset,
+            slave_enable => enable,
+            --enable => s_enable_ordered((i+1)*NUM_PARALLEL-1 downto i*NUM_PARALLEL),
+            centroids => s_centroids,
+            finished => s_finished,
+            input => s_features_buffered,
+            output => s_new_centroids
+        );
     
-    end generate;
+    --end generate;
 
 end Behavioral;
