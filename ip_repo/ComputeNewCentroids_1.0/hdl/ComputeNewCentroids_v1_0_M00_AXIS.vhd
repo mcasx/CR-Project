@@ -45,7 +45,8 @@ architecture implementation of StreamCopIPCore_v1_0_M00_AXIS is
 signal s_count: integer := 0;
 begin
     M_AXIS_TVALID <= enable;
-    
+    M_AXIS_TLAST <= '0';
+    M_AXIS_TSTRB <= (others => '0');
     process(M_AXIS_ACLK, M_AXIS_TREADY, M_AXIS_ARESETN, new_centroids)
     begin
         if (rising_edge(M_AXIS_ACLK)) then
