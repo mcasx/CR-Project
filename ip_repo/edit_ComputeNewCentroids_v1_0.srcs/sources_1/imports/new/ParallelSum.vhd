@@ -7,7 +7,7 @@ entity ParallelSum is
     generic(
         NUM_FEATURES: integer := 4;
         NUM_PARALLEL: integer := 2;
-        NUM_CENTROIDS: integer := 2;
+        NUM_CENTROIDS: integer := 2
     );
     port(
         clk: in std_logic;
