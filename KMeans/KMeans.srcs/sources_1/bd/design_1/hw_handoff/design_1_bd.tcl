@@ -253,7 +253,10 @@ proc create_root_design { parentCell } {
  ] $sys_clock
 
   # Create instance: ComputeNewCentroids_0, and set properties
-  set ComputeNewCentroids_0 [ create_bd_cell -type ip -vlnv user.org:user:ComputeNewCentroids:1.6 ComputeNewCentroids_0 ]
+  set ComputeNewCentroids_0 [ create_bd_cell -type ip -vlnv user.org:user:ComputeNewCentroids:1.7 ComputeNewCentroids_0 ]
+  set_property -dict [ list \
+   CONFIG.NUM_PARALLEL {16} \
+ ] $ComputeNewCentroids_0
 
   set_property -dict [ list \
    CONFIG.TDATA_NUM_BYTES {4} \
@@ -273,7 +276,13 @@ proc create_root_design { parentCell } {
   # Create instance: clk_wiz_1, and set properties
   set clk_wiz_1 [ create_bd_cell -type ip -vlnv xilinx.com:ip:clk_wiz:5.4 clk_wiz_1 ]
   set_property -dict [ list \
+   CONFIG.CLKOUT1_JITTER {290.478} \
+   CONFIG.CLKOUT1_PHASE_ERROR {133.882} \
+   CONFIG.CLKOUT1_REQUESTED_OUT_FREQ {10.000} \
    CONFIG.CLK_IN1_BOARD_INTERFACE {sys_clock} \
+   CONFIG.MMCM_CLKFBOUT_MULT_F {15.625} \
+   CONFIG.MMCM_CLKOUT0_DIVIDE_F {78.125} \
+   CONFIG.MMCM_DIVCLK_DIVIDE {2} \
    CONFIG.PRIM_SOURCE {Single_ended_clock_capable_pin} \
    CONFIG.RESET_BOARD_INTERFACE {reset} \
    CONFIG.RESET_PORT {resetn} \

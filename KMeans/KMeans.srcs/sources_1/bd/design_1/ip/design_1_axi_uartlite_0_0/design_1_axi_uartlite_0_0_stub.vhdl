@@ -1,7 +1,7 @@
 -- Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2017.4 (lin64) Build 2086221 Fri Dec 15 20:54:30 MST 2017
--- Date        : Fri Jun  1 17:25:13 2018
+-- Date        : Sun Jun  3 13:11:44 2018
 -- Host        : david-Lenovo-U31-70 running 64-bit elementary OS 0.4.1 Loki
 -- Command     : write_vhdl -force -mode synth_stub
 --               /home/david/Documents/CR-Project/KMeans/KMeans.srcs/sources_1/bd/design_1/ip/design_1_axi_uartlite_0_0/design_1_axi_uartlite_0_0_stub.vhdl

@@ -1,7 +1,7 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2017.4 (lin64) Build 2086221 Fri Dec 15 20:54:30 MST 2017
-| Date             : Sat Jun  2 20:29:59 2018
+| Date             : Sun Jun  3 19:00:29 2018
 | Host             : david-Lenovo-U31-70 running 64-bit elementary OS 0.4.1 Loki
 | Command          : report_power -file StreamCopIPCore_v1_0_power_routed.rpt -pb StreamCopIPCore_v1_0_power_summary_routed.pb -rpx StreamCopIPCore_v1_0_power_routed.rpx
 | Design           : StreamCopIPCore_v1_0
@@ -29,41 +29,35 @@ Table of Contents
 1. Summary
 ----------
 
-+--------------------------+-----------------------------------+
-| Total On-Chip Power (W)  | 771.255 (Junction temp exceeded!) |
-| Design Power Budget (W)  | Unspecified*                      |
-| Power Budget Margin (W)  | NA                                |
-| Dynamic (W)              | 770.464                           |
-| Device Static (W)        | 0.791                             |
-| Effective TJA (C/W)      | 4.6                               |
-| Max Ambient (C)          | 0.0                               |
-| Junction Temperature (C) | 125.0                             |
-| Confidence Level         | Low                               |
-| Setting File             | ---                               |
-| Simulation Activity File | ---                               |
-| Design Nets Matched      | NA                                |
-+--------------------------+-----------------------------------+
++--------------------------+--------------+
+| Total On-Chip Power (W)  | 0.084        |
+| Design Power Budget (W)  | Unspecified* |
+| Power Budget Margin (W)  | NA           |
+| Dynamic (W)              | 0.000        |
+| Device Static (W)        | 0.084        |
+| Effective TJA (C/W)      | 4.6          |
+| Max Ambient (C)          | 84.6         |
+| Junction Temperature (C) | 25.4         |
+| Confidence Level         | High         |
+| Setting File             | ---          |
+| Simulation Activity File | ---          |
+| Design Nets Matched      | NA           |
++--------------------------+--------------+
 * Specify Design Power Budget using, set_operating_conditions -design_power_budget <value in Watts>
 
 
 1.1 On-Chip Components
 ----------------------
 
-+----------------+-----------+----------+-----------+-----------------+
-| On-Chip        | Power (W) | Used     | Available | Utilization (%) |
-+----------------+-----------+----------+-----------+-----------------+
-| Slice Logic    |   348.051 |    56136 |       --- |             --- |
-|   LUT as Logic |   311.931 |    37741 |     63400 |           59.53 |
-|   CARRY4       |    33.864 |     7177 |     15850 |           45.28 |
-|   Register     |     2.242 |     5339 |    126800 |            4.21 |
-|   BUFG         |     0.017 |       12 |        32 |           37.50 |
-|   Others       |     0.000 |      196 |       --- |             --- |
-|   F7/F8 Muxes  |     0.000 |       32 |     63400 |            0.05 |
-| Signals        |   400.898 |    45879 |       --- |             --- |
-| I/O            |    21.512 |       77 |       210 |           36.67 |
-| Static Power   |     0.791 |          |           |                 |
-| Total          |   771.252 |          |           |                 |
-+----------------+-----------+----------+-----------+-----------------+
++--------------+-----------+----------+-----------+-----------------+
+| On-Chip      | Power (W) | Used     | Available | Utilization (%) |
++--------------+-----------+----------+-----------+-----------------+
+| Slice Logic  |     0.000 |        2 |       --- |             --- |
+|   Others     |     0.000 |        2 |       --- |             --- |
+| I/O          |     0.000 |       39 |       210 |           18.57 |
+| Static Power |     0.084 |          |           |                 |
+| Total        |     0.084 |          |           |                 |
++--------------+-----------+----------+-----------+-----------------+
 
 
 1.2 Power Supply Summary
@@ -72,16 +66,16 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |   749.663 |     749.101 |      0.563 |
-| Vccaux    |       1.800 |     1.842 |       1.749 |      0.093 |
+| Vccint    |       1.000 |     0.015 |       0.000 |      0.015 |
+| Vccaux    |       1.800 |     0.018 |       0.000 |      0.018 |
 | Vcco33    |       3.300 |     0.000 |       0.000 |      0.000 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
-| Vcco18    |       1.800 |    10.124 |      10.120 |      0.004 |
+| Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |
 | Vcco135   |       1.350 |     0.000 |       0.000 |      0.000 |
 | Vcco12    |       1.200 |     0.000 |       0.000 |      0.000 |
 | Vccaux_io |       1.800 |     0.000 |       0.000 |      0.000 |
-| Vccbram   |       1.000 |     0.018 |       0.000 |      0.018 |
+| Vccbram   |       1.000 |     0.000 |       0.000 |      0.000 |
 | MGTAVcc   |       1.000 |     0.000 |       0.000 |      0.000 |
 | MGTAVtt   |       1.200 |     0.000 |       0.000 |      0.000 |
 | Vccadc    |       1.800 |     0.020 |       0.000 |      0.020 |
@@ -91,17 +85,17 @@ Table of Contents
 1.3 Confidence Level
 --------------------
 
-+-----------------------------+------------+--------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
-| User Input Data             | Confidence | Details                                                | Action                                                                                                             |
-+-----------------------------+------------+--------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
-| Design implementation state | High       | Design is routed                                       |                                                                                                                    |
-| Clock nodes activity        | Low        | User specified less than 75% of clocks                 | Provide missing clock activity with a constraint file, simulation results or by editing the "By Clock Domain" view |
-| I/O nodes activity          | Low        | More than 75% of inputs are missing user specification | Provide missing input activity with simulation results or by editing the "By Resource Type -> I/Os" view           |
-| Internal nodes activity     | Medium     | User specified less than 25% of internal nodes         | Provide missing internal nodes activity with simulation results or by editing the "By Resource Type" views         |
-| Device models               | High       | Device models are Production                           |                                                                                                                    |
-|                             |            |                                                        |                                                                                                                    |
-| Overall confidence level    | Low        |                                                        |                                                                                                                    |
-+-----------------------------+------------+--------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
++-----------------------------+------------+------------------------------------------------+--------+
+| User Input Data             | Confidence | Details                                        | Action |
++-----------------------------+------------+------------------------------------------------+--------+
+| Design implementation state | High       | Design is routed                               |        |
+| Clock nodes activity        | High       | User specified more than 95% of clocks         |        |
+| I/O nodes activity          | High       | User specified more than 95% of inputs         |        |
+| Internal nodes activity     | High       | User specified more than 25% of internal nodes |        |
+| Device models               | High       | Device models are Production                   |        |
+|                             |            |                                                |        |
+| Overall confidence level    | High       |                                                |        |
++-----------------------------+------------+------------------------------------------------+--------+
 
 
 2. Settings
@@ -136,115 +130,10 @@ Table of Contents
 3.1 By Hierarchy
 ----------------
 
-+---------------------------------------------------+-----------+
-| Name                                              | Power (W) |
-+---------------------------------------------------+-----------+
-| StreamCopIPCore_v1_0                              |   770.461 |
-|   StreamCopIPCore_v1_0_M00_AXIS_inst              |     2.013 |
-|   StreamCopIPCore_v1_0_S00_AXIS_inst              |    73.139 |
-|   TopLevel                                        |   636.822 |
-|     buffer2_exec                                  |    73.405 |
-|     buffer_exec                                   |     0.020 |
-|     parallel_sum_gen[0].parallel_sum_x            |    10.790 |
-|     parallel_sum_gen[1].parallel_sum_x            |    10.054 |
-|     parallel_sum_gen[2].parallel_sum_x            |    10.510 |
-|     parallel_sum_gen[3].parallel_sum_x            |    11.164 |
-|     pick_centroid_demux_gen[0].pick_centroid_x    |    21.514 |
-|       EuclideanDistance_GEN[0].EuclideanDistanceX |     2.107 |
-|       EuclideanDistance_GEN[1].EuclideanDistanceX |     2.052 |
-|       EuclideanDistance_GEN[2].EuclideanDistanceX |     2.091 |
-|       EuclideanDistance_GEN[3].EuclideanDistanceX |     2.256 |
-|       PickSmallest                                |     7.709 |
-|     pick_centroid_demux_gen[10].pick_centroid_x   |    19.069 |
-|       EuclideanDistance_GEN[0].EuclideanDistanceX |     1.245 |
-|       EuclideanDistance_GEN[1].EuclideanDistanceX |     1.581 |
-|       EuclideanDistance_GEN[2].EuclideanDistanceX |     1.351 |
-|       EuclideanDistance_GEN[3].EuclideanDistanceX |     0.998 |
-|       PickSmallest                                |    11.158 |
-|     pick_centroid_demux_gen[11].pick_centroid_x   |    19.104 |
-|       EuclideanDistance_GEN[0].EuclideanDistanceX |     1.626 |
-|       EuclideanDistance_GEN[1].EuclideanDistanceX |     1.470 |
-|       EuclideanDistance_GEN[2].EuclideanDistanceX |     1.578 |
-|       EuclideanDistance_GEN[3].EuclideanDistanceX |     1.199 |
-|       PickSmallest                                |    10.490 |
-|     pick_centroid_demux_gen[12].pick_centroid_x   |    17.938 |
-|       EuclideanDistance_GEN[0].EuclideanDistanceX |     1.517 |
-|       EuclideanDistance_GEN[1].EuclideanDistanceX |     1.631 |
-|       EuclideanDistance_GEN[2].EuclideanDistanceX |     1.296 |
-|       EuclideanDistance_GEN[3].EuclideanDistanceX |     1.262 |
-|       PickSmallest                                |     9.476 |
-|     pick_centroid_demux_gen[13].pick_centroid_x   |   217.193 |
-|       EuclideanDistance_GEN[0].EuclideanDistanceX |     1.444 |
-|       EuclideanDistance_GEN[1].EuclideanDistanceX |     1.581 |
-|       EuclideanDistance_GEN[2].EuclideanDistanceX |     1.425 |
-|       EuclideanDistance_GEN[3].EuclideanDistanceX |     1.061 |
-|       PickSmallest                                |   208.929 |
-|     pick_centroid_demux_gen[14].pick_centroid_x   |    16.836 |
-|       EuclideanDistance_GEN[0].EuclideanDistanceX |     1.173 |
-|       EuclideanDistance_GEN[1].EuclideanDistanceX |     1.319 |
-|       EuclideanDistance_GEN[2].EuclideanDistanceX |     1.398 |
-|       EuclideanDistance_GEN[3].EuclideanDistanceX |     0.901 |
-|       PickSmallest                                |     9.383 |
-|     pick_centroid_demux_gen[15].pick_centroid_x   |    15.561 |
-|       EuclideanDistance_GEN[0].EuclideanDistanceX |     1.237 |
-|       EuclideanDistance_GEN[1].EuclideanDistanceX |     1.807 |
-|       EuclideanDistance_GEN[2].EuclideanDistanceX |     1.208 |
-|       EuclideanDistance_GEN[3].EuclideanDistanceX |     1.111 |
-|       PickSmallest                                |     7.548 |
-|     pick_centroid_demux_gen[1].pick_centroid_x    |    20.798 |
-|       EuclideanDistance_GEN[0].EuclideanDistanceX |     1.361 |
-|       EuclideanDistance_GEN[1].EuclideanDistanceX |     1.685 |
-|       EuclideanDistance_GEN[2].EuclideanDistanceX |     1.846 |
-|       EuclideanDistance_GEN[3].EuclideanDistanceX |     1.839 |
-|       PickSmallest                                |     9.509 |
-|     pick_centroid_demux_gen[2].pick_centroid_x    |    21.127 |
-|       EuclideanDistance_GEN[0].EuclideanDistanceX |     1.589 |
-|       EuclideanDistance_GEN[1].EuclideanDistanceX |     1.504 |
-|       EuclideanDistance_GEN[2].EuclideanDistanceX |     1.600 |
-|       EuclideanDistance_GEN[3].EuclideanDistanceX |     1.636 |
-|       PickSmallest                                |    10.829 |
-|     pick_centroid_demux_gen[3].pick_centroid_x    |    17.970 |
-|       EuclideanDistance_GEN[0].EuclideanDistanceX |     2.067 |
-|       EuclideanDistance_GEN[1].EuclideanDistanceX |     1.618 |
-|       EuclideanDistance_GEN[2].EuclideanDistanceX |     1.911 |
-|       EuclideanDistance_GEN[3].EuclideanDistanceX |     1.094 |
-|       PickSmallest                                |     8.047 |
-|     pick_centroid_demux_gen[4].pick_centroid_x    |    19.120 |
-|       EuclideanDistance_GEN[0].EuclideanDistanceX |     1.384 |
-|       EuclideanDistance_GEN[1].EuclideanDistanceX |     1.476 |
-|       EuclideanDistance_GEN[2].EuclideanDistanceX |     1.416 |
-|       EuclideanDistance_GEN[3].EuclideanDistanceX |     1.285 |
-|       PickSmallest                                |    10.253 |
-|     pick_centroid_demux_gen[5].pick_centroid_x    |    15.798 |
-|       EuclideanDistance_GEN[0].EuclideanDistanceX |     1.343 |
-|       EuclideanDistance_GEN[1].EuclideanDistanceX |     1.482 |
-|       EuclideanDistance_GEN[2].EuclideanDistanceX |     1.584 |
-|       EuclideanDistance_GEN[3].EuclideanDistanceX |     1.122 |
-|       PickSmallest                                |     7.296 |
-|     pick_centroid_demux_gen[6].pick_centroid_x    |    19.261 |
-|       EuclideanDistance_GEN[0].EuclideanDistanceX |     1.368 |
-|       EuclideanDistance_GEN[1].EuclideanDistanceX |     1.733 |
-|       EuclideanDistance_GEN[2].EuclideanDistanceX |     1.383 |
-|       EuclideanDistance_GEN[3].EuclideanDistanceX |     1.400 |
-|       PickSmallest                                |    10.522 |
-|     pick_centroid_demux_gen[7].pick_centroid_x    |    44.385 |
-|       EuclideanDistance_GEN[0].EuclideanDistanceX |     1.334 |
-|       EuclideanDistance_GEN[1].EuclideanDistanceX |     1.385 |
-|       EuclideanDistance_GEN[2].EuclideanDistanceX |     1.322 |
-|       EuclideanDistance_GEN[3].EuclideanDistanceX |     1.082 |
-|       PickSmallest                                |    36.544 |
-|     pick_centroid_demux_gen[8].pick_centroid_x    |    19.425 |
-|       EuclideanDistance_GEN[0].EuclideanDistanceX |     1.398 |
-|       EuclideanDistance_GEN[1].EuclideanDistanceX |     1.415 |
-|       EuclideanDistance_GEN[2].EuclideanDistanceX |     1.315 |
-|       EuclideanDistance_GEN[3].EuclideanDistanceX |     1.342 |
-|       PickSmallest                                |    10.678 |
-|     pick_centroid_demux_gen[9].pick_centroid_x    |    15.780 |
-|       EuclideanDistance_GEN[0].EuclideanDistanceX |     1.486 |
-|       EuclideanDistance_GEN[1].EuclideanDistanceX |     1.438 |
-|       EuclideanDistance_GEN[2].EuclideanDistanceX |     1.490 |
-|       EuclideanDistance_GEN[3].EuclideanDistanceX |     1.271 |
-|       PickSmallest                                |     7.279 |
-+---------------------------------------------------+-----------+
++----------------------+-----------+
+| Name                 | Power (W) |
++----------------------+-----------+
+| StreamCopIPCore_v1_0 |     0.000 |
++----------------------+-----------+
 
 

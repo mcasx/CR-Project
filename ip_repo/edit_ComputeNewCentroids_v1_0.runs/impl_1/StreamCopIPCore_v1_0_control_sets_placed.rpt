@@ -1,7 +1,7 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2017.4 (lin64) Build 2086221 Fri Dec 15 20:54:30 MST 2017
-| Date         : Sat Jun  2 20:27:57 2018
+| Date         : Sun Jun  3 18:57:56 2018
 | Host         : david-Lenovo-U31-70 running 64-bit elementary OS 0.4.1 Loki
 | Command      : report_control_sets -verbose -file StreamCopIPCore_v1_0_control_sets_placed.rpt
 | Design       : StreamCopIPCore_v1_0
@@ -22,8 +22,8 @@ Table of Contents
 +----------------------------------------------------------+-------+
 |                          Status                          | Count |
 +----------------------------------------------------------+-------+
-| Number of unique control sets                            |    77 |
-| Unused register locations in slices containing registers |   101 |
+| Number of unique control sets                            |     0 |
+| Unused register locations in slices containing registers |     0 |
 +----------------------------------------------------------+-------+
 
 
@@ -33,107 +33,25 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |            4487 |         2050 |
+| No           | No                    | No                     |               0 |            0 |
 | No           | No                    | Yes                    |               0 |            0 |
-| No           | Yes                   | No                     |              52 |           35 |
-| Yes          | No                    | No                     |             288 |          157 |
+| No           | Yes                   | No                     |               0 |            0 |
+| Yes          | No                    | No                     |               0 |            0 |
 | Yes          | No                    | Yes                    |               0 |            0 |
-| Yes          | Yes                   | No                     |             512 |          238 |
+| Yes          | Yes                   | No                     |               0 |            0 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
 
 3. Detailed Control Set Information
 -----------------------------------
 
-+---------------------------------------------------------------------------+------------------------------------------------------+-----------------------------------------------------------------+------------------+----------------+
-|                                Clock Signal                               |                     Enable Signal                    |                         Set/Reset Signal                        | Slice Load Count | Bel Load Count |
-+---------------------------------------------------------------------------+------------------------------------------------------+-----------------------------------------------------------------+------------------+----------------+
-|  s00_axis_aclk_IBUF_BUFG                                                  |                                                      | TopLevel/pick_centroid_demux_gen[11].pick_centroid_x/i___0_n_10 |                3 |              3 |
-|  s00_axis_aclk_IBUF_BUFG                                                  |                                                      | TopLevel/pick_centroid_demux_gen[13].pick_centroid_x/i___0_n_10 |                2 |              3 |
-|  s00_axis_aclk_IBUF_BUFG                                                  |                                                      | TopLevel/pick_centroid_demux_gen[0].pick_centroid_x/i___0_n_10  |                3 |              3 |
-|  s00_axis_aclk_IBUF_BUFG                                                  |                                                      | TopLevel/pick_centroid_demux_gen[1].pick_centroid_x/i___0_n_10  |                2 |              3 |
-|  s00_axis_aclk_IBUF_BUFG                                                  |                                                      | TopLevel/pick_centroid_demux_gen[2].pick_centroid_x/i___0_n_10  |                1 |              3 |
-|  s00_axis_aclk_IBUF_BUFG                                                  |                                                      | TopLevel/pick_centroid_demux_gen[3].pick_centroid_x/i___0_n_10  |                2 |              3 |
-|  s00_axis_aclk_IBUF_BUFG                                                  |                                                      | TopLevel/pick_centroid_demux_gen[4].pick_centroid_x/i___0_n_10  |                2 |              3 |
-|  s00_axis_aclk_IBUF_BUFG                                                  |                                                      | TopLevel/pick_centroid_demux_gen[5].pick_centroid_x/i___0_n_10  |                2 |              3 |
-|  s00_axis_aclk_IBUF_BUFG                                                  |                                                      | TopLevel/pick_centroid_demux_gen[6].pick_centroid_x/i___0_n_10  |                2 |              3 |
-|  s00_axis_aclk_IBUF_BUFG                                                  |                                                      | TopLevel/pick_centroid_demux_gen[7].pick_centroid_x/i___0_n_10  |                2 |              3 |
-|  s00_axis_aclk_IBUF_BUFG                                                  |                                                      | TopLevel/pick_centroid_demux_gen[8].pick_centroid_x/i___0_n_10  |                2 |              3 |
-|  s00_axis_aclk_IBUF_BUFG                                                  |                                                      | TopLevel/pick_centroid_demux_gen[9].pick_centroid_x/i___0_n_10  |                2 |              3 |
-|  s00_axis_aclk_IBUF_BUFG                                                  |                                                      | TopLevel/pick_centroid_demux_gen[10].pick_centroid_x/i___0_n_10 |                2 |              3 |
-|  s00_axis_aclk_IBUF_BUFG                                                  |                                                      | TopLevel/pick_centroid_demux_gen[12].pick_centroid_x/i___0_n_10 |                3 |              3 |
-|  s00_axis_aclk_IBUF_BUFG                                                  |                                                      | TopLevel/pick_centroid_demux_gen[14].pick_centroid_x/i___0_n_10 |                2 |              3 |
-|  s00_axis_aclk_IBUF_BUFG                                                  |                                                      | TopLevel/pick_centroid_demux_gen[15].pick_centroid_x/i___0_n_10 |                2 |              3 |
-|  m00_axis_aclk_IBUF_BUFG                                                  |                                                      | StreamCopIPCore_v1_0_M00_AXIS_inst/s_count[0]_i_1_n_10          |                1 |              4 |
-|  n_2_35984_BUFG                                                           |                                                      |                                                                 |               22 |             32 |
-|  n_8_35978_BUFG                                                           |                                                      |                                                                 |               30 |             32 |
-|  n_7_35979_BUFG                                                           |                                                      |                                                                 |               21 |             32 |
-|  n_6_35980_BUFG                                                           |                                                      |                                                                 |               29 |             32 |
-|  n_5_35981_BUFG                                                           |                                                      |                                                                 |               18 |             32 |
-|  StreamCopIPCore_v1_0_S00_AXIS_inst/s_centroid_features_reg[127]_i_2_n_10 |                                                      |                                                                 |               19 |             32 |
-|  n_3_35983_BUFG                                                           |                                                      |                                                                 |               24 |             32 |
-|  n_4_35982_BUFG                                                           |                                                      |                                                                 |               21 |             32 |
-|  n_9_35977_BUFG                                                           |                                                      |                                                                 |               31 |             32 |
-|  s00_axis_aclk_IBUF_BUFG                                                  | TopLevel/buffer_exec/E[0]                            |                                                                 |               19 |             32 |
-|  s00_axis_aclk_IBUF_BUFG                                                  | TopLevel/buffer_exec/SumGen[0].output_reg[0][0][0]   |                                                                 |               18 |             32 |
-|  s00_axis_aclk_IBUF_BUFG                                                  | TopLevel/buffer_exec/SumGen[0].output_reg[0][0]_0[0] |                                                                 |               12 |             32 |
-|  s00_axis_aclk_IBUF_BUFG                                                  | TopLevel/buffer_exec/SumGen[0].output_reg[0][0]_1[0] |                                                                 |               22 |             32 |
-|  s00_axis_aclk_IBUF_BUFG                                                  | TopLevel/buffer_exec/SumGen[0].output_reg[0][0]_2[0] |                                                                 |               16 |             32 |
-|  s00_axis_aclk_IBUF_BUFG                                                  | TopLevel/buffer_exec/SumGen[1].output_reg[1][0][0]   |                                                                 |               19 |             32 |
-|  s00_axis_aclk_IBUF_BUFG                                                  | TopLevel/buffer_exec/SumGen[1].output_reg[1][0]_0[0] |                                                                 |               14 |             32 |
-|  s00_axis_aclk_IBUF_BUFG                                                  | TopLevel/buffer_exec/SumGen[1].output_reg[1][0]_1[0] |                                                                 |               14 |             32 |
-|  StreamCopIPCore_v1_0_S00_AXIS_inst/s_point_features_reg[1023]_i_2_n_10   |                                                      |                                                                 |               29 |             32 |
-|  StreamCopIPCore_v1_0_S00_AXIS_inst/s_point_features_reg[351]_i_2_n_10    |                                                      |                                                                 |               24 |             32 |
-|  StreamCopIPCore_v1_0_S00_AXIS_inst/s_point_features_reg[31]_i_2_n_10     |                                                      |                                                                 |               26 |             32 |
-|  StreamCopIPCore_v1_0_S00_AXIS_inst/s_point_features_reg[319]_i_2_n_10    |                                                      |                                                                 |               21 |             32 |
-|  StreamCopIPCore_v1_0_S00_AXIS_inst/s_point_features_reg[255]_i_2_n_10    |                                                      |                                                                 |               21 |             32 |
-|  StreamCopIPCore_v1_0_S00_AXIS_inst/s_point_features_reg[223]_i_2_n_10    |                                                      |                                                                 |               25 |             32 |
-|  StreamCopIPCore_v1_0_S00_AXIS_inst/s_point_features_reg[191]_i_2_n_10    |                                                      |                                                                 |               20 |             32 |
-|  StreamCopIPCore_v1_0_S00_AXIS_inst/s_point_features_reg[159]_i_2_n_10    |                                                      |                                                                 |               28 |             32 |
-|  StreamCopIPCore_v1_0_S00_AXIS_inst/s_point_features_reg[127]_i_2_n_10    |                                                      |                                                                 |               25 |             32 |
-|  StreamCopIPCore_v1_0_S00_AXIS_inst/s_point_features_reg[287]_i_2_n_10    |                                                      |                                                                 |               29 |             32 |
-|  StreamCopIPCore_v1_0_S00_AXIS_inst/s_centroid_features_reg[95]_i_2_n_10  |                                                      |                                                                 |               22 |             32 |
-|  StreamCopIPCore_v1_0_S00_AXIS_inst/s_centroid_features_reg[63]_i_2_n_10  |                                                      |                                                                 |               20 |             32 |
-|  StreamCopIPCore_v1_0_S00_AXIS_inst/s_centroid_features_reg[31]_i_2_n_10  |                                                      |                                                                 |               21 |             32 |
-|  StreamCopIPCore_v1_0_S00_AXIS_inst/s_centroid_features_reg[255]_i_2_n_10 |                                                      |                                                                 |               19 |             32 |
-|  StreamCopIPCore_v1_0_S00_AXIS_inst/s_centroid_features_reg[223]_i_2_n_10 |                                                      |                                                                 |               20 |             32 |
-|  StreamCopIPCore_v1_0_S00_AXIS_inst/s_centroid_features_reg[191]_i_2_n_10 |                                                      |                                                                 |               20 |             32 |
-|  StreamCopIPCore_v1_0_S00_AXIS_inst/s_centroid_features_reg[159]_i_2_n_10 |                                                      |                                                                 |               21 |             32 |
-|  StreamCopIPCore_v1_0_S00_AXIS_inst/s_point_features_reg[415]_i_2_n_10    |                                                      |                                                                 |               25 |             32 |
-|  StreamCopIPCore_v1_0_S00_AXIS_inst/s_point_features_reg[447]_i_2_n_10    |                                                      |                                                                 |               26 |             32 |
-|  StreamCopIPCore_v1_0_S00_AXIS_inst/s_point_features_reg[479]_i_2_n_10    |                                                      |                                                                 |               22 |             32 |
-|  StreamCopIPCore_v1_0_S00_AXIS_inst/s_point_features_reg[383]_i_2_n_10    |                                                      |                                                                 |               24 |             32 |
-|  StreamCopIPCore_v1_0_S00_AXIS_inst/s_point_features_reg[511]_i_2_n_10    |                                                      |                                                                 |               22 |             32 |
-|  StreamCopIPCore_v1_0_S00_AXIS_inst/s_point_features_reg[543]_i_2_n_10    |                                                      |                                                                 |               25 |             32 |
-|  StreamCopIPCore_v1_0_S00_AXIS_inst/s_point_features_reg[575]_i_2_n_10    |                                                      |                                                                 |               20 |             32 |
-|  m00_axis_aclk_IBUF_BUFG                                                  | m00_axis_aresetn_IBUF                                |                                                                 |               23 |             32 |
-|  StreamCopIPCore_v1_0_S00_AXIS_inst/s_point_features_reg[607]_i_2_n_10    |                                                      |                                                                 |               29 |             32 |
-|  StreamCopIPCore_v1_0_S00_AXIS_inst/s_point_features_reg[991]_i_2_n_10    |                                                      |                                                                 |               28 |             32 |
-|  StreamCopIPCore_v1_0_S00_AXIS_inst/s_point_features_reg[95]_i_2_n_10     |                                                      |                                                                 |               27 |             32 |
-|  StreamCopIPCore_v1_0_S00_AXIS_inst/s_point_features_reg[703]_i_2_n_10    |                                                      |                                                                 |               27 |             32 |
-|  StreamCopIPCore_v1_0_S00_AXIS_inst/s_point_features_reg[671]_i_2_n_10    |                                                      |                                                                 |               28 |             32 |
-|  StreamCopIPCore_v1_0_S00_AXIS_inst/s_point_features_reg[63]_i_2_n_10     |                                                      |                                                                 |               23 |             32 |
-|  StreamCopIPCore_v1_0_S00_AXIS_inst/s_point_features_reg[639]_i_2_n_10    |                                                      |                                                                 |               24 |             32 |
-|  n_1_36341_BUFG                                                           |                                                      |                                                                 |               17 |             35 |
-|  n_0_36003_BUFG                                                           |                                                      |                                                                 |               32 |             57 |
-|  s00_axis_aclk_IBUF_BUFG                                                  | StreamCopIPCore_v1_0_S00_AXIS_inst/s_validData       | TopLevel/parallel_sum_gen[3].parallel_sum_x/p_0_out             |               30 |             64 |
-|  s00_axis_aclk_IBUF_BUFG                                                  | StreamCopIPCore_v1_0_S00_AXIS_inst/s_validData       | TopLevel/parallel_sum_gen[3].parallel_sum_x/p_2_out             |               31 |             64 |
-|  s00_axis_aclk_IBUF_BUFG                                                  | StreamCopIPCore_v1_0_S00_AXIS_inst/s_validData       | TopLevel/parallel_sum_gen[2].parallel_sum_x/p_2_out             |               30 |             64 |
-|  s00_axis_aclk_IBUF_BUFG                                                  | StreamCopIPCore_v1_0_S00_AXIS_inst/s_validData       | TopLevel/parallel_sum_gen[2].parallel_sum_x/p_0_out             |               31 |             64 |
-|  s00_axis_aclk_IBUF_BUFG                                                  | StreamCopIPCore_v1_0_S00_AXIS_inst/s_validData       | TopLevel/parallel_sum_gen[1].parallel_sum_x/p_2_out             |               29 |             64 |
-|  s00_axis_aclk_IBUF_BUFG                                                  | StreamCopIPCore_v1_0_S00_AXIS_inst/s_validData       | TopLevel/parallel_sum_gen[1].parallel_sum_x/p_0_out             |               27 |             64 |
-|  s00_axis_aclk_IBUF_BUFG                                                  | StreamCopIPCore_v1_0_S00_AXIS_inst/s_validData       | TopLevel/parallel_sum_gen[0].parallel_sum_x/p_2_out             |               29 |             64 |
-|  s00_axis_aclk_IBUF_BUFG                                                  | StreamCopIPCore_v1_0_S00_AXIS_inst/s_validData       | TopLevel/parallel_sum_gen[0].parallel_sum_x/p_0_out             |               31 |             64 |
-|  s00_axis_aclk_IBUF_BUFG                                                  |                                                      |                                                                 |             1045 |           3115 |
-+---------------------------------------------------------------------------+------------------------------------------------------+-----------------------------------------------------------------+------------------+----------------+
++--------------+---------------+------------------+------------------+----------------+
+| Clock Signal | Enable Signal | Set/Reset Signal | Slice Load Count | Bel Load Count |
++--------------+---------------+------------------+------------------+----------------+
 
 
 +--------+-----------------------+
 | Fanout | Number of ControlSets |
-+--------+-----------------------+
-| 3      |                    16 |
-| 4      |                     1 |
-| 16+    |                    60 |
 +--------+-----------------------+
 
 

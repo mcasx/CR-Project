@@ -14,9 +14,9 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 13453 
+INFO: Helper process launched with PID 23857 
 ---------------------------------------------------------------------------------
-Starting Synthesize : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 1278.391 ; gain = 79.996 ; free physical = 2491 ; free virtual = 11535
+Starting Synthesize : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 1277.391 ; gain = 78.996 ; free physical = 818 ; free virtual = 10587
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'StreamCopIPCore_v1_0' [/home/david/Documents/CR-Project/ip_repo/ComputeNewCentroids_1.0/hdl/ComputeNewCentroids_v1_0.vhd:49]
 	Parameter NUM_FEATURES bound to: 2 - type: integer 
@@ -35,12 +35,6 @@ INFO: [Synth 8-638] synthesizing module 'StreamCopIPCore_v1_0_S00_AXIS' [/home/d
 	Parameter NUM_CENTROIDS bound to: 4 - type: integer 
 	Parameter NUM_PARALLEL bound to: 16 - type: integer 
 	Parameter C_S_AXIS_TDATA_WIDTH bound to: 32 - type: integer 
-INFO: [Synth 8-6054] Found Dynamic range expression with variable size [/home/david/Documents/CR-Project/ip_repo/ComputeNewCentroids_1.0/hdl/ComputeNewCentroids_v1_0_S00_AXIS.vhd:97]
-WARNING: [Synth 8-614] signal 'i' is read in the process but is not in the sensitivity list [/home/david/Documents/CR-Project/ip_repo/ComputeNewCentroids_1.0/hdl/ComputeNewCentroids_v1_0_S00_AXIS.vhd:69]
-WARNING: [Synth 8-614] signal 'S_AXIS_TDATA' is read in the process but is not in the sensitivity list [/home/david/Documents/CR-Project/ip_repo/ComputeNewCentroids_1.0/hdl/ComputeNewCentroids_v1_0_S00_AXIS.vhd:69]
-WARNING: [Synth 8-614] signal 'S_AXIS_TLAST' is read in the process but is not in the sensitivity list [/home/david/Documents/CR-Project/ip_repo/ComputeNewCentroids_1.0/hdl/ComputeNewCentroids_v1_0_S00_AXIS.vhd:69]
-WARNING: [Synth 8-614] signal 'j' is read in the process but is not in the sensitivity list [/home/david/Documents/CR-Project/ip_repo/ComputeNewCentroids_1.0/hdl/ComputeNewCentroids_v1_0_S00_AXIS.vhd:69]
-WARNING: [Synth 8-614] signal 's_enables' is read in the process but is not in the sensitivity list [/home/david/Documents/CR-Project/ip_repo/ComputeNewCentroids_1.0/hdl/ComputeNewCentroids_v1_0_S00_AXIS.vhd:69]
 INFO: [Synth 8-256] done synthesizing module 'StreamCopIPCore_v1_0_S00_AXIS' (1#1) [/home/david/Documents/CR-Project/ip_repo/ComputeNewCentroids_1.0/hdl/ComputeNewCentroids_v1_0_S00_AXIS.vhd:46]
 	Parameter C_M_AXIS_TDATA_WIDTH bound to: 32 - type: integer 
 	Parameter C_M_START_COUNT bound to: 32 - type: integer 
@@ -82,38 +76,35 @@ INFO: [Synth 8-638] synthesizing module 'ParallelSum' [/home/david/Documents/CR-
 INFO: [Synth 8-256] done synthesizing module 'ParallelSum' (8#1) [/home/david/Documents/CR-Project/ip_repo/edit_ComputeNewCentroids_v1_0.srcs/sources_1/imports/new/ParallelSum.vhd:22]
 INFO: [Synth 8-256] done synthesizing module 'TopLevel' (9#1) [/home/david/Documents/CR-Project/ip_repo/edit_ComputeNewCentroids_v1_0.srcs/sources_1/imports/new/TopLevel.vhd:56]
 INFO: [Synth 8-256] done synthesizing module 'StreamCopIPCore_v1_0' (10#1) [/home/david/Documents/CR-Project/ip_repo/ComputeNewCentroids_1.0/hdl/ComputeNewCentroids_v1_0.vhd:49]
-WARNING: [Synth 8-3331] design StreamCopIPCore_v1_0_M00_AXIS has unconnected port M_AXIS_TREADY
+WARNING: [Synth 8-3331] design StreamCopIPCore_v1_0_M00_AXIS has unconnected port enable
 WARNING: [Synth 8-3331] design StreamCopIPCore_v1_0_S00_AXIS has unconnected port S_AXIS_TSTRB[3]
 WARNING: [Synth 8-3331] design StreamCopIPCore_v1_0_S00_AXIS has unconnected port S_AXIS_TSTRB[2]
 WARNING: [Synth 8-3331] design StreamCopIPCore_v1_0_S00_AXIS has unconnected port S_AXIS_TSTRB[1]
 WARNING: [Synth 8-3331] design StreamCopIPCore_v1_0_S00_AXIS has unconnected port S_AXIS_TSTRB[0]
+WARNING: [Synth 8-3331] design StreamCopIPCore_v1_0_S00_AXIS has unconnected port S_AXIS_TLAST
 ---------------------------------------------------------------------------------
-Finished Synthesize : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1329.922 ; gain = 131.527 ; free physical = 2477 ; free virtual = 11529
+Finished Synthesize : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1330.922 ; gain = 132.527 ; free physical = 713 ; free virtual = 10483
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1329.922 ; gain = 131.527 ; free physical = 2481 ; free virtual = 11533
+Finished Constraint Validation : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1330.922 ; gain = 132.527 ; free physical = 698 ; free virtual = 10468
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a100tcsg324-1
 ---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1338.926 ; gain = 140.531 ; free physical = 698 ; free virtual = 10468
+---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7a100tcsg324-1
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1337.926 ; gain = 139.531 ; free physical = 2481 ; free virtual = 11533
+WARNING: [Synth 8-6014] Unused sequential element i_reg was removed.  [/home/david/Documents/CR-Project/ip_repo/ComputeNewCentroids_1.0/hdl/ComputeNewCentroids_v1_0_S00_AXIS.vhd:67]
+WARNING: [Synth 8-6014] Unused sequential element j_reg was removed.  [/home/david/Documents/CR-Project/ip_repo/ComputeNewCentroids_1.0/hdl/ComputeNewCentroids_v1_0_S00_AXIS.vhd:68]
+WARNING: [Synth 8-6014] Unused sequential element s_count_reg was removed.  [/home/david/Documents/CR-Project/ip_repo/ComputeNewCentroids_1.0/hdl/ComputeNewCentroids_v1_0_M00_AXIS.vhd:58]
+INFO: [Synth 8-5545] ROM "enable" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "enable" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "enable" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "enable" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-5545] ROM "s_nextState" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-INFO: [Synth 8-5545] ROM "i" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-WARNING: [Synth 8-6014] Unused sequential element s_count_reg was removed.  [/home/david/Documents/CR-Project/ip_repo/ComputeNewCentroids_1.0/hdl/ComputeNewCentroids_v1_0_M00_AXIS.vhd:54]
-INFO: [Synth 8-5545] ROM "enable" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-INFO: [Synth 8-5545] ROM "enable" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-INFO: [Synth 8-5545] ROM "enable" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-INFO: [Synth 8-5545] ROM "enable" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-WARNING: [Synth 8-327] inferring latch for variable 'i_reg' [/home/david/Documents/CR-Project/ip_repo/ComputeNewCentroids_1.0/hdl/ComputeNewCentroids_v1_0_S00_AXIS.vhd:77]
-WARNING: [Synth 8-327] inferring latch for variable 's_point_features_reg' [/home/david/Documents/CR-Project/ip_repo/ComputeNewCentroids_1.0/hdl/ComputeNewCentroids_v1_0_S00_AXIS.vhd:100]
-WARNING: [Synth 8-327] inferring latch for variable 's_centroid_features_reg' [/home/david/Documents/CR-Project/ip_repo/ComputeNewCentroids_1.0/hdl/ComputeNewCentroids_v1_0_S00_AXIS.vhd:80]
-WARNING: [Synth 8-327] inferring latch for variable 'j_reg' [/home/david/Documents/CR-Project/ip_repo/ComputeNewCentroids_1.0/hdl/ComputeNewCentroids_v1_0_S00_AXIS.vhd:97]
----------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:36 ; elapsed = 00:00:30 . Memory (MB): peak = 1468.285 ; gain = 269.891 ; free physical = 2315 ; free virtual = 11360
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:40 ; elapsed = 00:00:34 . Memory (MB): peak = 1437.738 ; gain = 239.344 ; free physical = 899 ; free virtual = 10672
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -124,7 +115,7 @@ Report RTL Partitions:
 |2     |ParallelSum__GBM0         |           1|     14345|
 |3     |ParallelSum__GBM1         |           1|     11531|
 |4     |TopLevel__GC0             |           1|      6978|
-|5     |StreamCopIPCore_v1_0__GC0 |           1|     29529|
+|5     |StreamCopIPCore_v1_0__GC0 |           1|     29935|
 +------+--------------------------+------------+----------+
 No constraint files found.
 ---------------------------------------------------------------------------------
@@ -138,17 +129,20 @@ Detailed RTL Component Info :
 	   2 Input     31 Bit       Adders := 16    
 	   2 Input      9 Bit       Adders := 1     
 +---Registers : 
+	             1024 Bit    Registers := 1     
+	              256 Bit    Registers := 1     
 	               32 Bit    Registers := 185   
-	                1 Bit    Registers := 12    
+	               16 Bit    Registers := 1     
+	                1 Bit    Registers := 11    
 +---Muxes : 
-	   2 Input   1024 Bit        Muxes := 2     
+	   2 Input   1024 Bit        Muxes := 3     
 	   2 Input    256 Bit        Muxes := 2     
 	   4 Input     32 Bit        Muxes := 64    
-	   2 Input     32 Bit        Muxes := 459   
+	   2 Input     32 Bit        Muxes := 457   
 	   2 Input     31 Bit        Muxes := 16    
 	   2 Input     16 Bit        Muxes := 3     
 	   2 Input      4 Bit        Muxes := 16    
-	   2 Input      1 Bit        Muxes := 85    
+	   2 Input      1 Bit        Muxes := 80    
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -305,22 +299,23 @@ Detailed RTL Component Info :
 Module StreamCopIPCore_v1_0_S00_AXIS 
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input     32 Bit       Adders := 3     
+	   2 Input     32 Bit       Adders := 2     
 +---Registers : 
+	             1024 Bit    Registers := 1     
+	              256 Bit    Registers := 1     
+	               16 Bit    Registers := 1     
 	                1 Bit    Registers := 1     
 +---Muxes : 
-	   2 Input   1024 Bit        Muxes := 2     
+	   2 Input   1024 Bit        Muxes := 3     
 	   2 Input    256 Bit        Muxes := 2     
-	   2 Input     32 Bit        Muxes := 2     
 	   2 Input     16 Bit        Muxes := 3     
-	   2 Input      1 Bit        Muxes := 5     
 Module StreamCopIPCore_v1_0_M00_AXIS 
 Detailed RTL Component Info : 
 +---Adders : 
+	   2 Input     32 Bit       Adders := 1     
 	   2 Input      9 Bit       Adders := 1     
 +---Registers : 
 	               32 Bit    Registers := 1     
-	                1 Bit    Registers := 1     
 +---Muxes : 
 	   2 Input     32 Bit        Muxes := 1     
 ---------------------------------------------------------------------------------
@@ -403,278 +398,240 @@ INFO: [Synth 8-5545] ROM "pick_centroid_demux_gen[15].demux_x/enable" won't be m
 INFO: [Synth 8-5545] ROM "pick_centroid_demux_gen[15].demux_x/enable" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
 INFO: [Synth 8-5545] ROM "pick_centroid_demux_gen[15].demux_x/enable" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
 INFO: [Synth 8-5545] ROM "pick_centroid_demux_gen[15].demux_x/enable" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-INFO: [Synth 8-5545] ROM "s_nextState" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-INFO: [Synth 8-5545] ROM "i" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-WARNING: [Synth 8-6014] Unused sequential element s_count_reg was removed.  [/home/david/Documents/CR-Project/ip_repo/ComputeNewCentroids_1.0/hdl/ComputeNewCentroids_v1_0_M00_AXIS.vhd:54]
+WARNING: [Synth 8-6014] Unused sequential element i_reg was removed.  [/home/david/Documents/CR-Project/ip_repo/ComputeNewCentroids_1.0/hdl/ComputeNewCentroids_v1_0_S00_AXIS.vhd:67]
+WARNING: [Synth 8-6014] Unused sequential element j_reg was removed.  [/home/david/Documents/CR-Project/ip_repo/ComputeNewCentroids_1.0/hdl/ComputeNewCentroids_v1_0_S00_AXIS.vhd:68]
+WARNING: [Synth 8-6014] Unused sequential element s_count_reg was removed.  [/home/david/Documents/CR-Project/ip_repo/ComputeNewCentroids_1.0/hdl/ComputeNewCentroids_v1_0_M00_AXIS.vhd:58]
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (StreamCopIPCore_v1_0_S00_AXIS_inst/s_validOut_reg)
+WARNING: [Synth 8-3332] Sequential element (s_validOut_reg) is unused and will be removed from module StreamCopIPCore_v1_0_S00_AXIS.
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ParallelSum__GBM0:/\SumGen[0].s_count_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ParallelSum__GBM0:/\SumGen[0].s_count_reg[1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ParallelSum__GBM0:/\SumGen[0].s_count_reg[2] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ParallelSum__GBM0:/\SumGen[0].s_count_reg[3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ParallelSum__GBM0:/\SumGen[0].s_count_reg[4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ParallelSum__GBM0:/\SumGen[0].s_count_reg[5] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ParallelSum__GBM0:/\SumGen[0].s_count_reg[6] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ParallelSum__GBM0:/\SumGen[0].s_count_reg[7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ParallelSum__GBM0:/\SumGen[0].s_count_reg[8] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ParallelSum__GBM0:/\SumGen[0].s_count_reg[9] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ParallelSum__GBM0:/\SumGen[0].s_count_reg[10] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ParallelSum__GBM0:/\SumGen[0].s_count_reg[11] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ParallelSum__GBM0:/\SumGen[0].s_count_reg[12] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ParallelSum__GBM0:/\SumGen[0].s_count_reg[13] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ParallelSum__GBM0:/\SumGen[0].s_count_reg[14] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ParallelSum__GBM0:/\SumGen[0].s_count_reg[15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ParallelSum__GBM0:/\SumGen[0].s_count_reg[16] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ParallelSum__GBM0:/\SumGen[0].s_count_reg[17] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ParallelSum__GBM0:/\SumGen[0].s_count_reg[18] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ParallelSum__GBM0:/\SumGen[0].s_count_reg[19] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ParallelSum__GBM0:/\SumGen[0].s_count_reg[20] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ParallelSum__GBM0:/\SumGen[0].s_count_reg[21] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ParallelSum__GBM0:/\SumGen[0].s_count_reg[22] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ParallelSum__GBM0:/\SumGen[0].s_count_reg[23] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ParallelSum__GBM0:/\SumGen[0].s_count_reg[24] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ParallelSum__GBM0:/\SumGen[0].s_count_reg[25] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ParallelSum__GBM0:/\SumGen[0].s_count_reg[26] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ParallelSum__GBM0:/\SumGen[0].s_count_reg[27] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ParallelSum__GBM0:/\SumGen[0].s_count_reg[28] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ParallelSum__GBM0:/\SumGen[0].s_count_reg[29] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ParallelSum__GBM0:/\SumGen[0].s_count_reg[30] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ParallelSum__GBM0:/\SumGen[0].s_count_reg[31] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ParallelSum__GBM0:/\SumGen[0].hasFinished_reg )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ParallelSum__GBM0:/\SumGen[0].s_output_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ParallelSum__GBM0:/\SumGen[0].s_output_reg[1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ParallelSum__GBM0:/\SumGen[0].s_output_reg[2] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ParallelSum__GBM0:/\SumGen[0].s_output_reg[3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ParallelSum__GBM0:/\SumGen[0].s_output_reg[4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ParallelSum__GBM0:/\SumGen[0].s_output_reg[5] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ParallelSum__GBM0:/\SumGen[0].s_output_reg[6] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ParallelSum__GBM0:/\SumGen[0].s_output_reg[7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ParallelSum__GBM0:/\SumGen[0].s_output_reg[8] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ParallelSum__GBM0:/\SumGen[0].s_output_reg[9] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ParallelSum__GBM0:/\SumGen[0].s_output_reg[10] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ParallelSum__GBM0:/\SumGen[0].s_output_reg[11] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ParallelSum__GBM0:/\SumGen[0].s_output_reg[12] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ParallelSum__GBM0:/\SumGen[0].s_output_reg[13] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ParallelSum__GBM0:/\SumGen[0].s_output_reg[14] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ParallelSum__GBM0:/\SumGen[0].s_output_reg[15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ParallelSum__GBM0:/\SumGen[0].s_output_reg[16] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ParallelSum__GBM0:/\SumGen[0].s_output_reg[17] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ParallelSum__GBM0:/\SumGen[0].s_output_reg[18] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ParallelSum__GBM0:/\SumGen[0].s_output_reg[19] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ParallelSum__GBM0:/\SumGen[0].s_output_reg[20] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ParallelSum__GBM0:/\SumGen[0].s_output_reg[21] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ParallelSum__GBM0:/\SumGen[0].s_output_reg[22] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ParallelSum__GBM0:/\SumGen[0].s_output_reg[23] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ParallelSum__GBM0:/\SumGen[0].s_output_reg[24] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ParallelSum__GBM0:/\SumGen[0].s_output_reg[25] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ParallelSum__GBM0:/\SumGen[0].s_output_reg[26] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ParallelSum__GBM0:/\SumGen[0].s_output_reg[27] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ParallelSum__GBM0:/\SumGen[0].s_output_reg[28] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ParallelSum__GBM0:/\SumGen[0].s_output_reg[29] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ParallelSum__GBM0:/\SumGen[0].s_output_reg[30] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ParallelSum__GBM0:/\SumGen[0].s_output_reg[31] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ParallelSum__GBM0:/\SumGen[1].s_count_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ParallelSum__GBM0:/\SumGen[1].s_count_reg[1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ParallelSum__GBM0:/\SumGen[1].s_count_reg[2] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ParallelSum__GBM0:/\SumGen[1].s_count_reg[3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ParallelSum__GBM0:/\SumGen[1].s_count_reg[4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ParallelSum__GBM0:/\SumGen[1].s_count_reg[5] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ParallelSum__GBM0:/\SumGen[1].s_count_reg[6] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ParallelSum__GBM0:/\SumGen[1].s_count_reg[7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ParallelSum__GBM0:/\SumGen[1].s_count_reg[8] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ParallelSum__GBM0:/\SumGen[1].s_count_reg[9] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ParallelSum__GBM0:/\SumGen[1].s_count_reg[10] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ParallelSum__GBM0:/\SumGen[1].s_count_reg[11] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ParallelSum__GBM0:/\SumGen[1].s_count_reg[12] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ParallelSum__GBM0:/\SumGen[1].s_count_reg[13] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ParallelSum__GBM0:/\SumGen[1].s_count_reg[14] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ParallelSum__GBM0:/\SumGen[1].s_count_reg[15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ParallelSum__GBM0:/\SumGen[1].s_count_reg[16] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ParallelSum__GBM0:/\SumGen[1].s_count_reg[17] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ParallelSum__GBM0:/\SumGen[1].s_count_reg[18] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ParallelSum__GBM0:/\SumGen[1].s_count_reg[19] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ParallelSum__GBM0:/\SumGen[1].s_count_reg[20] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ParallelSum__GBM0:/\SumGen[1].s_count_reg[21] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ParallelSum__GBM0:/\SumGen[1].s_count_reg[22] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ParallelSum__GBM0:/\SumGen[1].s_count_reg[23] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ParallelSum__GBM0:/\SumGen[1].s_count_reg[24] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ParallelSum__GBM0:/\SumGen[1].s_count_reg[25] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ParallelSum__GBM0:/\SumGen[1].s_count_reg[26] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ParallelSum__GBM0:/\SumGen[1].s_count_reg[27] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ParallelSum__GBM0:/\SumGen[1].s_count_reg[28] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ParallelSum__GBM0:/\SumGen[1].s_count_reg[29] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ParallelSum__GBM0:/\SumGen[1].s_count_reg[30] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ParallelSum__GBM0:/\SumGen[1].s_count_reg[31] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ParallelSum__GBM0:/\SumGen[1].s_output_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ParallelSum__GBM0:/\SumGen[1].s_output_reg[1] )
+INFO: [Common 17-14] Message 'Synth 8-3333' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+WARNING: [Synth 8-3332] Sequential element (s_point_features_reg[1023]) is unused and will be removed from module StreamCopIPCore_v1_0_S00_AXIS.
+WARNING: [Synth 8-3332] Sequential element (s_point_features_reg[1022]) is unused and will be removed from module StreamCopIPCore_v1_0_S00_AXIS.
+WARNING: [Synth 8-3332] Sequential element (s_point_features_reg[1021]) is unused and will be removed from module StreamCopIPCore_v1_0_S00_AXIS.
+WARNING: [Synth 8-3332] Sequential element (s_point_features_reg[1020]) is unused and will be removed from module StreamCopIPCore_v1_0_S00_AXIS.
+WARNING: [Synth 8-3332] Sequential element (s_point_features_reg[1019]) is unused and will be removed from module StreamCopIPCore_v1_0_S00_AXIS.
+WARNING: [Synth 8-3332] Sequential element (s_point_features_reg[1018]) is unused and will be removed from module StreamCopIPCore_v1_0_S00_AXIS.
+WARNING: [Synth 8-3332] Sequential element (s_point_features_reg[1017]) is unused and will be removed from module StreamCopIPCore_v1_0_S00_AXIS.
+WARNING: [Synth 8-3332] Sequential element (s_point_features_reg[1016]) is unused and will be removed from module StreamCopIPCore_v1_0_S00_AXIS.
+WARNING: [Synth 8-3332] Sequential element (s_point_features_reg[1015]) is unused and will be removed from module StreamCopIPCore_v1_0_S00_AXIS.
+WARNING: [Synth 8-3332] Sequential element (s_point_features_reg[1014]) is unused and will be removed from module StreamCopIPCore_v1_0_S00_AXIS.
+WARNING: [Synth 8-3332] Sequential element (s_point_features_reg[1013]) is unused and will be removed from module StreamCopIPCore_v1_0_S00_AXIS.
+WARNING: [Synth 8-3332] Sequential element (s_point_features_reg[1012]) is unused and will be removed from module StreamCopIPCore_v1_0_S00_AXIS.
+WARNING: [Synth 8-3332] Sequential element (s_point_features_reg[1011]) is unused and will be removed from module StreamCopIPCore_v1_0_S00_AXIS.
+WARNING: [Synth 8-3332] Sequential element (s_point_features_reg[1010]) is unused and will be removed from module StreamCopIPCore_v1_0_S00_AXIS.
+WARNING: [Synth 8-3332] Sequential element (s_point_features_reg[1009]) is unused and will be removed from module StreamCopIPCore_v1_0_S00_AXIS.
+WARNING: [Synth 8-3332] Sequential element (s_point_features_reg[1008]) is unused and will be removed from module StreamCopIPCore_v1_0_S00_AXIS.
+WARNING: [Synth 8-3332] Sequential element (s_point_features_reg[1007]) is unused and will be removed from module StreamCopIPCore_v1_0_S00_AXIS.
+WARNING: [Synth 8-3332] Sequential element (s_point_features_reg[1006]) is unused and will be removed from module StreamCopIPCore_v1_0_S00_AXIS.
+WARNING: [Synth 8-3332] Sequential element (s_point_features_reg[1005]) is unused and will be removed from module StreamCopIPCore_v1_0_S00_AXIS.
+WARNING: [Synth 8-3332] Sequential element (s_point_features_reg[1004]) is unused and will be removed from module StreamCopIPCore_v1_0_S00_AXIS.
+WARNING: [Synth 8-3332] Sequential element (s_point_features_reg[1003]) is unused and will be removed from module StreamCopIPCore_v1_0_S00_AXIS.
+WARNING: [Synth 8-3332] Sequential element (s_point_features_reg[1002]) is unused and will be removed from module StreamCopIPCore_v1_0_S00_AXIS.
+WARNING: [Synth 8-3332] Sequential element (s_point_features_reg[1001]) is unused and will be removed from module StreamCopIPCore_v1_0_S00_AXIS.
+WARNING: [Synth 8-3332] Sequential element (s_point_features_reg[1000]) is unused and will be removed from module StreamCopIPCore_v1_0_S00_AXIS.
+WARNING: [Synth 8-3332] Sequential element (s_point_features_reg[999]) is unused and will be removed from module StreamCopIPCore_v1_0_S00_AXIS.
+WARNING: [Synth 8-3332] Sequential element (s_point_features_reg[998]) is unused and will be removed from module StreamCopIPCore_v1_0_S00_AXIS.
+WARNING: [Synth 8-3332] Sequential element (s_point_features_reg[997]) is unused and will be removed from module StreamCopIPCore_v1_0_S00_AXIS.
+WARNING: [Synth 8-3332] Sequential element (s_point_features_reg[996]) is unused and will be removed from module StreamCopIPCore_v1_0_S00_AXIS.
+WARNING: [Synth 8-3332] Sequential element (s_point_features_reg[995]) is unused and will be removed from module StreamCopIPCore_v1_0_S00_AXIS.
+WARNING: [Synth 8-3332] Sequential element (s_point_features_reg[994]) is unused and will be removed from module StreamCopIPCore_v1_0_S00_AXIS.
+WARNING: [Synth 8-3332] Sequential element (s_point_features_reg[993]) is unused and will be removed from module StreamCopIPCore_v1_0_S00_AXIS.
+WARNING: [Synth 8-3332] Sequential element (s_point_features_reg[992]) is unused and will be removed from module StreamCopIPCore_v1_0_S00_AXIS.
+WARNING: [Synth 8-3332] Sequential element (s_point_features_reg[991]) is unused and will be removed from module StreamCopIPCore_v1_0_S00_AXIS.
+WARNING: [Synth 8-3332] Sequential element (s_point_features_reg[990]) is unused and will be removed from module StreamCopIPCore_v1_0_S00_AXIS.
+WARNING: [Synth 8-3332] Sequential element (s_point_features_reg[989]) is unused and will be removed from module StreamCopIPCore_v1_0_S00_AXIS.
+WARNING: [Synth 8-3332] Sequential element (s_point_features_reg[988]) is unused and will be removed from module StreamCopIPCore_v1_0_S00_AXIS.
+WARNING: [Synth 8-3332] Sequential element (s_point_features_reg[987]) is unused and will be removed from module StreamCopIPCore_v1_0_S00_AXIS.
+WARNING: [Synth 8-3332] Sequential element (s_point_features_reg[986]) is unused and will be removed from module StreamCopIPCore_v1_0_S00_AXIS.
+WARNING: [Synth 8-3332] Sequential element (s_point_features_reg[985]) is unused and will be removed from module StreamCopIPCore_v1_0_S00_AXIS.
+WARNING: [Synth 8-3332] Sequential element (s_point_features_reg[984]) is unused and will be removed from module StreamCopIPCore_v1_0_S00_AXIS.
+WARNING: [Synth 8-3332] Sequential element (s_point_features_reg[983]) is unused and will be removed from module StreamCopIPCore_v1_0_S00_AXIS.
+WARNING: [Synth 8-3332] Sequential element (s_point_features_reg[982]) is unused and will be removed from module StreamCopIPCore_v1_0_S00_AXIS.
+WARNING: [Synth 8-3332] Sequential element (s_point_features_reg[981]) is unused and will be removed from module StreamCopIPCore_v1_0_S00_AXIS.
+WARNING: [Synth 8-3332] Sequential element (s_point_features_reg[980]) is unused and will be removed from module StreamCopIPCore_v1_0_S00_AXIS.
+WARNING: [Synth 8-3332] Sequential element (s_point_features_reg[979]) is unused and will be removed from module StreamCopIPCore_v1_0_S00_AXIS.
+WARNING: [Synth 8-3332] Sequential element (s_point_features_reg[978]) is unused and will be removed from module StreamCopIPCore_v1_0_S00_AXIS.
+WARNING: [Synth 8-3332] Sequential element (s_point_features_reg[977]) is unused and will be removed from module StreamCopIPCore_v1_0_S00_AXIS.
+WARNING: [Synth 8-3332] Sequential element (s_point_features_reg[976]) is unused and will be removed from module StreamCopIPCore_v1_0_S00_AXIS.
+WARNING: [Synth 8-3332] Sequential element (s_point_features_reg[975]) is unused and will be removed from module StreamCopIPCore_v1_0_S00_AXIS.
+WARNING: [Synth 8-3332] Sequential element (s_point_features_reg[974]) is unused and will be removed from module StreamCopIPCore_v1_0_S00_AXIS.
+WARNING: [Synth 8-3332] Sequential element (s_point_features_reg[973]) is unused and will be removed from module StreamCopIPCore_v1_0_S00_AXIS.
+WARNING: [Synth 8-3332] Sequential element (s_point_features_reg[972]) is unused and will be removed from module StreamCopIPCore_v1_0_S00_AXIS.
+WARNING: [Synth 8-3332] Sequential element (s_point_features_reg[971]) is unused and will be removed from module StreamCopIPCore_v1_0_S00_AXIS.
+WARNING: [Synth 8-3332] Sequential element (s_point_features_reg[970]) is unused and will be removed from module StreamCopIPCore_v1_0_S00_AXIS.
+WARNING: [Synth 8-3332] Sequential element (s_point_features_reg[969]) is unused and will be removed from module StreamCopIPCore_v1_0_S00_AXIS.
+WARNING: [Synth 8-3332] Sequential element (s_point_features_reg[968]) is unused and will be removed from module StreamCopIPCore_v1_0_S00_AXIS.
+WARNING: [Synth 8-3332] Sequential element (s_point_features_reg[967]) is unused and will be removed from module StreamCopIPCore_v1_0_S00_AXIS.
+WARNING: [Synth 8-3332] Sequential element (s_point_features_reg[966]) is unused and will be removed from module StreamCopIPCore_v1_0_S00_AXIS.
+WARNING: [Synth 8-3332] Sequential element (s_point_features_reg[965]) is unused and will be removed from module StreamCopIPCore_v1_0_S00_AXIS.
+WARNING: [Synth 8-3332] Sequential element (s_point_features_reg[964]) is unused and will be removed from module StreamCopIPCore_v1_0_S00_AXIS.
+WARNING: [Synth 8-3332] Sequential element (s_point_features_reg[963]) is unused and will be removed from module StreamCopIPCore_v1_0_S00_AXIS.
+WARNING: [Synth 8-3332] Sequential element (s_point_features_reg[962]) is unused and will be removed from module StreamCopIPCore_v1_0_S00_AXIS.
+WARNING: [Synth 8-3332] Sequential element (s_point_features_reg[961]) is unused and will be removed from module StreamCopIPCore_v1_0_S00_AXIS.
+WARNING: [Synth 8-3332] Sequential element (s_point_features_reg[960]) is unused and will be removed from module StreamCopIPCore_v1_0_S00_AXIS.
+WARNING: [Synth 8-3332] Sequential element (s_point_features_reg[959]) is unused and will be removed from module StreamCopIPCore_v1_0_S00_AXIS.
+WARNING: [Synth 8-3332] Sequential element (s_point_features_reg[958]) is unused and will be removed from module StreamCopIPCore_v1_0_S00_AXIS.
+WARNING: [Synth 8-3332] Sequential element (s_point_features_reg[957]) is unused and will be removed from module StreamCopIPCore_v1_0_S00_AXIS.
+WARNING: [Synth 8-3332] Sequential element (s_point_features_reg[956]) is unused and will be removed from module StreamCopIPCore_v1_0_S00_AXIS.
+WARNING: [Synth 8-3332] Sequential element (s_point_features_reg[955]) is unused and will be removed from module StreamCopIPCore_v1_0_S00_AXIS.
+WARNING: [Synth 8-3332] Sequential element (s_point_features_reg[954]) is unused and will be removed from module StreamCopIPCore_v1_0_S00_AXIS.
+WARNING: [Synth 8-3332] Sequential element (s_point_features_reg[953]) is unused and will be removed from module StreamCopIPCore_v1_0_S00_AXIS.
+WARNING: [Synth 8-3332] Sequential element (s_point_features_reg[952]) is unused and will be removed from module StreamCopIPCore_v1_0_S00_AXIS.
+WARNING: [Synth 8-3332] Sequential element (s_point_features_reg[951]) is unused and will be removed from module StreamCopIPCore_v1_0_S00_AXIS.
+WARNING: [Synth 8-3332] Sequential element (s_point_features_reg[950]) is unused and will be removed from module StreamCopIPCore_v1_0_S00_AXIS.
+WARNING: [Synth 8-3332] Sequential element (s_point_features_reg[949]) is unused and will be removed from module StreamCopIPCore_v1_0_S00_AXIS.
+WARNING: [Synth 8-3332] Sequential element (s_point_features_reg[948]) is unused and will be removed from module StreamCopIPCore_v1_0_S00_AXIS.
+WARNING: [Synth 8-3332] Sequential element (s_point_features_reg[947]) is unused and will be removed from module StreamCopIPCore_v1_0_S00_AXIS.
+WARNING: [Synth 8-3332] Sequential element (s_point_features_reg[946]) is unused and will be removed from module StreamCopIPCore_v1_0_S00_AXIS.
+WARNING: [Synth 8-3332] Sequential element (s_point_features_reg[945]) is unused and will be removed from module StreamCopIPCore_v1_0_S00_AXIS.
+WARNING: [Synth 8-3332] Sequential element (s_point_features_reg[944]) is unused and will be removed from module StreamCopIPCore_v1_0_S00_AXIS.
+WARNING: [Synth 8-3332] Sequential element (s_point_features_reg[943]) is unused and will be removed from module StreamCopIPCore_v1_0_S00_AXIS.
+WARNING: [Synth 8-3332] Sequential element (s_point_features_reg[942]) is unused and will be removed from module StreamCopIPCore_v1_0_S00_AXIS.
+WARNING: [Synth 8-3332] Sequential element (s_point_features_reg[941]) is unused and will be removed from module StreamCopIPCore_v1_0_S00_AXIS.
+WARNING: [Synth 8-3332] Sequential element (s_point_features_reg[940]) is unused and will be removed from module StreamCopIPCore_v1_0_S00_AXIS.
+WARNING: [Synth 8-3332] Sequential element (s_point_features_reg[939]) is unused and will be removed from module StreamCopIPCore_v1_0_S00_AXIS.
+WARNING: [Synth 8-3332] Sequential element (s_point_features_reg[938]) is unused and will be removed from module StreamCopIPCore_v1_0_S00_AXIS.
+WARNING: [Synth 8-3332] Sequential element (s_point_features_reg[937]) is unused and will be removed from module StreamCopIPCore_v1_0_S00_AXIS.
+WARNING: [Synth 8-3332] Sequential element (s_point_features_reg[936]) is unused and will be removed from module StreamCopIPCore_v1_0_S00_AXIS.
+WARNING: [Synth 8-3332] Sequential element (s_point_features_reg[935]) is unused and will be removed from module StreamCopIPCore_v1_0_S00_AXIS.
+WARNING: [Synth 8-3332] Sequential element (s_point_features_reg[934]) is unused and will be removed from module StreamCopIPCore_v1_0_S00_AXIS.
+WARNING: [Synth 8-3332] Sequential element (s_point_features_reg[933]) is unused and will be removed from module StreamCopIPCore_v1_0_S00_AXIS.
+WARNING: [Synth 8-3332] Sequential element (s_point_features_reg[932]) is unused and will be removed from module StreamCopIPCore_v1_0_S00_AXIS.
+WARNING: [Synth 8-3332] Sequential element (s_point_features_reg[931]) is unused and will be removed from module StreamCopIPCore_v1_0_S00_AXIS.
+WARNING: [Synth 8-3332] Sequential element (s_point_features_reg[930]) is unused and will be removed from module StreamCopIPCore_v1_0_S00_AXIS.
+WARNING: [Synth 8-3332] Sequential element (s_point_features_reg[929]) is unused and will be removed from module StreamCopIPCore_v1_0_S00_AXIS.
+WARNING: [Synth 8-3332] Sequential element (s_point_features_reg[928]) is unused and will be removed from module StreamCopIPCore_v1_0_S00_AXIS.
+WARNING: [Synth 8-3332] Sequential element (s_point_features_reg[927]) is unused and will be removed from module StreamCopIPCore_v1_0_S00_AXIS.
+WARNING: [Synth 8-3332] Sequential element (s_point_features_reg[926]) is unused and will be removed from module StreamCopIPCore_v1_0_S00_AXIS.
+WARNING: [Synth 8-3332] Sequential element (s_point_features_reg[925]) is unused and will be removed from module StreamCopIPCore_v1_0_S00_AXIS.
+INFO: [Common 17-14] Message 'Synth 8-3332' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:58 ; elapsed = 00:00:53 . Memory (MB): peak = 1591.207 ; gain = 392.812 ; free physical = 2210 ; free virtual = 11256
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:08 ; elapsed = 00:01:03 . Memory (MB): peak = 1594.816 ; gain = 396.422 ; free physical = 816 ; free virtual = 10592
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
 +------+--------------------------+------------+----------+
 |      |RTL Partition             |Replication |Instances |
 +------+--------------------------+------------+----------+
-|1     |PickCentroid              |          16|      5062|
-|2     |ParallelSum__GBM0         |           4|      7937|
-|3     |ParallelSum__GBM1         |           4|      7066|
-|4     |TopLevel__GC0             |           1|      2690|
-|5     |StreamCopIPCore_v1_0__GC0 |           1|      4278|
+|1     |StreamCopIPCore_v1_0__GC0 |           1|       401|
 +------+--------------------------+------------+----------+
 No constraint files found.
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:58 ; elapsed = 00:00:53 . Memory (MB): peak = 1591.207 ; gain = 392.812 ; free physical = 2205 ; free virtual = 11252
+Finished Timing Optimization : Time (s): cpu = 00:01:08 ; elapsed = 00:01:04 . Memory (MB): peak = 1594.816 ; gain = 396.422 ; free physical = 816 ; free virtual = 10592
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
 +------+--------------------------+------------+----------+
 |      |RTL Partition             |Replication |Instances |
 +------+--------------------------+------------+----------+
-|1     |PickCentroid              |          16|      5062|
-|2     |ParallelSum__GBM0         |           4|      7937|
-|3     |ParallelSum__GBM1         |           4|      7066|
-|4     |TopLevel__GC0             |           1|      2690|
-|5     |StreamCopIPCore_v1_0__GC0 |           1|      4278|
+|1     |StreamCopIPCore_v1_0__GC0 |           1|       401|
 +------+--------------------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
-WARNING: [Synth 8-3332] Sequential element (PickSmallest/x_reg[31]) is unused and will be removed from module PickCentroid.
-WARNING: [Synth 8-3332] Sequential element (PickSmallest/x_reg[30]) is unused and will be removed from module PickCentroid.
-WARNING: [Synth 8-3332] Sequential element (PickSmallest/x_reg[29]) is unused and will be removed from module PickCentroid.
-WARNING: [Synth 8-3332] Sequential element (PickSmallest/x_reg[28]) is unused and will be removed from module PickCentroid.
-WARNING: [Synth 8-3332] Sequential element (PickSmallest/x_reg[27]) is unused and will be removed from module PickCentroid.
-WARNING: [Synth 8-3332] Sequential element (PickSmallest/x_reg[26]) is unused and will be removed from module PickCentroid.
-WARNING: [Synth 8-3332] Sequential element (PickSmallest/x_reg[25]) is unused and will be removed from module PickCentroid.
-WARNING: [Synth 8-3332] Sequential element (PickSmallest/x_reg[24]) is unused and will be removed from module PickCentroid.
-WARNING: [Synth 8-3332] Sequential element (PickSmallest/x_reg[23]) is unused and will be removed from module PickCentroid.
-WARNING: [Synth 8-3332] Sequential element (PickSmallest/x_reg[22]) is unused and will be removed from module PickCentroid.
-WARNING: [Synth 8-3332] Sequential element (PickSmallest/x_reg[21]) is unused and will be removed from module PickCentroid.
-WARNING: [Synth 8-3332] Sequential element (PickSmallest/x_reg[20]) is unused and will be removed from module PickCentroid.
-WARNING: [Synth 8-3332] Sequential element (PickSmallest/x_reg[19]) is unused and will be removed from module PickCentroid.
-WARNING: [Synth 8-3332] Sequential element (PickSmallest/x_reg[18]) is unused and will be removed from module PickCentroid.
-WARNING: [Synth 8-3332] Sequential element (PickSmallest/x_reg[17]) is unused and will be removed from module PickCentroid.
-WARNING: [Synth 8-3332] Sequential element (PickSmallest/x_reg[16]) is unused and will be removed from module PickCentroid.
-WARNING: [Synth 8-3332] Sequential element (PickSmallest/x_reg[15]) is unused and will be removed from module PickCentroid.
-WARNING: [Synth 8-3332] Sequential element (PickSmallest/x_reg[14]) is unused and will be removed from module PickCentroid.
-WARNING: [Synth 8-3332] Sequential element (PickSmallest/x_reg[13]) is unused and will be removed from module PickCentroid.
-WARNING: [Synth 8-3332] Sequential element (PickSmallest/x_reg[12]) is unused and will be removed from module PickCentroid.
-WARNING: [Synth 8-3332] Sequential element (PickSmallest/x_reg[11]) is unused and will be removed from module PickCentroid.
-WARNING: [Synth 8-3332] Sequential element (PickSmallest/x_reg[10]) is unused and will be removed from module PickCentroid.
-WARNING: [Synth 8-3332] Sequential element (PickSmallest/x_reg[9]) is unused and will be removed from module PickCentroid.
-WARNING: [Synth 8-3332] Sequential element (PickSmallest/x_reg[8]) is unused and will be removed from module PickCentroid.
-WARNING: [Synth 8-3332] Sequential element (PickSmallest/x_reg[7]) is unused and will be removed from module PickCentroid.
-WARNING: [Synth 8-3332] Sequential element (PickSmallest/x_reg[6]) is unused and will be removed from module PickCentroid.
-WARNING: [Synth 8-3332] Sequential element (PickSmallest/x_reg[5]) is unused and will be removed from module PickCentroid.
-WARNING: [Synth 8-3332] Sequential element (PickSmallest/x_reg[4]) is unused and will be removed from module PickCentroid.
-WARNING: [Synth 8-3332] Sequential element (PickSmallest/x_reg[3]) is unused and will be removed from module PickCentroid.
-WARNING: [Synth 8-3332] Sequential element (PickSmallest/x_reg[2]) is unused and will be removed from module PickCentroid.
-INFO: [Synth 8-4765] Removing register instance (\buffer_exec/output_reg[31][31] ) from module (TopLevel__GC0) as it is equivalent to (\buffer2_exec/output_reg[31][31] ) and driving same net [/home/david/Documents/CR-Project/ip_repo/edit_ComputeNewCentroids_v1_0.srcs/sources_1/imports/new/Buffer.vhd:26]
-INFO: [Synth 8-4765] Removing register instance (\buffer_exec/output_reg[31][30] ) from module (TopLevel__GC0) as it is equivalent to (\buffer2_exec/output_reg[31][30] ) and driving same net [/home/david/Documents/CR-Project/ip_repo/edit_ComputeNewCentroids_v1_0.srcs/sources_1/imports/new/Buffer.vhd:26]
-INFO: [Synth 8-4765] Removing register instance (\buffer_exec/output_reg[31][29] ) from module (TopLevel__GC0) as it is equivalent to (\buffer2_exec/output_reg[31][29] ) and driving same net [/home/david/Documents/CR-Project/ip_repo/edit_ComputeNewCentroids_v1_0.srcs/sources_1/imports/new/Buffer.vhd:26]
-INFO: [Synth 8-4765] Removing register instance (\buffer_exec/output_reg[31][28] ) from module (TopLevel__GC0) as it is equivalent to (\buffer2_exec/output_reg[31][28] ) and driving same net [/home/david/Documents/CR-Project/ip_repo/edit_ComputeNewCentroids_v1_0.srcs/sources_1/imports/new/Buffer.vhd:26]
-INFO: [Synth 8-4765] Removing register instance (\buffer_exec/output_reg[31][27] ) from module (TopLevel__GC0) as it is equivalent to (\buffer2_exec/output_reg[31][27] ) and driving same net [/home/david/Documents/CR-Project/ip_repo/edit_ComputeNewCentroids_v1_0.srcs/sources_1/imports/new/Buffer.vhd:26]
-INFO: [Synth 8-4765] Removing register instance (\buffer_exec/output_reg[31][26] ) from module (TopLevel__GC0) as it is equivalent to (\buffer2_exec/output_reg[31][26] ) and driving same net [/home/david/Documents/CR-Project/ip_repo/edit_ComputeNewCentroids_v1_0.srcs/sources_1/imports/new/Buffer.vhd:26]
-INFO: [Synth 8-4765] Removing register instance (\buffer_exec/output_reg[31][25] ) from module (TopLevel__GC0) as it is equivalent to (\buffer2_exec/output_reg[31][25] ) and driving same net [/home/david/Documents/CR-Project/ip_repo/edit_ComputeNewCentroids_v1_0.srcs/sources_1/imports/new/Buffer.vhd:26]
-INFO: [Synth 8-4765] Removing register instance (\buffer_exec/output_reg[31][24] ) from module (TopLevel__GC0) as it is equivalent to (\buffer2_exec/output_reg[31][24] ) and driving same net [/home/david/Documents/CR-Project/ip_repo/edit_ComputeNewCentroids_v1_0.srcs/sources_1/imports/new/Buffer.vhd:26]
-INFO: [Synth 8-4765] Removing register instance (\buffer_exec/output_reg[31][23] ) from module (TopLevel__GC0) as it is equivalent to (\buffer2_exec/output_reg[31][23] ) and driving same net [/home/david/Documents/CR-Project/ip_repo/edit_ComputeNewCentroids_v1_0.srcs/sources_1/imports/new/Buffer.vhd:26]
-INFO: [Synth 8-4765] Removing register instance (\buffer_exec/output_reg[31][22] ) from module (TopLevel__GC0) as it is equivalent to (\buffer2_exec/output_reg[31][22] ) and driving same net [/home/david/Documents/CR-Project/ip_repo/edit_ComputeNewCentroids_v1_0.srcs/sources_1/imports/new/Buffer.vhd:26]
-INFO: [Synth 8-4765] Removing register instance (\buffer_exec/output_reg[31][21] ) from module (TopLevel__GC0) as it is equivalent to (\buffer2_exec/output_reg[31][21] ) and driving same net [/home/david/Documents/CR-Project/ip_repo/edit_ComputeNewCentroids_v1_0.srcs/sources_1/imports/new/Buffer.vhd:26]
-INFO: [Synth 8-4765] Removing register instance (\buffer_exec/output_reg[31][20] ) from module (TopLevel__GC0) as it is equivalent to (\buffer2_exec/output_reg[31][20] ) and driving same net [/home/david/Documents/CR-Project/ip_repo/edit_ComputeNewCentroids_v1_0.srcs/sources_1/imports/new/Buffer.vhd:26]
-INFO: [Synth 8-4765] Removing register instance (\buffer_exec/output_reg[31][19] ) from module (TopLevel__GC0) as it is equivalent to (\buffer2_exec/output_reg[31][19] ) and driving same net [/home/david/Documents/CR-Project/ip_repo/edit_ComputeNewCentroids_v1_0.srcs/sources_1/imports/new/Buffer.vhd:26]
-INFO: [Synth 8-4765] Removing register instance (\buffer_exec/output_reg[31][18] ) from module (TopLevel__GC0) as it is equivalent to (\buffer2_exec/output_reg[31][18] ) and driving same net [/home/david/Documents/CR-Project/ip_repo/edit_ComputeNewCentroids_v1_0.srcs/sources_1/imports/new/Buffer.vhd:26]
-INFO: [Synth 8-4765] Removing register instance (\buffer_exec/output_reg[31][17] ) from module (TopLevel__GC0) as it is equivalent to (\buffer2_exec/output_reg[31][17] ) and driving same net [/home/david/Documents/CR-Project/ip_repo/edit_ComputeNewCentroids_v1_0.srcs/sources_1/imports/new/Buffer.vhd:26]
-INFO: [Synth 8-4765] Removing register instance (\buffer_exec/output_reg[31][16] ) from module (TopLevel__GC0) as it is equivalent to (\buffer2_exec/output_reg[31][16] ) and driving same net [/home/david/Documents/CR-Project/ip_repo/edit_ComputeNewCentroids_v1_0.srcs/sources_1/imports/new/Buffer.vhd:26]
-INFO: [Synth 8-4765] Removing register instance (\buffer_exec/output_reg[31][15] ) from module (TopLevel__GC0) as it is equivalent to (\buffer2_exec/output_reg[31][15] ) and driving same net [/home/david/Documents/CR-Project/ip_repo/edit_ComputeNewCentroids_v1_0.srcs/sources_1/imports/new/Buffer.vhd:26]
-INFO: [Synth 8-4765] Removing register instance (\buffer_exec/output_reg[31][14] ) from module (TopLevel__GC0) as it is equivalent to (\buffer2_exec/output_reg[31][14] ) and driving same net [/home/david/Documents/CR-Project/ip_repo/edit_ComputeNewCentroids_v1_0.srcs/sources_1/imports/new/Buffer.vhd:26]
-INFO: [Synth 8-4765] Removing register instance (\buffer_exec/output_reg[31][13] ) from module (TopLevel__GC0) as it is equivalent to (\buffer2_exec/output_reg[31][13] ) and driving same net [/home/david/Documents/CR-Project/ip_repo/edit_ComputeNewCentroids_v1_0.srcs/sources_1/imports/new/Buffer.vhd:26]
-INFO: [Synth 8-4765] Removing register instance (\buffer_exec/output_reg[31][12] ) from module (TopLevel__GC0) as it is equivalent to (\buffer2_exec/output_reg[31][12] ) and driving same net [/home/david/Documents/CR-Project/ip_repo/edit_ComputeNewCentroids_v1_0.srcs/sources_1/imports/new/Buffer.vhd:26]
-INFO: [Synth 8-4765] Removing register instance (\buffer_exec/output_reg[31][11] ) from module (TopLevel__GC0) as it is equivalent to (\buffer2_exec/output_reg[31][11] ) and driving same net [/home/david/Documents/CR-Project/ip_repo/edit_ComputeNewCentroids_v1_0.srcs/sources_1/imports/new/Buffer.vhd:26]
-INFO: [Synth 8-4765] Removing register instance (\buffer_exec/output_reg[31][10] ) from module (TopLevel__GC0) as it is equivalent to (\buffer2_exec/output_reg[31][10] ) and driving same net [/home/david/Documents/CR-Project/ip_repo/edit_ComputeNewCentroids_v1_0.srcs/sources_1/imports/new/Buffer.vhd:26]
-INFO: [Synth 8-4765] Removing register instance (\buffer_exec/output_reg[31][9] ) from module (TopLevel__GC0) as it is equivalent to (\buffer2_exec/output_reg[31][9] ) and driving same net [/home/david/Documents/CR-Project/ip_repo/edit_ComputeNewCentroids_v1_0.srcs/sources_1/imports/new/Buffer.vhd:26]
-INFO: [Synth 8-4765] Removing register instance (\buffer_exec/output_reg[31][8] ) from module (TopLevel__GC0) as it is equivalent to (\buffer2_exec/output_reg[31][8] ) and driving same net [/home/david/Documents/CR-Project/ip_repo/edit_ComputeNewCentroids_v1_0.srcs/sources_1/imports/new/Buffer.vhd:26]
-INFO: [Synth 8-4765] Removing register instance (\buffer_exec/output_reg[31][7] ) from module (TopLevel__GC0) as it is equivalent to (\buffer2_exec/output_reg[31][7] ) and driving same net [/home/david/Documents/CR-Project/ip_repo/edit_ComputeNewCentroids_v1_0.srcs/sources_1/imports/new/Buffer.vhd:26]
-INFO: [Synth 8-4765] Removing register instance (\buffer_exec/output_reg[31][6] ) from module (TopLevel__GC0) as it is equivalent to (\buffer2_exec/output_reg[31][6] ) and driving same net [/home/david/Documents/CR-Project/ip_repo/edit_ComputeNewCentroids_v1_0.srcs/sources_1/imports/new/Buffer.vhd:26]
-INFO: [Synth 8-4765] Removing register instance (\buffer_exec/output_reg[31][5] ) from module (TopLevel__GC0) as it is equivalent to (\buffer2_exec/output_reg[31][5] ) and driving same net [/home/david/Documents/CR-Project/ip_repo/edit_ComputeNewCentroids_v1_0.srcs/sources_1/imports/new/Buffer.vhd:26]
-INFO: [Synth 8-4765] Removing register instance (\buffer_exec/output_reg[31][4] ) from module (TopLevel__GC0) as it is equivalent to (\buffer2_exec/output_reg[31][4] ) and driving same net [/home/david/Documents/CR-Project/ip_repo/edit_ComputeNewCentroids_v1_0.srcs/sources_1/imports/new/Buffer.vhd:26]
-INFO: [Synth 8-4765] Removing register instance (\buffer_exec/output_reg[31][3] ) from module (TopLevel__GC0) as it is equivalent to (\buffer2_exec/output_reg[31][3] ) and driving same net [/home/david/Documents/CR-Project/ip_repo/edit_ComputeNewCentroids_v1_0.srcs/sources_1/imports/new/Buffer.vhd:26]
-INFO: [Synth 8-4765] Removing register instance (\buffer_exec/output_reg[31][2] ) from module (TopLevel__GC0) as it is equivalent to (\buffer2_exec/output_reg[31][2] ) and driving same net [/home/david/Documents/CR-Project/ip_repo/edit_ComputeNewCentroids_v1_0.srcs/sources_1/imports/new/Buffer.vhd:26]
-INFO: [Synth 8-4765] Removing register instance (\buffer_exec/output_reg[31][1] ) from module (TopLevel__GC0) as it is equivalent to (\buffer2_exec/output_reg[31][1] ) and driving same net [/home/david/Documents/CR-Project/ip_repo/edit_ComputeNewCentroids_v1_0.srcs/sources_1/imports/new/Buffer.vhd:26]
-INFO: [Synth 8-4765] Removing register instance (\buffer_exec/output_reg[31][0] ) from module (TopLevel__GC0) as it is equivalent to (\buffer2_exec/output_reg[31][0] ) and driving same net [/home/david/Documents/CR-Project/ip_repo/edit_ComputeNewCentroids_v1_0.srcs/sources_1/imports/new/Buffer.vhd:26]
-INFO: [Synth 8-4765] Removing register instance (\buffer_exec/output_reg[30][31] ) from module (TopLevel__GC0) as it is equivalent to (\buffer2_exec/output_reg[30][31] ) and driving same net [/home/david/Documents/CR-Project/ip_repo/edit_ComputeNewCentroids_v1_0.srcs/sources_1/imports/new/Buffer.vhd:26]
-INFO: [Synth 8-4765] Removing register instance (\buffer_exec/output_reg[30][30] ) from module (TopLevel__GC0) as it is equivalent to (\buffer2_exec/output_reg[30][30] ) and driving same net [/home/david/Documents/CR-Project/ip_repo/edit_ComputeNewCentroids_v1_0.srcs/sources_1/imports/new/Buffer.vhd:26]
-INFO: [Synth 8-4765] Removing register instance (\buffer_exec/output_reg[30][29] ) from module (TopLevel__GC0) as it is equivalent to (\buffer2_exec/output_reg[30][29] ) and driving same net [/home/david/Documents/CR-Project/ip_repo/edit_ComputeNewCentroids_v1_0.srcs/sources_1/imports/new/Buffer.vhd:26]
-INFO: [Synth 8-4765] Removing register instance (\buffer_exec/output_reg[30][28] ) from module (TopLevel__GC0) as it is equivalent to (\buffer2_exec/output_reg[30][28] ) and driving same net [/home/david/Documents/CR-Project/ip_repo/edit_ComputeNewCentroids_v1_0.srcs/sources_1/imports/new/Buffer.vhd:26]
-INFO: [Synth 8-4765] Removing register instance (\buffer_exec/output_reg[30][27] ) from module (TopLevel__GC0) as it is equivalent to (\buffer2_exec/output_reg[30][27] ) and driving same net [/home/david/Documents/CR-Project/ip_repo/edit_ComputeNewCentroids_v1_0.srcs/sources_1/imports/new/Buffer.vhd:26]
-INFO: [Synth 8-4765] Removing register instance (\buffer_exec/output_reg[30][26] ) from module (TopLevel__GC0) as it is equivalent to (\buffer2_exec/output_reg[30][26] ) and driving same net [/home/david/Documents/CR-Project/ip_repo/edit_ComputeNewCentroids_v1_0.srcs/sources_1/imports/new/Buffer.vhd:26]
-INFO: [Synth 8-4765] Removing register instance (\buffer_exec/output_reg[30][25] ) from module (TopLevel__GC0) as it is equivalent to (\buffer2_exec/output_reg[30][25] ) and driving same net [/home/david/Documents/CR-Project/ip_repo/edit_ComputeNewCentroids_v1_0.srcs/sources_1/imports/new/Buffer.vhd:26]
-INFO: [Synth 8-4765] Removing register instance (\buffer_exec/output_reg[30][24] ) from module (TopLevel__GC0) as it is equivalent to (\buffer2_exec/output_reg[30][24] ) and driving same net [/home/david/Documents/CR-Project/ip_repo/edit_ComputeNewCentroids_v1_0.srcs/sources_1/imports/new/Buffer.vhd:26]
-INFO: [Synth 8-4765] Removing register instance (\buffer_exec/output_reg[30][23] ) from module (TopLevel__GC0) as it is equivalent to (\buffer2_exec/output_reg[30][23] ) and driving same net [/home/david/Documents/CR-Project/ip_repo/edit_ComputeNewCentroids_v1_0.srcs/sources_1/imports/new/Buffer.vhd:26]
-INFO: [Synth 8-4765] Removing register instance (\buffer_exec/output_reg[30][22] ) from module (TopLevel__GC0) as it is equivalent to (\buffer2_exec/output_reg[30][22] ) and driving same net [/home/david/Documents/CR-Project/ip_repo/edit_ComputeNewCentroids_v1_0.srcs/sources_1/imports/new/Buffer.vhd:26]
-INFO: [Synth 8-4765] Removing register instance (\buffer_exec/output_reg[30][21] ) from module (TopLevel__GC0) as it is equivalent to (\buffer2_exec/output_reg[30][21] ) and driving same net [/home/david/Documents/CR-Project/ip_repo/edit_ComputeNewCentroids_v1_0.srcs/sources_1/imports/new/Buffer.vhd:26]
-INFO: [Synth 8-4765] Removing register instance (\buffer_exec/output_reg[30][20] ) from module (TopLevel__GC0) as it is equivalent to (\buffer2_exec/output_reg[30][20] ) and driving same net [/home/david/Documents/CR-Project/ip_repo/edit_ComputeNewCentroids_v1_0.srcs/sources_1/imports/new/Buffer.vhd:26]
-INFO: [Synth 8-4765] Removing register instance (\buffer_exec/output_reg[30][19] ) from module (TopLevel__GC0) as it is equivalent to (\buffer2_exec/output_reg[30][19] ) and driving same net [/home/david/Documents/CR-Project/ip_repo/edit_ComputeNewCentroids_v1_0.srcs/sources_1/imports/new/Buffer.vhd:26]
-INFO: [Synth 8-4765] Removing register instance (\buffer_exec/output_reg[30][18] ) from module (TopLevel__GC0) as it is equivalent to (\buffer2_exec/output_reg[30][18] ) and driving same net [/home/david/Documents/CR-Project/ip_repo/edit_ComputeNewCentroids_v1_0.srcs/sources_1/imports/new/Buffer.vhd:26]
-INFO: [Synth 8-4765] Removing register instance (\buffer_exec/output_reg[30][17] ) from module (TopLevel__GC0) as it is equivalent to (\buffer2_exec/output_reg[30][17] ) and driving same net [/home/david/Documents/CR-Project/ip_repo/edit_ComputeNewCentroids_v1_0.srcs/sources_1/imports/new/Buffer.vhd:26]
-INFO: [Synth 8-4765] Removing register instance (\buffer_exec/output_reg[30][16] ) from module (TopLevel__GC0) as it is equivalent to (\buffer2_exec/output_reg[30][16] ) and driving same net [/home/david/Documents/CR-Project/ip_repo/edit_ComputeNewCentroids_v1_0.srcs/sources_1/imports/new/Buffer.vhd:26]
-INFO: [Synth 8-4765] Removing register instance (\buffer_exec/output_reg[30][15] ) from module (TopLevel__GC0) as it is equivalent to (\buffer2_exec/output_reg[30][15] ) and driving same net [/home/david/Documents/CR-Project/ip_repo/edit_ComputeNewCentroids_v1_0.srcs/sources_1/imports/new/Buffer.vhd:26]
-INFO: [Synth 8-4765] Removing register instance (\buffer_exec/output_reg[30][14] ) from module (TopLevel__GC0) as it is equivalent to (\buffer2_exec/output_reg[30][14] ) and driving same net [/home/david/Documents/CR-Project/ip_repo/edit_ComputeNewCentroids_v1_0.srcs/sources_1/imports/new/Buffer.vhd:26]
-INFO: [Synth 8-4765] Removing register instance (\buffer_exec/output_reg[30][13] ) from module (TopLevel__GC0) as it is equivalent to (\buffer2_exec/output_reg[30][13] ) and driving same net [/home/david/Documents/CR-Project/ip_repo/edit_ComputeNewCentroids_v1_0.srcs/sources_1/imports/new/Buffer.vhd:26]
-INFO: [Synth 8-4765] Removing register instance (\buffer_exec/output_reg[30][12] ) from module (TopLevel__GC0) as it is equivalent to (\buffer2_exec/output_reg[30][12] ) and driving same net [/home/david/Documents/CR-Project/ip_repo/edit_ComputeNewCentroids_v1_0.srcs/sources_1/imports/new/Buffer.vhd:26]
-INFO: [Synth 8-4765] Removing register instance (\buffer_exec/output_reg[30][11] ) from module (TopLevel__GC0) as it is equivalent to (\buffer2_exec/output_reg[30][11] ) and driving same net [/home/david/Documents/CR-Project/ip_repo/edit_ComputeNewCentroids_v1_0.srcs/sources_1/imports/new/Buffer.vhd:26]
-INFO: [Synth 8-4765] Removing register instance (\buffer_exec/output_reg[30][10] ) from module (TopLevel__GC0) as it is equivalent to (\buffer2_exec/output_reg[30][10] ) and driving same net [/home/david/Documents/CR-Project/ip_repo/edit_ComputeNewCentroids_v1_0.srcs/sources_1/imports/new/Buffer.vhd:26]
-INFO: [Synth 8-4765] Removing register instance (\buffer_exec/output_reg[30][9] ) from module (TopLevel__GC0) as it is equivalent to (\buffer2_exec/output_reg[30][9] ) and driving same net [/home/david/Documents/CR-Project/ip_repo/edit_ComputeNewCentroids_v1_0.srcs/sources_1/imports/new/Buffer.vhd:26]
-INFO: [Synth 8-4765] Removing register instance (\buffer_exec/output_reg[30][8] ) from module (TopLevel__GC0) as it is equivalent to (\buffer2_exec/output_reg[30][8] ) and driving same net [/home/david/Documents/CR-Project/ip_repo/edit_ComputeNewCentroids_v1_0.srcs/sources_1/imports/new/Buffer.vhd:26]
-INFO: [Synth 8-4765] Removing register instance (\buffer_exec/output_reg[30][7] ) from module (TopLevel__GC0) as it is equivalent to (\buffer2_exec/output_reg[30][7] ) and driving same net [/home/david/Documents/CR-Project/ip_repo/edit_ComputeNewCentroids_v1_0.srcs/sources_1/imports/new/Buffer.vhd:26]
-INFO: [Synth 8-4765] Removing register instance (\buffer_exec/output_reg[30][6] ) from module (TopLevel__GC0) as it is equivalent to (\buffer2_exec/output_reg[30][6] ) and driving same net [/home/david/Documents/CR-Project/ip_repo/edit_ComputeNewCentroids_v1_0.srcs/sources_1/imports/new/Buffer.vhd:26]
-INFO: [Synth 8-4765] Removing register instance (\buffer_exec/output_reg[30][5] ) from module (TopLevel__GC0) as it is equivalent to (\buffer2_exec/output_reg[30][5] ) and driving same net [/home/david/Documents/CR-Project/ip_repo/edit_ComputeNewCentroids_v1_0.srcs/sources_1/imports/new/Buffer.vhd:26]
-INFO: [Synth 8-4765] Removing register instance (\buffer_exec/output_reg[30][4] ) from module (TopLevel__GC0) as it is equivalent to (\buffer2_exec/output_reg[30][4] ) and driving same net [/home/david/Documents/CR-Project/ip_repo/edit_ComputeNewCentroids_v1_0.srcs/sources_1/imports/new/Buffer.vhd:26]
-INFO: [Synth 8-4765] Removing register instance (\buffer_exec/output_reg[30][3] ) from module (TopLevel__GC0) as it is equivalent to (\buffer2_exec/output_reg[30][3] ) and driving same net [/home/david/Documents/CR-Project/ip_repo/edit_ComputeNewCentroids_v1_0.srcs/sources_1/imports/new/Buffer.vhd:26]
-INFO: [Synth 8-4765] Removing register instance (\buffer_exec/output_reg[30][2] ) from module (TopLevel__GC0) as it is equivalent to (\buffer2_exec/output_reg[30][2] ) and driving same net [/home/david/Documents/CR-Project/ip_repo/edit_ComputeNewCentroids_v1_0.srcs/sources_1/imports/new/Buffer.vhd:26]
-INFO: [Synth 8-4765] Removing register instance (\buffer_exec/output_reg[30][1] ) from module (TopLevel__GC0) as it is equivalent to (\buffer2_exec/output_reg[30][1] ) and driving same net [/home/david/Documents/CR-Project/ip_repo/edit_ComputeNewCentroids_v1_0.srcs/sources_1/imports/new/Buffer.vhd:26]
-INFO: [Synth 8-4765] Removing register instance (\buffer_exec/output_reg[30][0] ) from module (TopLevel__GC0) as it is equivalent to (\buffer2_exec/output_reg[30][0] ) and driving same net [/home/david/Documents/CR-Project/ip_repo/edit_ComputeNewCentroids_v1_0.srcs/sources_1/imports/new/Buffer.vhd:26]
-INFO: [Synth 8-4765] Removing register instance (\buffer_exec/output_reg[29][31] ) from module (TopLevel__GC0) as it is equivalent to (\buffer2_exec/output_reg[29][31] ) and driving same net [/home/david/Documents/CR-Project/ip_repo/edit_ComputeNewCentroids_v1_0.srcs/sources_1/imports/new/Buffer.vhd:26]
-INFO: [Synth 8-4765] Removing register instance (\buffer_exec/output_reg[29][30] ) from module (TopLevel__GC0) as it is equivalent to (\buffer2_exec/output_reg[29][30] ) and driving same net [/home/david/Documents/CR-Project/ip_repo/edit_ComputeNewCentroids_v1_0.srcs/sources_1/imports/new/Buffer.vhd:26]
-INFO: [Synth 8-4765] Removing register instance (\buffer_exec/output_reg[29][29] ) from module (TopLevel__GC0) as it is equivalent to (\buffer2_exec/output_reg[29][29] ) and driving same net [/home/david/Documents/CR-Project/ip_repo/edit_ComputeNewCentroids_v1_0.srcs/sources_1/imports/new/Buffer.vhd:26]
-INFO: [Synth 8-4765] Removing register instance (\buffer_exec/output_reg[29][28] ) from module (TopLevel__GC0) as it is equivalent to (\buffer2_exec/output_reg[29][28] ) and driving same net [/home/david/Documents/CR-Project/ip_repo/edit_ComputeNewCentroids_v1_0.srcs/sources_1/imports/new/Buffer.vhd:26]
-INFO: [Synth 8-4765] Removing register instance (\buffer_exec/output_reg[29][27] ) from module (TopLevel__GC0) as it is equivalent to (\buffer2_exec/output_reg[29][27] ) and driving same net [/home/david/Documents/CR-Project/ip_repo/edit_ComputeNewCentroids_v1_0.srcs/sources_1/imports/new/Buffer.vhd:26]
-INFO: [Synth 8-4765] Removing register instance (\buffer_exec/output_reg[29][26] ) from module (TopLevel__GC0) as it is equivalent to (\buffer2_exec/output_reg[29][26] ) and driving same net [/home/david/Documents/CR-Project/ip_repo/edit_ComputeNewCentroids_v1_0.srcs/sources_1/imports/new/Buffer.vhd:26]
-INFO: [Synth 8-4765] Removing register instance (\buffer_exec/output_reg[29][25] ) from module (TopLevel__GC0) as it is equivalent to (\buffer2_exec/output_reg[29][25] ) and driving same net [/home/david/Documents/CR-Project/ip_repo/edit_ComputeNewCentroids_v1_0.srcs/sources_1/imports/new/Buffer.vhd:26]
-INFO: [Synth 8-4765] Removing register instance (\buffer_exec/output_reg[29][24] ) from module (TopLevel__GC0) as it is equivalent to (\buffer2_exec/output_reg[29][24] ) and driving same net [/home/david/Documents/CR-Project/ip_repo/edit_ComputeNewCentroids_v1_0.srcs/sources_1/imports/new/Buffer.vhd:26]
-INFO: [Synth 8-4765] Removing register instance (\buffer_exec/output_reg[29][23] ) from module (TopLevel__GC0) as it is equivalent to (\buffer2_exec/output_reg[29][23] ) and driving same net [/home/david/Documents/CR-Project/ip_repo/edit_ComputeNewCentroids_v1_0.srcs/sources_1/imports/new/Buffer.vhd:26]
-INFO: [Synth 8-4765] Removing register instance (\buffer_exec/output_reg[29][22] ) from module (TopLevel__GC0) as it is equivalent to (\buffer2_exec/output_reg[29][22] ) and driving same net [/home/david/Documents/CR-Project/ip_repo/edit_ComputeNewCentroids_v1_0.srcs/sources_1/imports/new/Buffer.vhd:26]
-INFO: [Synth 8-4765] Removing register instance (\buffer_exec/output_reg[29][21] ) from module (TopLevel__GC0) as it is equivalent to (\buffer2_exec/output_reg[29][21] ) and driving same net [/home/david/Documents/CR-Project/ip_repo/edit_ComputeNewCentroids_v1_0.srcs/sources_1/imports/new/Buffer.vhd:26]
-INFO: [Synth 8-4765] Removing register instance (\buffer_exec/output_reg[29][20] ) from module (TopLevel__GC0) as it is equivalent to (\buffer2_exec/output_reg[29][20] ) and driving same net [/home/david/Documents/CR-Project/ip_repo/edit_ComputeNewCentroids_v1_0.srcs/sources_1/imports/new/Buffer.vhd:26]
-INFO: [Synth 8-4765] Removing register instance (\buffer_exec/output_reg[29][19] ) from module (TopLevel__GC0) as it is equivalent to (\buffer2_exec/output_reg[29][19] ) and driving same net [/home/david/Documents/CR-Project/ip_repo/edit_ComputeNewCentroids_v1_0.srcs/sources_1/imports/new/Buffer.vhd:26]
-INFO: [Synth 8-4765] Removing register instance (\buffer_exec/output_reg[29][18] ) from module (TopLevel__GC0) as it is equivalent to (\buffer2_exec/output_reg[29][18] ) and driving same net [/home/david/Documents/CR-Project/ip_repo/edit_ComputeNewCentroids_v1_0.srcs/sources_1/imports/new/Buffer.vhd:26]
-INFO: [Synth 8-4765] Removing register instance (\buffer_exec/output_reg[29][17] ) from module (TopLevel__GC0) as it is equivalent to (\buffer2_exec/output_reg[29][17] ) and driving same net [/home/david/Documents/CR-Project/ip_repo/edit_ComputeNewCentroids_v1_0.srcs/sources_1/imports/new/Buffer.vhd:26]
-INFO: [Synth 8-4765] Removing register instance (\buffer_exec/output_reg[29][16] ) from module (TopLevel__GC0) as it is equivalent to (\buffer2_exec/output_reg[29][16] ) and driving same net [/home/david/Documents/CR-Project/ip_repo/edit_ComputeNewCentroids_v1_0.srcs/sources_1/imports/new/Buffer.vhd:26]
-INFO: [Synth 8-4765] Removing register instance (\buffer_exec/output_reg[29][15] ) from module (TopLevel__GC0) as it is equivalent to (\buffer2_exec/output_reg[29][15] ) and driving same net [/home/david/Documents/CR-Project/ip_repo/edit_ComputeNewCentroids_v1_0.srcs/sources_1/imports/new/Buffer.vhd:26]
-INFO: [Synth 8-4765] Removing register instance (\buffer_exec/output_reg[29][14] ) from module (TopLevel__GC0) as it is equivalent to (\buffer2_exec/output_reg[29][14] ) and driving same net [/home/david/Documents/CR-Project/ip_repo/edit_ComputeNewCentroids_v1_0.srcs/sources_1/imports/new/Buffer.vhd:26]
-INFO: [Synth 8-4765] Removing register instance (\buffer_exec/output_reg[29][13] ) from module (TopLevel__GC0) as it is equivalent to (\buffer2_exec/output_reg[29][13] ) and driving same net [/home/david/Documents/CR-Project/ip_repo/edit_ComputeNewCentroids_v1_0.srcs/sources_1/imports/new/Buffer.vhd:26]
-INFO: [Synth 8-4765] Removing register instance (\buffer_exec/output_reg[29][12] ) from module (TopLevel__GC0) as it is equivalent to (\buffer2_exec/output_reg[29][12] ) and driving same net [/home/david/Documents/CR-Project/ip_repo/edit_ComputeNewCentroids_v1_0.srcs/sources_1/imports/new/Buffer.vhd:26]
-INFO: [Synth 8-4765] Removing register instance (\buffer_exec/output_reg[29][11] ) from module (TopLevel__GC0) as it is equivalent to (\buffer2_exec/output_reg[29][11] ) and driving same net [/home/david/Documents/CR-Project/ip_repo/edit_ComputeNewCentroids_v1_0.srcs/sources_1/imports/new/Buffer.vhd:26]
-INFO: [Synth 8-4765] Removing register instance (\buffer_exec/output_reg[29][10] ) from module (TopLevel__GC0) as it is equivalent to (\buffer2_exec/output_reg[29][10] ) and driving same net [/home/david/Documents/CR-Project/ip_repo/edit_ComputeNewCentroids_v1_0.srcs/sources_1/imports/new/Buffer.vhd:26]
-INFO: [Synth 8-4765] Removing register instance (\buffer_exec/output_reg[29][9] ) from module (TopLevel__GC0) as it is equivalent to (\buffer2_exec/output_reg[29][9] ) and driving same net [/home/david/Documents/CR-Project/ip_repo/edit_ComputeNewCentroids_v1_0.srcs/sources_1/imports/new/Buffer.vhd:26]
-INFO: [Synth 8-4765] Removing register instance (\buffer_exec/output_reg[29][8] ) from module (TopLevel__GC0) as it is equivalent to (\buffer2_exec/output_reg[29][8] ) and driving same net [/home/david/Documents/CR-Project/ip_repo/edit_ComputeNewCentroids_v1_0.srcs/sources_1/imports/new/Buffer.vhd:26]
-INFO: [Synth 8-4765] Removing register instance (\buffer_exec/output_reg[29][7] ) from module (TopLevel__GC0) as it is equivalent to (\buffer2_exec/output_reg[29][7] ) and driving same net [/home/david/Documents/CR-Project/ip_repo/edit_ComputeNewCentroids_v1_0.srcs/sources_1/imports/new/Buffer.vhd:26]
-INFO: [Synth 8-4765] Removing register instance (\buffer_exec/output_reg[29][6] ) from module (TopLevel__GC0) as it is equivalent to (\buffer2_exec/output_reg[29][6] ) and driving same net [/home/david/Documents/CR-Project/ip_repo/edit_ComputeNewCentroids_v1_0.srcs/sources_1/imports/new/Buffer.vhd:26]
-INFO: [Synth 8-4765] Removing register instance (\buffer_exec/output_reg[29][5] ) from module (TopLevel__GC0) as it is equivalent to (\buffer2_exec/output_reg[29][5] ) and driving same net [/home/david/Documents/CR-Project/ip_repo/edit_ComputeNewCentroids_v1_0.srcs/sources_1/imports/new/Buffer.vhd:26]
-INFO: [Synth 8-4765] Removing register instance (\buffer_exec/output_reg[29][4] ) from module (TopLevel__GC0) as it is equivalent to (\buffer2_exec/output_reg[29][4] ) and driving same net [/home/david/Documents/CR-Project/ip_repo/edit_ComputeNewCentroids_v1_0.srcs/sources_1/imports/new/Buffer.vhd:26]
-INFO: [Synth 8-4765] Removing register instance (\buffer_exec/output_reg[29][3] ) from module (TopLevel__GC0) as it is equivalent to (\buffer2_exec/output_reg[29][3] ) and driving same net [/home/david/Documents/CR-Project/ip_repo/edit_ComputeNewCentroids_v1_0.srcs/sources_1/imports/new/Buffer.vhd:26]
-INFO: [Synth 8-4765] Removing register instance (\buffer_exec/output_reg[29][2] ) from module (TopLevel__GC0) as it is equivalent to (\buffer2_exec/output_reg[29][2] ) and driving same net [/home/david/Documents/CR-Project/ip_repo/edit_ComputeNewCentroids_v1_0.srcs/sources_1/imports/new/Buffer.vhd:26]
-INFO: [Synth 8-4765] Removing register instance (\buffer_exec/output_reg[29][1] ) from module (TopLevel__GC0) as it is equivalent to (\buffer2_exec/output_reg[29][1] ) and driving same net [/home/david/Documents/CR-Project/ip_repo/edit_ComputeNewCentroids_v1_0.srcs/sources_1/imports/new/Buffer.vhd:26]
-INFO: [Synth 8-4765] Removing register instance (\buffer_exec/output_reg[29][0] ) from module (TopLevel__GC0) as it is equivalent to (\buffer2_exec/output_reg[29][0] ) and driving same net [/home/david/Documents/CR-Project/ip_repo/edit_ComputeNewCentroids_v1_0.srcs/sources_1/imports/new/Buffer.vhd:26]
-INFO: [Synth 8-4765] Removing register instance (\buffer_exec/output_reg[28][31] ) from module (TopLevel__GC0) as it is equivalent to (\buffer2_exec/output_reg[28][31] ) and driving same net [/home/david/Documents/CR-Project/ip_repo/edit_ComputeNewCentroids_v1_0.srcs/sources_1/imports/new/Buffer.vhd:26]
-INFO: [Synth 8-4765] Removing register instance (\buffer_exec/output_reg[28][30] ) from module (TopLevel__GC0) as it is equivalent to (\buffer2_exec/output_reg[28][30] ) and driving same net [/home/david/Documents/CR-Project/ip_repo/edit_ComputeNewCentroids_v1_0.srcs/sources_1/imports/new/Buffer.vhd:26]
-INFO: [Synth 8-4765] Removing register instance (\buffer_exec/output_reg[28][29] ) from module (TopLevel__GC0) as it is equivalent to (\buffer2_exec/output_reg[28][29] ) and driving same net [/home/david/Documents/CR-Project/ip_repo/edit_ComputeNewCentroids_v1_0.srcs/sources_1/imports/new/Buffer.vhd:26]
-INFO: [Synth 8-4765] Removing register instance (\buffer_exec/output_reg[28][28] ) from module (TopLevel__GC0) as it is equivalent to (\buffer2_exec/output_reg[28][28] ) and driving same net [/home/david/Documents/CR-Project/ip_repo/edit_ComputeNewCentroids_v1_0.srcs/sources_1/imports/new/Buffer.vhd:26]
-INFO: [Common 17-14] Message 'Synth 8-4765' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
-INFO: [Synth 8-3886] merging instance 'TopLevel/pick_centroid_demux_gen[0].pick_centroid_x/PickSmallest/centroid_reg[2]' (FDS) to 'TopLevel/pick_centroid_demux_gen[0].pick_centroid_x/PickSmallest/centroid_reg[31]'
-INFO: [Synth 8-3886] merging instance 'TopLevel/pick_centroid_demux_gen[0].pick_centroid_x/PickSmallest/centroid_reg[3]' (FDS) to 'TopLevel/pick_centroid_demux_gen[0].pick_centroid_x/PickSmallest/centroid_reg[31]'
-INFO: [Synth 8-3886] merging instance 'TopLevel/pick_centroid_demux_gen[0].pick_centroid_x/PickSmallest/centroid_reg[4]' (FDS) to 'TopLevel/pick_centroid_demux_gen[0].pick_centroid_x/PickSmallest/centroid_reg[31]'
-INFO: [Synth 8-3886] merging instance 'TopLevel/pick_centroid_demux_gen[0].pick_centroid_x/PickSmallest/centroid_reg[13]' (FDS) to 'TopLevel/pick_centroid_demux_gen[0].pick_centroid_x/PickSmallest/centroid_reg[31]'
-INFO: [Synth 8-3886] merging instance 'TopLevel/pick_centroid_demux_gen[0].pick_centroid_x/PickSmallest/centroid_reg[14]' (FDS) to 'TopLevel/pick_centroid_demux_gen[0].pick_centroid_x/PickSmallest/centroid_reg[31]'
-INFO: [Synth 8-3886] merging instance 'TopLevel/pick_centroid_demux_gen[0].pick_centroid_x/PickSmallest/centroid_reg[15]' (FDS) to 'TopLevel/pick_centroid_demux_gen[0].pick_centroid_x/PickSmallest/centroid_reg[31]'
-INFO: [Synth 8-3886] merging instance 'TopLevel/pick_centroid_demux_gen[0].pick_centroid_x/PickSmallest/centroid_reg[16]' (FDS) to 'TopLevel/pick_centroid_demux_gen[0].pick_centroid_x/PickSmallest/centroid_reg[31]'
-INFO: [Synth 8-3886] merging instance 'TopLevel/pick_centroid_demux_gen[0].pick_centroid_x/PickSmallest/centroid_reg[21]' (FDS) to 'TopLevel/pick_centroid_demux_gen[0].pick_centroid_x/PickSmallest/centroid_reg[31]'
-INFO: [Synth 8-3886] merging instance 'TopLevel/pick_centroid_demux_gen[0].pick_centroid_x/PickSmallest/centroid_reg[22]' (FDS) to 'TopLevel/pick_centroid_demux_gen[0].pick_centroid_x/PickSmallest/centroid_reg[31]'
-INFO: [Synth 8-3886] merging instance 'TopLevel/pick_centroid_demux_gen[0].pick_centroid_x/PickSmallest/centroid_reg[23]' (FDS) to 'TopLevel/pick_centroid_demux_gen[0].pick_centroid_x/PickSmallest/centroid_reg[31]'
-INFO: [Synth 8-3886] merging instance 'TopLevel/pick_centroid_demux_gen[0].pick_centroid_x/PickSmallest/centroid_reg[24]' (FDS) to 'TopLevel/pick_centroid_demux_gen[0].pick_centroid_x/PickSmallest/centroid_reg[31]'
-INFO: [Synth 8-3886] merging instance 'TopLevel/pick_centroid_demux_gen[0].pick_centroid_x/PickSmallest/centroid_reg[31]' (FDS) to 'TopLevel/pick_centroid_demux_gen[0].pick_centroid_x/PickSmallest/centroid_reg[30]'
-INFO: [Synth 8-3886] merging instance 'TopLevel/pick_centroid_demux_gen[0].pick_centroid_x/PickSmallest/centroid_reg[30]' (FDS) to 'TopLevel/pick_centroid_demux_gen[0].pick_centroid_x/PickSmallest/centroid_reg[29]'
-INFO: [Synth 8-3886] merging instance 'TopLevel/pick_centroid_demux_gen[1].pick_centroid_x/PickSmallest/centroid_reg[2]' (FDS) to 'TopLevel/pick_centroid_demux_gen[1].pick_centroid_x/PickSmallest/centroid_reg[31]'
-INFO: [Synth 8-3886] merging instance 'TopLevel/pick_centroid_demux_gen[1].pick_centroid_x/PickSmallest/centroid_reg[3]' (FDS) to 'TopLevel/pick_centroid_demux_gen[1].pick_centroid_x/PickSmallest/centroid_reg[31]'
-INFO: [Synth 8-3886] merging instance 'TopLevel/pick_centroid_demux_gen[1].pick_centroid_x/PickSmallest/centroid_reg[4]' (FDS) to 'TopLevel/pick_centroid_demux_gen[1].pick_centroid_x/PickSmallest/centroid_reg[31]'
-INFO: [Synth 8-3886] merging instance 'TopLevel/pick_centroid_demux_gen[1].pick_centroid_x/PickSmallest/centroid_reg[13]' (FDS) to 'TopLevel/pick_centroid_demux_gen[1].pick_centroid_x/PickSmallest/centroid_reg[31]'
-INFO: [Synth 8-3886] merging instance 'TopLevel/pick_centroid_demux_gen[1].pick_centroid_x/PickSmallest/centroid_reg[14]' (FDS) to 'TopLevel/pick_centroid_demux_gen[1].pick_centroid_x/PickSmallest/centroid_reg[31]'
-INFO: [Synth 8-3886] merging instance 'TopLevel/pick_centroid_demux_gen[1].pick_centroid_x/PickSmallest/centroid_reg[15]' (FDS) to 'TopLevel/pick_centroid_demux_gen[1].pick_centroid_x/PickSmallest/centroid_reg[31]'
-INFO: [Synth 8-3886] merging instance 'TopLevel/pick_centroid_demux_gen[1].pick_centroid_x/PickSmallest/centroid_reg[16]' (FDS) to 'TopLevel/pick_centroid_demux_gen[1].pick_centroid_x/PickSmallest/centroid_reg[31]'
-INFO: [Synth 8-3886] merging instance 'TopLevel/pick_centroid_demux_gen[1].pick_centroid_x/PickSmallest/centroid_reg[21]' (FDS) to 'TopLevel/pick_centroid_demux_gen[1].pick_centroid_x/PickSmallest/centroid_reg[31]'
-INFO: [Synth 8-3886] merging instance 'TopLevel/pick_centroid_demux_gen[1].pick_centroid_x/PickSmallest/centroid_reg[22]' (FDS) to 'TopLevel/pick_centroid_demux_gen[1].pick_centroid_x/PickSmallest/centroid_reg[31]'
-INFO: [Synth 8-3886] merging instance 'TopLevel/pick_centroid_demux_gen[1].pick_centroid_x/PickSmallest/centroid_reg[23]' (FDS) to 'TopLevel/pick_centroid_demux_gen[1].pick_centroid_x/PickSmallest/centroid_reg[31]'
-INFO: [Synth 8-3886] merging instance 'TopLevel/pick_centroid_demux_gen[1].pick_centroid_x/PickSmallest/centroid_reg[24]' (FDS) to 'TopLevel/pick_centroid_demux_gen[1].pick_centroid_x/PickSmallest/centroid_reg[31]'
-INFO: [Synth 8-3886] merging instance 'TopLevel/pick_centroid_demux_gen[1].pick_centroid_x/PickSmallest/centroid_reg[31]' (FDS) to 'TopLevel/pick_centroid_demux_gen[1].pick_centroid_x/PickSmallest/centroid_reg[30]'
-INFO: [Synth 8-3886] merging instance 'TopLevel/pick_centroid_demux_gen[1].pick_centroid_x/PickSmallest/centroid_reg[30]' (FDS) to 'TopLevel/pick_centroid_demux_gen[1].pick_centroid_x/PickSmallest/centroid_reg[29]'
-INFO: [Synth 8-3886] merging instance 'TopLevel/pick_centroid_demux_gen[2].pick_centroid_x/PickSmallest/centroid_reg[2]' (FDS) to 'TopLevel/pick_centroid_demux_gen[2].pick_centroid_x/PickSmallest/centroid_reg[31]'
-INFO: [Synth 8-3886] merging instance 'TopLevel/pick_centroid_demux_gen[2].pick_centroid_x/PickSmallest/centroid_reg[3]' (FDS) to 'TopLevel/pick_centroid_demux_gen[2].pick_centroid_x/PickSmallest/centroid_reg[31]'
-INFO: [Synth 8-3886] merging instance 'TopLevel/pick_centroid_demux_gen[2].pick_centroid_x/PickSmallest/centroid_reg[4]' (FDS) to 'TopLevel/pick_centroid_demux_gen[2].pick_centroid_x/PickSmallest/centroid_reg[31]'
-INFO: [Synth 8-3886] merging instance 'TopLevel/pick_centroid_demux_gen[2].pick_centroid_x/PickSmallest/centroid_reg[13]' (FDS) to 'TopLevel/pick_centroid_demux_gen[2].pick_centroid_x/PickSmallest/centroid_reg[31]'
-INFO: [Synth 8-3886] merging instance 'TopLevel/pick_centroid_demux_gen[2].pick_centroid_x/PickSmallest/centroid_reg[14]' (FDS) to 'TopLevel/pick_centroid_demux_gen[2].pick_centroid_x/PickSmallest/centroid_reg[31]'
-INFO: [Synth 8-3886] merging instance 'TopLevel/pick_centroid_demux_gen[2].pick_centroid_x/PickSmallest/centroid_reg[15]' (FDS) to 'TopLevel/pick_centroid_demux_gen[2].pick_centroid_x/PickSmallest/centroid_reg[31]'
-INFO: [Synth 8-3886] merging instance 'TopLevel/pick_centroid_demux_gen[2].pick_centroid_x/PickSmallest/centroid_reg[16]' (FDS) to 'TopLevel/pick_centroid_demux_gen[2].pick_centroid_x/PickSmallest/centroid_reg[31]'
-INFO: [Synth 8-3886] merging instance 'TopLevel/pick_centroid_demux_gen[2].pick_centroid_x/PickSmallest/centroid_reg[21]' (FDS) to 'TopLevel/pick_centroid_demux_gen[2].pick_centroid_x/PickSmallest/centroid_reg[31]'
-INFO: [Synth 8-3886] merging instance 'TopLevel/pick_centroid_demux_gen[2].pick_centroid_x/PickSmallest/centroid_reg[22]' (FDS) to 'TopLevel/pick_centroid_demux_gen[2].pick_centroid_x/PickSmallest/centroid_reg[31]'
-INFO: [Synth 8-3886] merging instance 'TopLevel/pick_centroid_demux_gen[2].pick_centroid_x/PickSmallest/centroid_reg[23]' (FDS) to 'TopLevel/pick_centroid_demux_gen[2].pick_centroid_x/PickSmallest/centroid_reg[31]'
-INFO: [Synth 8-3886] merging instance 'TopLevel/pick_centroid_demux_gen[2].pick_centroid_x/PickSmallest/centroid_reg[24]' (FDS) to 'TopLevel/pick_centroid_demux_gen[2].pick_centroid_x/PickSmallest/centroid_reg[31]'
-INFO: [Synth 8-3886] merging instance 'TopLevel/pick_centroid_demux_gen[2].pick_centroid_x/PickSmallest/centroid_reg[31]' (FDS) to 'TopLevel/pick_centroid_demux_gen[2].pick_centroid_x/PickSmallest/centroid_reg[30]'
-INFO: [Synth 8-3886] merging instance 'TopLevel/pick_centroid_demux_gen[2].pick_centroid_x/PickSmallest/centroid_reg[30]' (FDS) to 'TopLevel/pick_centroid_demux_gen[2].pick_centroid_x/PickSmallest/centroid_reg[29]'
-INFO: [Synth 8-3886] merging instance 'TopLevel/pick_centroid_demux_gen[0].pick_centroid_x/PickSmallest/centroid_reg[8]' (FDS) to 'TopLevel/pick_centroid_demux_gen[0].pick_centroid_x/PickSmallest/centroid_reg[29]'
-INFO: [Synth 8-3886] merging instance 'TopLevel/pick_centroid_demux_gen[0].pick_centroid_x/PickSmallest/centroid_reg[7]' (FDS) to 'TopLevel/pick_centroid_demux_gen[0].pick_centroid_x/PickSmallest/centroid_reg[29]'
-INFO: [Synth 8-3886] merging instance 'TopLevel/pick_centroid_demux_gen[0].pick_centroid_x/PickSmallest/centroid_reg[6]' (FDS) to 'TopLevel/pick_centroid_demux_gen[0].pick_centroid_x/PickSmallest/centroid_reg[29]'
-INFO: [Synth 8-3886] merging instance 'TopLevel/pick_centroid_demux_gen[0].pick_centroid_x/PickSmallest/centroid_reg[5]' (FDS) to 'TopLevel/pick_centroid_demux_gen[0].pick_centroid_x/PickSmallest/centroid_reg[29]'
-INFO: [Synth 8-3886] merging instance 'TopLevel/pick_centroid_demux_gen[0].pick_centroid_x/PickSmallest/centroid_reg[12]' (FDS) to 'TopLevel/pick_centroid_demux_gen[0].pick_centroid_x/PickSmallest/centroid_reg[29]'
-INFO: [Synth 8-3886] merging instance 'TopLevel/pick_centroid_demux_gen[0].pick_centroid_x/PickSmallest/centroid_reg[11]' (FDS) to 'TopLevel/pick_centroid_demux_gen[0].pick_centroid_x/PickSmallest/centroid_reg[29]'
-INFO: [Synth 8-3886] merging instance 'TopLevel/pick_centroid_demux_gen[0].pick_centroid_x/PickSmallest/centroid_reg[10]' (FDS) to 'TopLevel/pick_centroid_demux_gen[0].pick_centroid_x/PickSmallest/centroid_reg[29]'
-INFO: [Synth 8-3886] merging instance 'TopLevel/pick_centroid_demux_gen[0].pick_centroid_x/PickSmallest/centroid_reg[9]' (FDS) to 'TopLevel/pick_centroid_demux_gen[0].pick_centroid_x/PickSmallest/centroid_reg[29]'
-INFO: [Synth 8-3886] merging instance 'TopLevel/pick_centroid_demux_gen[0].pick_centroid_x/PickSmallest/centroid_reg[20]' (FDS) to 'TopLevel/pick_centroid_demux_gen[0].pick_centroid_x/PickSmallest/centroid_reg[29]'
-INFO: [Synth 8-3886] merging instance 'TopLevel/pick_centroid_demux_gen[0].pick_centroid_x/PickSmallest/centroid_reg[19]' (FDS) to 'TopLevel/pick_centroid_demux_gen[0].pick_centroid_x/PickSmallest/centroid_reg[29]'
-INFO: [Synth 8-3886] merging instance 'TopLevel/pick_centroid_demux_gen[0].pick_centroid_x/PickSmallest/centroid_reg[18]' (FDS) to 'TopLevel/pick_centroid_demux_gen[0].pick_centroid_x/PickSmallest/centroid_reg[29]'
-INFO: [Synth 8-3886] merging instance 'TopLevel/pick_centroid_demux_gen[0].pick_centroid_x/PickSmallest/centroid_reg[17]' (FDS) to 'TopLevel/pick_centroid_demux_gen[0].pick_centroid_x/PickSmallest/centroid_reg[29]'
-INFO: [Synth 8-3886] merging instance 'TopLevel/pick_centroid_demux_gen[0].pick_centroid_x/PickSmallest/centroid_reg[29]' (FDS) to 'TopLevel/pick_centroid_demux_gen[0].pick_centroid_x/PickSmallest/centroid_reg[28]'
-INFO: [Synth 8-3886] merging instance 'TopLevel/pick_centroid_demux_gen[0].pick_centroid_x/PickSmallest/centroid_reg[28]' (FDS) to 'TopLevel/pick_centroid_demux_gen[0].pick_centroid_x/PickSmallest/centroid_reg[27]'
-INFO: [Synth 8-3886] merging instance 'TopLevel/pick_centroid_demux_gen[0].pick_centroid_x/PickSmallest/centroid_reg[27]' (FDS) to 'TopLevel/pick_centroid_demux_gen[0].pick_centroid_x/PickSmallest/centroid_reg[26]'
-INFO: [Synth 8-3886] merging instance 'TopLevel/pick_centroid_demux_gen[0].pick_centroid_x/PickSmallest/centroid_reg[26]' (FDS) to 'TopLevel/pick_centroid_demux_gen[0].pick_centroid_x/PickSmallest/centroid_reg[25]'
-INFO: [Synth 8-3886] merging instance 'TopLevel/pick_centroid_demux_gen[1].pick_centroid_x/PickSmallest/centroid_reg[8]' (FDS) to 'TopLevel/pick_centroid_demux_gen[1].pick_centroid_x/PickSmallest/centroid_reg[29]'
-INFO: [Synth 8-3886] merging instance 'TopLevel/pick_centroid_demux_gen[1].pick_centroid_x/PickSmallest/centroid_reg[7]' (FDS) to 'TopLevel/pick_centroid_demux_gen[1].pick_centroid_x/PickSmallest/centroid_reg[29]'
-INFO: [Synth 8-3886] merging instance 'TopLevel/pick_centroid_demux_gen[1].pick_centroid_x/PickSmallest/centroid_reg[6]' (FDS) to 'TopLevel/pick_centroid_demux_gen[1].pick_centroid_x/PickSmallest/centroid_reg[29]'
-INFO: [Synth 8-3886] merging instance 'TopLevel/pick_centroid_demux_gen[1].pick_centroid_x/PickSmallest/centroid_reg[5]' (FDS) to 'TopLevel/pick_centroid_demux_gen[1].pick_centroid_x/PickSmallest/centroid_reg[29]'
-INFO: [Synth 8-3886] merging instance 'TopLevel/pick_centroid_demux_gen[1].pick_centroid_x/PickSmallest/centroid_reg[12]' (FDS) to 'TopLevel/pick_centroid_demux_gen[1].pick_centroid_x/PickSmallest/centroid_reg[29]'
-INFO: [Synth 8-3886] merging instance 'TopLevel/pick_centroid_demux_gen[1].pick_centroid_x/PickSmallest/centroid_reg[11]' (FDS) to 'TopLevel/pick_centroid_demux_gen[1].pick_centroid_x/PickSmallest/centroid_reg[29]'
-INFO: [Synth 8-3886] merging instance 'TopLevel/pick_centroid_demux_gen[1].pick_centroid_x/PickSmallest/centroid_reg[10]' (FDS) to 'TopLevel/pick_centroid_demux_gen[1].pick_centroid_x/PickSmallest/centroid_reg[29]'
-INFO: [Synth 8-3886] merging instance 'TopLevel/pick_centroid_demux_gen[1].pick_centroid_x/PickSmallest/centroid_reg[9]' (FDS) to 'TopLevel/pick_centroid_demux_gen[1].pick_centroid_x/PickSmallest/centroid_reg[29]'
-INFO: [Synth 8-3886] merging instance 'TopLevel/pick_centroid_demux_gen[1].pick_centroid_x/PickSmallest/centroid_reg[20]' (FDS) to 'TopLevel/pick_centroid_demux_gen[1].pick_centroid_x/PickSmallest/centroid_reg[29]'
-INFO: [Synth 8-3886] merging instance 'TopLevel/pick_centroid_demux_gen[1].pick_centroid_x/PickSmallest/centroid_reg[19]' (FDS) to 'TopLevel/pick_centroid_demux_gen[1].pick_centroid_x/PickSmallest/centroid_reg[29]'
-INFO: [Synth 8-3886] merging instance 'TopLevel/pick_centroid_demux_gen[1].pick_centroid_x/PickSmallest/centroid_reg[18]' (FDS) to 'TopLevel/pick_centroid_demux_gen[1].pick_centroid_x/PickSmallest/centroid_reg[29]'
-INFO: [Synth 8-3886] merging instance 'TopLevel/pick_centroid_demux_gen[1].pick_centroid_x/PickSmallest/centroid_reg[17]' (FDS) to 'TopLevel/pick_centroid_demux_gen[1].pick_centroid_x/PickSmallest/centroid_reg[29]'
-INFO: [Synth 8-3886] merging instance 'TopLevel/pick_centroid_demux_gen[1].pick_centroid_x/PickSmallest/centroid_reg[29]' (FDS) to 'TopLevel/pick_centroid_demux_gen[1].pick_centroid_x/PickSmallest/centroid_reg[28]'
-INFO: [Synth 8-3886] merging instance 'TopLevel/pick_centroid_demux_gen[1].pick_centroid_x/PickSmallest/centroid_reg[28]' (FDS) to 'TopLevel/pick_centroid_demux_gen[1].pick_centroid_x/PickSmallest/centroid_reg[27]'
-INFO: [Synth 8-3886] merging instance 'TopLevel/pick_centroid_demux_gen[1].pick_centroid_x/PickSmallest/centroid_reg[27]' (FDS) to 'TopLevel/pick_centroid_demux_gen[1].pick_centroid_x/PickSmallest/centroid_reg[26]'
-INFO: [Synth 8-3886] merging instance 'TopLevel/pick_centroid_demux_gen[1].pick_centroid_x/PickSmallest/centroid_reg[26]' (FDS) to 'TopLevel/pick_centroid_demux_gen[1].pick_centroid_x/PickSmallest/centroid_reg[25]'
-INFO: [Synth 8-3886] merging instance 'TopLevel/pick_centroid_demux_gen[2].pick_centroid_x/PickSmallest/centroid_reg[8]' (FDS) to 'TopLevel/pick_centroid_demux_gen[2].pick_centroid_x/PickSmallest/centroid_reg[29]'
-INFO: [Synth 8-3886] merging instance 'TopLevel/pick_centroid_demux_gen[2].pick_centroid_x/PickSmallest/centroid_reg[7]' (FDS) to 'TopLevel/pick_centroid_demux_gen[2].pick_centroid_x/PickSmallest/centroid_reg[29]'
-INFO: [Synth 8-3886] merging instance 'TopLevel/pick_centroid_demux_gen[2].pick_centroid_x/PickSmallest/centroid_reg[6]' (FDS) to 'TopLevel/pick_centroid_demux_gen[2].pick_centroid_x/PickSmallest/centroid_reg[29]'
-INFO: [Synth 8-3886] merging instance 'TopLevel/pick_centroid_demux_gen[2].pick_centroid_x/PickSmallest/centroid_reg[5]' (FDS) to 'TopLevel/pick_centroid_demux_gen[2].pick_centroid_x/PickSmallest/centroid_reg[29]'
-INFO: [Synth 8-3886] merging instance 'TopLevel/pick_centroid_demux_gen[2].pick_centroid_x/PickSmallest/centroid_reg[12]' (FDS) to 'TopLevel/pick_centroid_demux_gen[2].pick_centroid_x/PickSmallest/centroid_reg[29]'
-INFO: [Synth 8-3886] merging instance 'TopLevel/pick_centroid_demux_gen[2].pick_centroid_x/PickSmallest/centroid_reg[11]' (FDS) to 'TopLevel/pick_centroid_demux_gen[2].pick_centroid_x/PickSmallest/centroid_reg[29]'
-INFO: [Synth 8-3886] merging instance 'TopLevel/pick_centroid_demux_gen[2].pick_centroid_x/PickSmallest/centroid_reg[10]' (FDS) to 'TopLevel/pick_centroid_demux_gen[2].pick_centroid_x/PickSmallest/centroid_reg[29]'
-INFO: [Synth 8-3886] merging instance 'TopLevel/pick_centroid_demux_gen[2].pick_centroid_x/PickSmallest/centroid_reg[9]' (FDS) to 'TopLevel/pick_centroid_demux_gen[2].pick_centroid_x/PickSmallest/centroid_reg[29]'
-INFO: [Synth 8-3886] merging instance 'TopLevel/pick_centroid_demux_gen[2].pick_centroid_x/PickSmallest/centroid_reg[20]' (FDS) to 'TopLevel/pick_centroid_demux_gen[2].pick_centroid_x/PickSmallest/centroid_reg[29]'
-INFO: [Synth 8-3886] merging instance 'TopLevel/pick_centroid_demux_gen[2].pick_centroid_x/PickSmallest/centroid_reg[19]' (FDS) to 'TopLevel/pick_centroid_demux_gen[2].pick_centroid_x/PickSmallest/centroid_reg[29]'
-INFO: [Synth 8-3886] merging instance 'TopLevel/pick_centroid_demux_gen[2].pick_centroid_x/PickSmallest/centroid_reg[18]' (FDS) to 'TopLevel/pick_centroid_demux_gen[2].pick_centroid_x/PickSmallest/centroid_reg[29]'
-INFO: [Synth 8-3886] merging instance 'TopLevel/pick_centroid_demux_gen[2].pick_centroid_x/PickSmallest/centroid_reg[17]' (FDS) to 'TopLevel/pick_centroid_demux_gen[2].pick_centroid_x/PickSmallest/centroid_reg[29]'
-INFO: [Synth 8-3886] merging instance 'TopLevel/pick_centroid_demux_gen[2].pick_centroid_x/PickSmallest/centroid_reg[29]' (FDS) to 'TopLevel/pick_centroid_demux_gen[2].pick_centroid_x/PickSmallest/centroid_reg[28]'
-INFO: [Synth 8-3886] merging instance 'TopLevel/pick_centroid_demux_gen[2].pick_centroid_x/PickSmallest/centroid_reg[28]' (FDS) to 'TopLevel/pick_centroid_demux_gen[2].pick_centroid_x/PickSmallest/centroid_reg[27]'
-INFO: [Synth 8-3886] merging instance 'TopLevel/pick_centroid_demux_gen[2].pick_centroid_x/PickSmallest/centroid_reg[27]' (FDS) to 'TopLevel/pick_centroid_demux_gen[2].pick_centroid_x/PickSmallest/centroid_reg[26]'
-INFO: [Synth 8-3886] merging instance 'TopLevel/pick_centroid_demux_gen[2].pick_centroid_x/PickSmallest/centroid_reg[26]' (FDS) to 'TopLevel/pick_centroid_demux_gen[2].pick_centroid_x/PickSmallest/centroid_reg[25]'
-INFO: [Synth 8-3886] merging instance 'TopLevel/pick_centroid_demux_gen[3].pick_centroid_x/PickSmallest/centroid_reg[2]' (FDS) to 'TopLevel/pick_centroid_demux_gen[3].pick_centroid_x/PickSmallest/centroid_reg[31]'
-INFO: [Synth 8-3886] merging instance 'TopLevel/pick_centroid_demux_gen[3].pick_centroid_x/PickSmallest/centroid_reg[3]' (FDS) to 'TopLevel/pick_centroid_demux_gen[3].pick_centroid_x/PickSmallest/centroid_reg[31]'
-INFO: [Synth 8-3886] merging instance 'TopLevel/pick_centroid_demux_gen[3].pick_centroid_x/PickSmallest/centroid_reg[4]' (FDS) to 'TopLevel/pick_centroid_demux_gen[3].pick_centroid_x/PickSmallest/centroid_reg[31]'
-INFO: [Synth 8-3886] merging instance 'TopLevel/pick_centroid_demux_gen[3].pick_centroid_x/PickSmallest/centroid_reg[13]' (FDS) to 'TopLevel/pick_centroid_demux_gen[3].pick_centroid_x/PickSmallest/centroid_reg[31]'
-INFO: [Synth 8-3886] merging instance 'TopLevel/pick_centroid_demux_gen[3].pick_centroid_x/PickSmallest/centroid_reg[14]' (FDS) to 'TopLevel/pick_centroid_demux_gen[3].pick_centroid_x/PickSmallest/centroid_reg[31]'
-INFO: [Synth 8-3886] merging instance 'TopLevel/pick_centroid_demux_gen[3].pick_centroid_x/PickSmallest/centroid_reg[15]' (FDS) to 'TopLevel/pick_centroid_demux_gen[3].pick_centroid_x/PickSmallest/centroid_reg[31]'
-INFO: [Synth 8-3886] merging instance 'TopLevel/pick_centroid_demux_gen[3].pick_centroid_x/PickSmallest/centroid_reg[16]' (FDS) to 'TopLevel/pick_centroid_demux_gen[3].pick_centroid_x/PickSmallest/centroid_reg[31]'
-INFO: [Synth 8-3886] merging instance 'TopLevel/pick_centroid_demux_gen[3].pick_centroid_x/PickSmallest/centroid_reg[21]' (FDS) to 'TopLevel/pick_centroid_demux_gen[3].pick_centroid_x/PickSmallest/centroid_reg[31]'
-INFO: [Synth 8-3886] merging instance 'TopLevel/pick_centroid_demux_gen[3].pick_centroid_x/PickSmallest/centroid_reg[22]' (FDS) to 'TopLevel/pick_centroid_demux_gen[3].pick_centroid_x/PickSmallest/centroid_reg[31]'
-INFO: [Synth 8-3886] merging instance 'TopLevel/pick_centroid_demux_gen[3].pick_centroid_x/PickSmallest/centroid_reg[23]' (FDS) to 'TopLevel/pick_centroid_demux_gen[3].pick_centroid_x/PickSmallest/centroid_reg[31]'
-INFO: [Synth 8-3886] merging instance 'TopLevel/pick_centroid_demux_gen[3].pick_centroid_x/PickSmallest/centroid_reg[24]' (FDS) to 'TopLevel/pick_centroid_demux_gen[3].pick_centroid_x/PickSmallest/centroid_reg[31]'
-INFO: [Synth 8-3886] merging instance 'TopLevel/pick_centroid_demux_gen[3].pick_centroid_x/PickSmallest/centroid_reg[31]' (FDS) to 'TopLevel/pick_centroid_demux_gen[3].pick_centroid_x/PickSmallest/centroid_reg[30]'
-INFO: [Synth 8-3886] merging instance 'TopLevel/pick_centroid_demux_gen[3].pick_centroid_x/PickSmallest/centroid_reg[30]' (FDS) to 'TopLevel/pick_centroid_demux_gen[3].pick_centroid_x/PickSmallest/centroid_reg[29]'
-INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:01:06 ; elapsed = 00:01:01 . Memory (MB): peak = 1636.809 ; gain = 438.414 ; free physical = 2229 ; free virtual = 11276
+Finished Technology Mapping : Time (s): cpu = 00:01:08 ; elapsed = 00:01:04 . Memory (MB): peak = 1594.816 ; gain = 396.422 ; free physical = 842 ; free virtual = 10618
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -698,7 +655,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:01:10 ; elapsed = 00:01:05 . Memory (MB): peak = 1636.809 ; gain = 438.414 ; free physical = 2228 ; free virtual = 11274
+Finished IO Insertion : Time (s): cpu = 00:01:09 ; elapsed = 00:01:05 . Memory (MB): peak = 1594.816 ; gain = 396.422 ; free physical = 843 ; free virtual = 10619
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -711,7 +668,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:01:11 ; elapsed = 00:01:06 . Memory (MB): peak = 1636.809 ; gain = 438.414 ; free physical = 2229 ; free virtual = 11275
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:09 ; elapsed = 00:01:05 . Memory (MB): peak = 1594.816 ; gain = 396.422 ; free physical = 843 ; free virtual = 10619
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -723,25 +680,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:16 ; elapsed = 00:01:11 . Memory (MB): peak = 1636.809 ; gain = 438.414 ; free physical = 2210 ; free virtual = 11257
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:09 ; elapsed = 00:01:05 . Memory (MB): peak = 1594.816 ; gain = 396.422 ; free physical = 843 ; free virtual = 10619
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:01:26 ; elapsed = 00:01:21 . Memory (MB): peak = 1636.809 ; gain = 438.414 ; free physical = 2226 ; free virtual = 11276
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:09 ; elapsed = 00:01:05 . Memory (MB): peak = 1594.816 ; gain = 396.422 ; free physical = 843 ; free virtual = 10619
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:01:27 ; elapsed = 00:01:22 . Memory (MB): peak = 1636.809 ; gain = 438.414 ; free physical = 2243 ; free virtual = 11275
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:09 ; elapsed = 00:01:05 . Memory (MB): peak = 1594.816 ; gain = 396.422 ; free physical = 843 ; free virtual = 10619
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:01:27 ; elapsed = 00:01:23 . Memory (MB): peak = 1636.809 ; gain = 438.414 ; free physical = 2243 ; free virtual = 11276
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:09 ; elapsed = 00:01:05 . Memory (MB): peak = 1594.816 ; gain = 396.422 ; free physical = 843 ; free virtual = 10619
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -754,157 +711,35 @@ Report BlackBoxes:
 +-+--------------+----------+
 
 Report Cell Usage: 
-+------+-------+------+
-|      |Cell   |Count |
-+------+-------+------+
-|1     |BUFG   |    12|
-|2     |CARRY4 |  7177|
-|3     |LUT1   |  4899|
-|4     |LUT2   | 10023|
-|5     |LUT3   |  4397|
-|6     |LUT4   |  2978|
-|7     |LUT5   | 12105|
-|8     |LUT6   |  8986|
-|9     |MUXF7  |    32|
-|10    |FDRE   |  3919|
-|11    |FDSE   |    48|
-|12    |LD     |  1372|
-|13    |IBUF   |    38|
-|14    |OBUF   |    39|
-+------+-------+------+
++------+-----+------+
+|      |Cell |Count |
++------+-----+------+
+|1     |OBUF |    39|
++------+-----+------+
 
 Report Instance Areas: 
-+------+----------------------------------------------------+------------------------------+------+
-|      |Instance                                            |Module                        |Cells |
-+------+----------------------------------------------------+------------------------------+------+
-|1     |top                                                 |                              | 56025|
-|2     |  StreamCopIPCore_v1_0_M00_AXIS_inst                |StreamCopIPCore_v1_0_M00_AXIS |    71|
-|3     |  StreamCopIPCore_v1_0_S00_AXIS_inst                |StreamCopIPCore_v1_0_S00_AXIS | 12843|
-|4     |  TopLevel                                          |TopLevel                      | 40282|
-|5     |    buffer2_exec                                    |Buffer_imp                    |  3949|
-|6     |    buffer_exec                                     |Buffer_imp_0                  |     9|
-|7     |    \parallel_sum_gen[0].parallel_sum_x             |ParallelSum                   |   866|
-|8     |    \parallel_sum_gen[1].parallel_sum_x             |ParallelSum_1                 |   866|
-|9     |    \parallel_sum_gen[2].parallel_sum_x             |ParallelSum_2                 |   930|
-|10    |    \parallel_sum_gen[3].parallel_sum_x             |ParallelSum_3                 |   898|
-|11    |    \pick_centroid_demux_gen[0].pick_centroid_x     |PickCentroid                  |  1336|
-|12    |      \EuclideanDistance_GEN[0].EuclideanDistanceX  |EuclideanDistance_92          |    65|
-|13    |      \EuclideanDistance_GEN[1].EuclideanDistanceX  |EuclideanDistance_93          |    65|
-|14    |      \EuclideanDistance_GEN[2].EuclideanDistanceX  |EuclideanDistance_94          |    65|
-|15    |      \EuclideanDistance_GEN[3].EuclideanDistanceX  |EuclideanDistance_95          |    65|
-|16    |      PickSmallest                                  |PickSmallest_96               |   488|
-|17    |    \pick_centroid_demux_gen[10].pick_centroid_x    |PickCentroid_4                |  1473|
-|18    |      \EuclideanDistance_GEN[0].EuclideanDistanceX  |EuclideanDistance_87          |    65|
-|19    |      \EuclideanDistance_GEN[1].EuclideanDistanceX  |EuclideanDistance_88          |    65|
-|20    |      \EuclideanDistance_GEN[2].EuclideanDistanceX  |EuclideanDistance_89          |    65|
-|21    |      \EuclideanDistance_GEN[3].EuclideanDistanceX  |EuclideanDistance_90          |    65|
-|22    |      PickSmallest                                  |PickSmallest_91               |   625|
-|23    |    \pick_centroid_demux_gen[11].pick_centroid_x    |PickCentroid_5                |  1325|
-|24    |      \EuclideanDistance_GEN[0].EuclideanDistanceX  |EuclideanDistance_82          |    65|
-|25    |      \EuclideanDistance_GEN[1].EuclideanDistanceX  |EuclideanDistance_83          |    65|
-|26    |      \EuclideanDistance_GEN[2].EuclideanDistanceX  |EuclideanDistance_84          |    65|
-|27    |      \EuclideanDistance_GEN[3].EuclideanDistanceX  |EuclideanDistance_85          |    65|
-|28    |      PickSmallest                                  |PickSmallest_86               |   477|
-|29    |    \pick_centroid_demux_gen[12].pick_centroid_x    |PickCentroid_6                |  1449|
-|30    |      \EuclideanDistance_GEN[0].EuclideanDistanceX  |EuclideanDistance_77          |    65|
-|31    |      \EuclideanDistance_GEN[1].EuclideanDistanceX  |EuclideanDistance_78          |    65|
-|32    |      \EuclideanDistance_GEN[2].EuclideanDistanceX  |EuclideanDistance_79          |    65|
-|33    |      \EuclideanDistance_GEN[3].EuclideanDistanceX  |EuclideanDistance_80          |    65|
-|34    |      PickSmallest                                  |PickSmallest_81               |   601|
-|35    |    \pick_centroid_demux_gen[13].pick_centroid_x    |PickCentroid_7                |  9828|
-|36    |      \EuclideanDistance_GEN[0].EuclideanDistanceX  |EuclideanDistance_72          |    65|
-|37    |      \EuclideanDistance_GEN[1].EuclideanDistanceX  |EuclideanDistance_73          |    65|
-|38    |      \EuclideanDistance_GEN[2].EuclideanDistanceX  |EuclideanDistance_74          |    65|
-|39    |      \EuclideanDistance_GEN[3].EuclideanDistanceX  |EuclideanDistance_75          |    65|
-|40    |      PickSmallest                                  |PickSmallest_76               |  8980|
-|41    |    \pick_centroid_demux_gen[14].pick_centroid_x    |PickCentroid_8                |  1456|
-|42    |      \EuclideanDistance_GEN[0].EuclideanDistanceX  |EuclideanDistance_67          |    65|
-|43    |      \EuclideanDistance_GEN[1].EuclideanDistanceX  |EuclideanDistance_68          |    65|
-|44    |      \EuclideanDistance_GEN[2].EuclideanDistanceX  |EuclideanDistance_69          |    65|
-|45    |      \EuclideanDistance_GEN[3].EuclideanDistanceX  |EuclideanDistance_70          |    65|
-|46    |      PickSmallest                                  |PickSmallest_71               |   608|
-|47    |    \pick_centroid_demux_gen[15].pick_centroid_x    |PickCentroid_9                |  1209|
-|48    |      \EuclideanDistance_GEN[0].EuclideanDistanceX  |EuclideanDistance_62          |    65|
-|49    |      \EuclideanDistance_GEN[1].EuclideanDistanceX  |EuclideanDistance_63          |    65|
-|50    |      \EuclideanDistance_GEN[2].EuclideanDistanceX  |EuclideanDistance_64          |    65|
-|51    |      \EuclideanDistance_GEN[3].EuclideanDistanceX  |EuclideanDistance_65          |    65|
-|52    |      PickSmallest                                  |PickSmallest_66               |   361|
-|53    |    \pick_centroid_demux_gen[1].pick_centroid_x     |PickCentroid_10               |  1599|
-|54    |      \EuclideanDistance_GEN[0].EuclideanDistanceX  |EuclideanDistance_57          |    65|
-|55    |      \EuclideanDistance_GEN[1].EuclideanDistanceX  |EuclideanDistance_58          |    65|
-|56    |      \EuclideanDistance_GEN[2].EuclideanDistanceX  |EuclideanDistance_59          |    65|
-|57    |      \EuclideanDistance_GEN[3].EuclideanDistanceX  |EuclideanDistance_60          |    65|
-|58    |      PickSmallest                                  |PickSmallest_61               |   751|
-|59    |    \pick_centroid_demux_gen[2].pick_centroid_x     |PickCentroid_11               |  1700|
-|60    |      \EuclideanDistance_GEN[0].EuclideanDistanceX  |EuclideanDistance_52          |    65|
-|61    |      \EuclideanDistance_GEN[1].EuclideanDistanceX  |EuclideanDistance_53          |    65|
-|62    |      \EuclideanDistance_GEN[2].EuclideanDistanceX  |EuclideanDistance_54          |    65|
-|63    |      \EuclideanDistance_GEN[3].EuclideanDistanceX  |EuclideanDistance_55          |    65|
-|64    |      PickSmallest                                  |PickSmallest_56               |   852|
-|65    |    \pick_centroid_demux_gen[3].pick_centroid_x     |PickCentroid_12               |  1224|
-|66    |      \EuclideanDistance_GEN[0].EuclideanDistanceX  |EuclideanDistance_47          |    65|
-|67    |      \EuclideanDistance_GEN[1].EuclideanDistanceX  |EuclideanDistance_48          |    65|
-|68    |      \EuclideanDistance_GEN[2].EuclideanDistanceX  |EuclideanDistance_49          |    65|
-|69    |      \EuclideanDistance_GEN[3].EuclideanDistanceX  |EuclideanDistance_50          |    65|
-|70    |      PickSmallest                                  |PickSmallest_51               |   376|
-|71    |    \pick_centroid_demux_gen[4].pick_centroid_x     |PickCentroid_13               |  1600|
-|72    |      \EuclideanDistance_GEN[0].EuclideanDistanceX  |EuclideanDistance_42          |    65|
-|73    |      \EuclideanDistance_GEN[1].EuclideanDistanceX  |EuclideanDistance_43          |    65|
-|74    |      \EuclideanDistance_GEN[2].EuclideanDistanceX  |EuclideanDistance_44          |    65|
-|75    |      \EuclideanDistance_GEN[3].EuclideanDistanceX  |EuclideanDistance_45          |    65|
-|76    |      PickSmallest                                  |PickSmallest_46               |   752|
-|77    |    \pick_centroid_demux_gen[5].pick_centroid_x     |PickCentroid_14               |  1228|
-|78    |      \EuclideanDistance_GEN[0].EuclideanDistanceX  |EuclideanDistance_37          |    65|
-|79    |      \EuclideanDistance_GEN[1].EuclideanDistanceX  |EuclideanDistance_38          |    65|
-|80    |      \EuclideanDistance_GEN[2].EuclideanDistanceX  |EuclideanDistance_39          |    65|
-|81    |      \EuclideanDistance_GEN[3].EuclideanDistanceX  |EuclideanDistance_40          |    65|
-|82    |      PickSmallest                                  |PickSmallest_41               |   380|
-|83    |    \pick_centroid_demux_gen[6].pick_centroid_x     |PickCentroid_15               |  1612|
-|84    |      \EuclideanDistance_GEN[0].EuclideanDistanceX  |EuclideanDistance_32          |    65|
-|85    |      \EuclideanDistance_GEN[1].EuclideanDistanceX  |EuclideanDistance_33          |    65|
-|86    |      \EuclideanDistance_GEN[2].EuclideanDistanceX  |EuclideanDistance_34          |    65|
-|87    |      \EuclideanDistance_GEN[3].EuclideanDistanceX  |EuclideanDistance_35          |    65|
-|88    |      PickSmallest                                  |PickSmallest_36               |   764|
-|89    |    \pick_centroid_demux_gen[7].pick_centroid_x     |PickCentroid_16               |  2908|
-|90    |      \EuclideanDistance_GEN[0].EuclideanDistanceX  |EuclideanDistance_27          |    65|
-|91    |      \EuclideanDistance_GEN[1].EuclideanDistanceX  |EuclideanDistance_28          |    65|
-|92    |      \EuclideanDistance_GEN[2].EuclideanDistanceX  |EuclideanDistance_29          |    65|
-|93    |      \EuclideanDistance_GEN[3].EuclideanDistanceX  |EuclideanDistance_30          |    65|
-|94    |      PickSmallest                                  |PickSmallest_31               |  2060|
-|95    |    \pick_centroid_demux_gen[8].pick_centroid_x     |PickCentroid_17               |  1596|
-|96    |      \EuclideanDistance_GEN[0].EuclideanDistanceX  |EuclideanDistance_22          |    65|
-|97    |      \EuclideanDistance_GEN[1].EuclideanDistanceX  |EuclideanDistance_23          |    65|
-|98    |      \EuclideanDistance_GEN[2].EuclideanDistanceX  |EuclideanDistance_24          |    65|
-|99    |      \EuclideanDistance_GEN[3].EuclideanDistanceX  |EuclideanDistance_25          |    65|
-|100   |      PickSmallest                                  |PickSmallest_26               |   748|
-|101   |    \pick_centroid_demux_gen[9].pick_centroid_x     |PickCentroid_18               |  1221|
-|102   |      \EuclideanDistance_GEN[0].EuclideanDistanceX  |EuclideanDistance             |    65|
-|103   |      \EuclideanDistance_GEN[1].EuclideanDistanceX  |EuclideanDistance_19          |    65|
-|104   |      \EuclideanDistance_GEN[2].EuclideanDistanceX  |EuclideanDistance_20          |    65|
-|105   |      \EuclideanDistance_GEN[3].EuclideanDistanceX  |EuclideanDistance_21          |    65|
-|106   |      PickSmallest                                  |PickSmallest                  |   373|
-+------+----------------------------------------------------+------------------------------+------+
++------+---------+-------+------+
+|      |Instance |Module |Cells |
++------+---------+-------+------+
+|1     |top      |       |    39|
++------+---------+-------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:01:27 ; elapsed = 00:01:23 . Memory (MB): peak = 1636.809 ; gain = 438.414 ; free physical = 2243 ; free virtual = 11276
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:09 ; elapsed = 00:01:05 . Memory (MB): peak = 1594.816 ; gain = 396.422 ; free physical = 843 ; free virtual = 10619
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 46 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:01:27 ; elapsed = 00:01:23 . Memory (MB): peak = 1636.809 ; gain = 438.414 ; free physical = 2244 ; free virtual = 11277
-Synthesis Optimization Complete : Time (s): cpu = 00:01:27 ; elapsed = 00:01:23 . Memory (MB): peak = 1636.816 ; gain = 438.414 ; free physical = 2244 ; free virtual = 11277
+Synthesis finished with 0 errors, 0 critical warnings and 1409 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:01:09 ; elapsed = 00:01:05 . Memory (MB): peak = 1594.816 ; gain = 396.422 ; free physical = 845 ; free virtual = 10621
+Synthesis Optimization Complete : Time (s): cpu = 00:01:09 ; elapsed = 00:01:05 . Memory (MB): peak = 1594.824 ; gain = 396.422 ; free physical = 845 ; free virtual = 10621
 INFO: [Project 1-571] Translating synthesized netlist
-INFO: [Netlist 29-17] Analyzing 8619 Unisim elements for replacement
-INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
 INFO: [Project 1-111] Unisim Transformation Summary:
-  A total of 1372 instances were transformed.
-  LD => LDCE: 1372 instances
+No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
-306 Infos, 46 Warnings, 0 Critical Warnings and 0 Errors encountered.
+199 Infos, 112 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:01:45 ; elapsed = 00:01:40 . Memory (MB): peak = 1793.980 ; gain = 608.961 ; free physical = 2139 ; free virtual = 11171
+synth_design: Time (s): cpu = 00:01:12 ; elapsed = 00:01:47 . Memory (MB): peak = 1601.074 ; gain = 416.055 ; free physical = 602 ; free virtual = 10408
 INFO: [Common 17-1381] The checkpoint '/home/david/Documents/CR-Project/ip_repo/edit_ComputeNewCentroids_v1_0.runs/synth_1/StreamCopIPCore_v1_0.dcp' has been generated.
-write_checkpoint: Time (s): cpu = 00:00:18 ; elapsed = 00:00:20 . Memory (MB): peak = 1817.992 ; gain = 24.012 ; free physical = 2099 ; free virtual = 11147
 INFO: [runtcl-4] Executing : report_utilization -file StreamCopIPCore_v1_0_utilization_synth.rpt -pb StreamCopIPCore_v1_0_utilization_synth.pb
-report_utilization: Time (s): cpu = 00:00:00.32 ; elapsed = 00:00:00.36 . Memory (MB): peak = 1817.992 ; gain = 0.000 ; free physical = 2096 ; free virtual = 11144
-INFO: [Common 17-206] Exiting Vivado at Sat Jun  2 20:24:11 2018...
+report_utilization: Time (s): cpu = 00:00:00.07 ; elapsed = 00:00:00.10 . Memory (MB): peak = 1624.973 ; gain = 0.000 ; free physical = 603 ; free virtual = 10409
+INFO: [Common 17-206] Exiting Vivado at Sun Jun  3 18:56:14 2018...

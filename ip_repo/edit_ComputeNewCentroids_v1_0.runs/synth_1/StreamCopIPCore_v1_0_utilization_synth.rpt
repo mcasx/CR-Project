@@ -1,7 +1,7 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2017.4 (lin64) Build 2086221 Fri Dec 15 20:54:30 MST 2017
-| Date         : Sat Jun  2 20:24:11 2018
+| Date         : Sun Jun  3 18:56:14 2018
 | Host         : david-Lenovo-U31-70 running 64-bit elementary OS 0.4.1 Loki
 | Command      : report_utilization -file StreamCopIPCore_v1_0_utilization_synth.rpt -pb StreamCopIPCore_v1_0_utilization_synth.pb
 | Design       : StreamCopIPCore_v1_0
@@ -27,18 +27,18 @@ Table of Contents
 1. Slice Logic
 --------------
 
-+-------------------------+-------+-------+-----------+-------+
-|        Site Type        |  Used | Fixed | Available | Util% |
-+-------------------------+-------+-------+-----------+-------+
-| Slice LUTs*             | 37770 |     0 |     63400 | 59.57 |
-|   LUT as Logic          | 37770 |     0 |     63400 | 59.57 |
-|   LUT as Memory         |     0 |     0 |     19000 |  0.00 |
-| Slice Registers         |  5339 |     0 |    126800 |  4.21 |
-|   Register as Flip Flop |  3967 |     0 |    126800 |  3.13 |
-|   Register as Latch     |  1372 |     0 |    126800 |  1.08 |
-| F7 Muxes                |    32 |     0 |     31700 |  0.10 |
-| F8 Muxes                |     0 |     0 |     15850 |  0.00 |
-+-------------------------+-------+-------+-----------+-------+
++-------------------------+------+-------+-----------+-------+
+|        Site Type        | Used | Fixed | Available | Util% |
++-------------------------+------+-------+-----------+-------+
+| Slice LUTs*             |    0 |     0 |     63400 |  0.00 |
+|   LUT as Logic          |    0 |     0 |     63400 |  0.00 |
+|   LUT as Memory         |    0 |     0 |     19000 |  0.00 |
+| Slice Registers         |    0 |     0 |    126800 |  0.00 |
+|   Register as Flip Flop |    0 |     0 |    126800 |  0.00 |
+|   Register as Latch     |    0 |     0 |    126800 |  0.00 |
+| F7 Muxes                |    0 |     0 |     31700 |  0.00 |
+| F8 Muxes                |    0 |     0 |     15850 |  0.00 |
++-------------------------+------+-------+-----------+-------+
 * Warning! The Final LUT count, after physical optimizations and full implementation, is typically lower. Run opt_design after synthesis, if not already completed, for a more realistic count.
 
 
@@ -55,9 +55,9 @@ Table of Contents
 | 0     |            _ |       Reset |            - |
 | 0     |          Yes |           - |            - |
 | 0     |          Yes |           - |          Set |
-| 1372  |          Yes |           - |        Reset |
-| 48    |          Yes |         Set |            - |
-| 3919  |          Yes |       Reset |            - |
+| 0     |          Yes |           - |        Reset |
+| 0     |          Yes |         Set |            - |
+| 0     |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -90,7 +90,7 @@ Table of Contents
 +-----------------------------+------+-------+-----------+-------+
 |          Site Type          | Used | Fixed | Available | Util% |
 +-----------------------------+------+-------+-----------+-------+
-| Bonded IOB                  |   77 |     0 |       210 | 36.67 |
+| Bonded IOB                  |   39 |     0 |       210 | 18.57 |
 | Bonded IPADs                |    0 |     0 |         2 |  0.00 |
 | PHY_CONTROL                 |    0 |     0 |         6 |  0.00 |
 | PHASER_REF                  |    0 |     0 |         6 |  0.00 |
@@ -112,7 +112,7 @@ Table of Contents
 +------------+------+-------+-----------+-------+
 |  Site Type | Used | Fixed | Available | Util% |
 +------------+------+-------+-----------+-------+
-| BUFGCTRL   |   12 |     0 |        32 | 37.50 |
+| BUFGCTRL   |    0 |     0 |        32 |  0.00 |
 | BUFIO      |    0 |     0 |        24 |  0.00 |
 | MMCME2_ADV |    0 |     0 |         6 |  0.00 |
 | PLLE2_ADV  |    0 |     0 |         6 |  0.00 |
@@ -143,24 +143,11 @@ Table of Contents
 7. Primitives
 -------------
 
-+----------+-------+---------------------+
-| Ref Name |  Used | Functional Category |
-+----------+-------+---------------------+
-| LUT5     | 12105 |                 LUT |
-| LUT2     | 10023 |                 LUT |
-| LUT6     |  8986 |                 LUT |
-| CARRY4   |  7177 |          CarryLogic |
-| LUT1     |  4899 |                 LUT |
-| LUT3     |  4397 |                 LUT |
-| FDRE     |  3919 |        Flop & Latch |
-| LUT4     |  2978 |                 LUT |
-| LDCE     |  1372 |        Flop & Latch |
-| FDSE     |    48 |        Flop & Latch |
-| OBUF     |    39 |                  IO |
-| IBUF     |    38 |                  IO |
-| MUXF7    |    32 |               MuxFx |
-| BUFG     |    12 |               Clock |
-+----------+-------+---------------------+
++----------+------+---------------------+
+| Ref Name | Used | Functional Category |
++----------+------+---------------------+
+| OBUF     |   39 |                  IO |
++----------+------+---------------------+
 
 
 8. Black Boxes

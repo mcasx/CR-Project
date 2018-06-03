@@ -1,7 +1,7 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2017.4 (lin64) Build 2086221 Fri Dec 15 20:54:30 MST 2017
-| Date         : Sat Jun  2 20:30:00 2018
+| Date         : Sun Jun  3 19:00:29 2018
 | Host         : david-Lenovo-U31-70 running 64-bit elementary OS 0.4.1 Loki
 | Command      : report_timing_summary -max_paths 10 -file StreamCopIPCore_v1_0_timing_summary_routed.rpt -rpx StreamCopIPCore_v1_0_timing_summary_routed.rpx -warn_on_violation
 | Design       : StreamCopIPCore_v1_0
@@ -52,157 +52,7 @@ Table of Contents
 
 1. checking no_clock
 --------------------
- There are 36 register/latch pins with no clock driven by root clock pin: m00_axis_aclk (HIGH)
-
- There are 3931 register/latch pins with no clock driven by root clock pin: s00_axis_aclk (HIGH)
-
- There are 1372 register/latch pins with no clock driven by root clock pin: s00_axis_tvalid (HIGH)
-
- There are 128 register/latch pins with no clock driven by root clock pin: StreamCopIPCore_v1_0_S00_AXIS_inst/i_reg[0]/Q (HIGH)
-
- There are 128 register/latch pins with no clock driven by root clock pin: StreamCopIPCore_v1_0_S00_AXIS_inst/i_reg[0]_rep/Q (HIGH)
-
- There are 256 register/latch pins with no clock driven by root clock pin: StreamCopIPCore_v1_0_S00_AXIS_inst/i_reg[10]/Q (HIGH)
-
- There are 256 register/latch pins with no clock driven by root clock pin: StreamCopIPCore_v1_0_S00_AXIS_inst/i_reg[11]/Q (HIGH)
-
- There are 256 register/latch pins with no clock driven by root clock pin: StreamCopIPCore_v1_0_S00_AXIS_inst/i_reg[12]/Q (HIGH)
-
- There are 256 register/latch pins with no clock driven by root clock pin: StreamCopIPCore_v1_0_S00_AXIS_inst/i_reg[13]/Q (HIGH)
-
- There are 256 register/latch pins with no clock driven by root clock pin: StreamCopIPCore_v1_0_S00_AXIS_inst/i_reg[14]/Q (HIGH)
-
- There are 256 register/latch pins with no clock driven by root clock pin: StreamCopIPCore_v1_0_S00_AXIS_inst/i_reg[15]/Q (HIGH)
-
- There are 256 register/latch pins with no clock driven by root clock pin: StreamCopIPCore_v1_0_S00_AXIS_inst/i_reg[16]/Q (HIGH)
-
- There are 256 register/latch pins with no clock driven by root clock pin: StreamCopIPCore_v1_0_S00_AXIS_inst/i_reg[17]/Q (HIGH)
-
- There are 256 register/latch pins with no clock driven by root clock pin: StreamCopIPCore_v1_0_S00_AXIS_inst/i_reg[18]/Q (HIGH)
-
- There are 256 register/latch pins with no clock driven by root clock pin: StreamCopIPCore_v1_0_S00_AXIS_inst/i_reg[19]/Q (HIGH)
-
- There are 128 register/latch pins with no clock driven by root clock pin: StreamCopIPCore_v1_0_S00_AXIS_inst/i_reg[1]/Q (HIGH)
-
- There are 128 register/latch pins with no clock driven by root clock pin: StreamCopIPCore_v1_0_S00_AXIS_inst/i_reg[1]_rep/Q (HIGH)
-
- There are 256 register/latch pins with no clock driven by root clock pin: StreamCopIPCore_v1_0_S00_AXIS_inst/i_reg[20]/Q (HIGH)
-
- There are 256 register/latch pins with no clock driven by root clock pin: StreamCopIPCore_v1_0_S00_AXIS_inst/i_reg[21]/Q (HIGH)
-
- There are 256 register/latch pins with no clock driven by root clock pin: StreamCopIPCore_v1_0_S00_AXIS_inst/i_reg[22]/Q (HIGH)
-
- There are 256 register/latch pins with no clock driven by root clock pin: StreamCopIPCore_v1_0_S00_AXIS_inst/i_reg[23]/Q (HIGH)
-
- There are 256 register/latch pins with no clock driven by root clock pin: StreamCopIPCore_v1_0_S00_AXIS_inst/i_reg[24]/Q (HIGH)
-
- There are 256 register/latch pins with no clock driven by root clock pin: StreamCopIPCore_v1_0_S00_AXIS_inst/i_reg[25]/Q (HIGH)
-
- There are 256 register/latch pins with no clock driven by root clock pin: StreamCopIPCore_v1_0_S00_AXIS_inst/i_reg[26]/Q (HIGH)
-
- There are 128 register/latch pins with no clock driven by root clock pin: StreamCopIPCore_v1_0_S00_AXIS_inst/i_reg[2]/Q (HIGH)
-
- There are 128 register/latch pins with no clock driven by root clock pin: StreamCopIPCore_v1_0_S00_AXIS_inst/i_reg[2]_rep/Q (HIGH)
-
- There are 256 register/latch pins with no clock driven by root clock pin: StreamCopIPCore_v1_0_S00_AXIS_inst/i_reg[3]/Q (HIGH)
-
- There are 256 register/latch pins with no clock driven by root clock pin: StreamCopIPCore_v1_0_S00_AXIS_inst/i_reg[4]/Q (HIGH)
-
- There are 256 register/latch pins with no clock driven by root clock pin: StreamCopIPCore_v1_0_S00_AXIS_inst/i_reg[5]/Q (HIGH)
-
- There are 256 register/latch pins with no clock driven by root clock pin: StreamCopIPCore_v1_0_S00_AXIS_inst/i_reg[6]/Q (HIGH)
-
- There are 256 register/latch pins with no clock driven by root clock pin: StreamCopIPCore_v1_0_S00_AXIS_inst/i_reg[7]/Q (HIGH)
-
- There are 256 register/latch pins with no clock driven by root clock pin: StreamCopIPCore_v1_0_S00_AXIS_inst/i_reg[8]/Q (HIGH)
-
- There are 256 register/latch pins with no clock driven by root clock pin: StreamCopIPCore_v1_0_S00_AXIS_inst/i_reg[9]/Q (HIGH)
-
- There are 256 register/latch pins with no clock driven by root clock pin: StreamCopIPCore_v1_0_S00_AXIS_inst/j_reg[0]_rep/Q (HIGH)
-
- There are 256 register/latch pins with no clock driven by root clock pin: StreamCopIPCore_v1_0_S00_AXIS_inst/j_reg[0]_rep__1/Q (HIGH)
-
- There are 256 register/latch pins with no clock driven by root clock pin: StreamCopIPCore_v1_0_S00_AXIS_inst/j_reg[0]_rep__3/Q (HIGH)
-
- There are 256 register/latch pins with no clock driven by root clock pin: StreamCopIPCore_v1_0_S00_AXIS_inst/j_reg[0]_rep__4/Q (HIGH)
-
- There are 1024 register/latch pins with no clock driven by root clock pin: StreamCopIPCore_v1_0_S00_AXIS_inst/j_reg[10]/Q (HIGH)
-
- There are 1024 register/latch pins with no clock driven by root clock pin: StreamCopIPCore_v1_0_S00_AXIS_inst/j_reg[11]/Q (HIGH)
-
- There are 1024 register/latch pins with no clock driven by root clock pin: StreamCopIPCore_v1_0_S00_AXIS_inst/j_reg[12]/Q (HIGH)
-
- There are 1024 register/latch pins with no clock driven by root clock pin: StreamCopIPCore_v1_0_S00_AXIS_inst/j_reg[13]/Q (HIGH)
-
- There are 1024 register/latch pins with no clock driven by root clock pin: StreamCopIPCore_v1_0_S00_AXIS_inst/j_reg[14]/Q (HIGH)
-
- There are 1024 register/latch pins with no clock driven by root clock pin: StreamCopIPCore_v1_0_S00_AXIS_inst/j_reg[15]/Q (HIGH)
-
- There are 1024 register/latch pins with no clock driven by root clock pin: StreamCopIPCore_v1_0_S00_AXIS_inst/j_reg[16]/Q (HIGH)
-
- There are 1024 register/latch pins with no clock driven by root clock pin: StreamCopIPCore_v1_0_S00_AXIS_inst/j_reg[17]/Q (HIGH)
-
- There are 1024 register/latch pins with no clock driven by root clock pin: StreamCopIPCore_v1_0_S00_AXIS_inst/j_reg[18]/Q (HIGH)
-
- There are 1024 register/latch pins with no clock driven by root clock pin: StreamCopIPCore_v1_0_S00_AXIS_inst/j_reg[19]/Q (HIGH)
-
- There are 256 register/latch pins with no clock driven by root clock pin: StreamCopIPCore_v1_0_S00_AXIS_inst/j_reg[1]_rep/Q (HIGH)
-
- There are 256 register/latch pins with no clock driven by root clock pin: StreamCopIPCore_v1_0_S00_AXIS_inst/j_reg[1]_rep__1/Q (HIGH)
-
- There are 256 register/latch pins with no clock driven by root clock pin: StreamCopIPCore_v1_0_S00_AXIS_inst/j_reg[1]_rep__3/Q (HIGH)
-
- There are 256 register/latch pins with no clock driven by root clock pin: StreamCopIPCore_v1_0_S00_AXIS_inst/j_reg[1]_rep__4/Q (HIGH)
-
- There are 1024 register/latch pins with no clock driven by root clock pin: StreamCopIPCore_v1_0_S00_AXIS_inst/j_reg[20]/Q (HIGH)
-
- There are 1024 register/latch pins with no clock driven by root clock pin: StreamCopIPCore_v1_0_S00_AXIS_inst/j_reg[21]/Q (HIGH)
-
- There are 1024 register/latch pins with no clock driven by root clock pin: StreamCopIPCore_v1_0_S00_AXIS_inst/j_reg[22]/Q (HIGH)
-
- There are 1024 register/latch pins with no clock driven by root clock pin: StreamCopIPCore_v1_0_S00_AXIS_inst/j_reg[23]/Q (HIGH)
-
- There are 1024 register/latch pins with no clock driven by root clock pin: StreamCopIPCore_v1_0_S00_AXIS_inst/j_reg[24]/Q (HIGH)
-
- There are 1024 register/latch pins with no clock driven by root clock pin: StreamCopIPCore_v1_0_S00_AXIS_inst/j_reg[25]/Q (HIGH)
-
- There are 1024 register/latch pins with no clock driven by root clock pin: StreamCopIPCore_v1_0_S00_AXIS_inst/j_reg[26]/Q (HIGH)
-
- There are 64 register/latch pins with no clock driven by root clock pin: StreamCopIPCore_v1_0_S00_AXIS_inst/j_reg[2]/Q (HIGH)
-
- There are 64 register/latch pins with no clock driven by root clock pin: StreamCopIPCore_v1_0_S00_AXIS_inst/j_reg[2]_rep/Q (HIGH)
-
- There are 64 register/latch pins with no clock driven by root clock pin: StreamCopIPCore_v1_0_S00_AXIS_inst/j_reg[2]_rep__0/Q (HIGH)
-
- There are 128 register/latch pins with no clock driven by root clock pin: StreamCopIPCore_v1_0_S00_AXIS_inst/j_reg[2]_rep__1/Q (HIGH)
-
- There are 128 register/latch pins with no clock driven by root clock pin: StreamCopIPCore_v1_0_S00_AXIS_inst/j_reg[2]_rep__2/Q (HIGH)
-
- There are 128 register/latch pins with no clock driven by root clock pin: StreamCopIPCore_v1_0_S00_AXIS_inst/j_reg[2]_rep__3/Q (HIGH)
-
- There are 96 register/latch pins with no clock driven by root clock pin: StreamCopIPCore_v1_0_S00_AXIS_inst/j_reg[2]_rep__4/Q (HIGH)
-
- There are 128 register/latch pins with no clock driven by root clock pin: StreamCopIPCore_v1_0_S00_AXIS_inst/j_reg[2]_rep__5/Q (HIGH)
-
- There are 128 register/latch pins with no clock driven by root clock pin: StreamCopIPCore_v1_0_S00_AXIS_inst/j_reg[2]_rep__6/Q (HIGH)
-
- There are 96 register/latch pins with no clock driven by root clock pin: StreamCopIPCore_v1_0_S00_AXIS_inst/j_reg[2]_rep__7/Q (HIGH)
-
- There are 1024 register/latch pins with no clock driven by root clock pin: StreamCopIPCore_v1_0_S00_AXIS_inst/j_reg[3]/Q (HIGH)
-
- There are 1024 register/latch pins with no clock driven by root clock pin: StreamCopIPCore_v1_0_S00_AXIS_inst/j_reg[4]/Q (HIGH)
-
- There are 1024 register/latch pins with no clock driven by root clock pin: StreamCopIPCore_v1_0_S00_AXIS_inst/j_reg[5]/Q (HIGH)
-
- There are 1024 register/latch pins with no clock driven by root clock pin: StreamCopIPCore_v1_0_S00_AXIS_inst/j_reg[6]/Q (HIGH)
-
- There are 1024 register/latch pins with no clock driven by root clock pin: StreamCopIPCore_v1_0_S00_AXIS_inst/j_reg[7]/Q (HIGH)
-
- There are 1024 register/latch pins with no clock driven by root clock pin: StreamCopIPCore_v1_0_S00_AXIS_inst/j_reg[8]/Q (HIGH)
-
- There are 1024 register/latch pins with no clock driven by root clock pin: StreamCopIPCore_v1_0_S00_AXIS_inst/j_reg[9]/Q (HIGH)
-
- There are 1372 register/latch pins with no clock driven by root clock pin: StreamCopIPCore_v1_0_S00_AXIS_inst/s_currentState_reg/Q (HIGH)
+ There are 0 register/latch pins with no clock.
 
 
 2. checking constant_clock
@@ -217,21 +67,21 @@ Table of Contents
 
 4. checking unconstrained_internal_endpoints
 --------------------------------------------
- There are 6687 pins that are not constrained for maximum delay. (HIGH)
+ There are 0 pins that are not constrained for maximum delay.
 
  There are 0 pins that are not constrained for maximum delay due to constant clock.
 
 
 5. checking no_input_delay
 --------------------------
- There are 36 input ports with no input delay specified. (HIGH)
+ There are 0 input ports with no input delay specified.
 
  There are 0 input ports with no input delay but user has a false path constraint.
 
 
 6. checking no_output_delay
 ---------------------------
- There are 33 ports with no output delay specified. (HIGH)
+ There are 0 ports with no output delay specified.
 
  There are 0 ports with no output delay but user has a false path constraint
 
@@ -250,7 +100,7 @@ Table of Contents
 
 9. checking loops
 -----------------
- There are 15 combinational loops in the design. (HIGH)
+ There are 0 combinational loops in the design.
 
 
 10. checking partial_input_delay
@@ -265,7 +115,7 @@ Table of Contents
 
 12. checking latch_loops
 ------------------------
- There are 15 combinational latch loops in the design through latch input (HIGH)
+ There are 0 combinational latch loops in the design through latch input
 
 
 
