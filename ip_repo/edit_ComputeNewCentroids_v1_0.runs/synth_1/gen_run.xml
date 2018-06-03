@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1527967316">
+  <File Type="VDS-TIMING-PB" Name="StreamCopIPCore_v1_0_timing_summary_synth.pb"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="StreamCopIPCore_v1_0_timing_summary_synth.rpt"/>
+  <File Type="RDS-DCP" Name="StreamCopIPCore_v1_0.dcp"/>
+  <File Type="PA-TCL" Name="StreamCopIPCore_v1_0.tcl"/>
+  <File Type="REPORTS-TCL" Name="StreamCopIPCore_v1_0_reports.tcl"/>
+  <File Type="RDS-RDS" Name="StreamCopIPCore_v1_0.vds"/>
+  <File Type="RDS-PROPCONSTRS" Name="StreamCopIPCore_v1_0_drc_synth.rpt"/>
+  <File Type="RDS-UTIL" Name="StreamCopIPCore_v1_0_utilization_synth.rpt"/>
+  <File Type="RDS-UTIL-PB" Name="StreamCopIPCore_v1_0_utilization_synth.pb"/>
+  <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
+    <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/imports/new/projectPackage.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/edit_ComputeNewCentorids_v1_0.srcs/sources_1/imports/new/projectPackage.vhd"/>
+        <Attr Name="ImportTime" Val="1527703302"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/new/Buffer.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/edit_ComputeNewCentorids_v1_0.srcs/sources_1/imports/new/Buffer.vhd"/>
+        <Attr Name="ImportTime" Val="1527610448"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/new/EuclideanDistance.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/edit_ComputeNewCentorids_v1_0.srcs/sources_1/imports/new/EuclideanDistance.vhd"/>
+        <Attr Name="ImportTime" Val="1527687190"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/new/PickSmallest.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/edit_ComputeNewCentorids_v1_0.srcs/sources_1/imports/new/PickSmallest.vhd"/>
+        <Attr Name="ImportTime" Val="1527865028"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/new/PickCentroid.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/edit_ComputeNewCentorids_v1_0.srcs/sources_1/imports/new/PickCentroid.vhd"/>
+        <Attr Name="ImportTime" Val="1527865028"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/new/demux.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/edit_ComputeNewCentorids_v1_0.srcs/sources_1/imports/new/demux.vhd"/>
+        <Attr Name="ImportTime" Val="1527699248"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/new/ParallelSum.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/edit_ComputeNewCentorids_v1_0.srcs/sources_1/imports/new/ParallelSum.vhd"/>
+        <Attr Name="ImportTime" Val="1527865028"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/new/TopLevel.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/edit_ComputeNewCentorids_v1_0.srcs/sources_1/imports/new/TopLevel.vhd"/>
+        <Attr Name="ImportTime" Val="1527865028"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/ComputeNewCentroids_1.0/hdl/ComputeNewCentroids_v1_0_M00_AXIS.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/ComputeNewCentroids_1.0/hdl/ComputeNewCentroids_v1_0_S00_AXIS.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/ComputeNewCentroids_1.0/hdl/ComputeNewCentroids_v1_0.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/new/Adder.vhd">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/edit_ComputeNewCentorids_v1_0.srcs/sources_1/imports/new/Adder.vhd"/>
+        <Attr Name="ImportTime" Val="1527596488"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/new/DistanceCalculator.vhd">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/edit_ComputeNewCentorids_v1_0.srcs/sources_1/imports/new/DistanceCalculator.vhd"/>
+        <Attr Name="ImportTime" Val="1527589504"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/component.xml">
+      <FileInfo SFType="IPXACT"/>
+    </File>
+    <Config>
+      <Option Name="DesignMode" Val="RTL"/>
+      <Option Name="TopModule" Val="StreamCopIPCore_v1_0"/>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
+    <Filter Type="Constrs"/>
+    <Config>
+      <Option Name="ConstrsType" Val="XDC"/>
+    </Config>
+  </FileSet>
+  <Strategy Version="1" Minor="2">
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017"/>
+    <Step Id="synth_design"/>
+  </Strategy>
+</GenRun>

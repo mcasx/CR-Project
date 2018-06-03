@@ -1,7 +1,7 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2017.4 (lin64) Build 2086221 Fri Dec 15 20:54:30 MST 2017
-| Date         : Sat Jun  2 13:00:47 2018
+| Date         : Sat Jun  2 20:26:37 2018
 | Host         : david-Lenovo-U31-70 running 64-bit elementary OS 0.4.1 Loki
 | Command      : report_drc -file StreamCopIPCore_v1_0_drc_opted.rpt -pb StreamCopIPCore_v1_0_drc_opted.pb -rpx StreamCopIPCore_v1_0_drc_opted.rpx
 | Design       : StreamCopIPCore_v1_0

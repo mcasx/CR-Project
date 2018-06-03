@@ -60,11 +60,13 @@ architecture Behavioral of TopLevel is
     signal s_enable: std_logic_vector(NUM_PARALLEL*NUM_CENTROIDS-1 DOWNTO 0);
     signal s_enable_ordered: std_logic_vector(NUM_PARALLEL*NUM_CENTROIDS-1 DOWNTO 0); 
     signal s_finished: std_logic;
+    
     signal s_point_features: point_array(NUM_FEATURES*NUM_PARALLEL-1 downto 0);
     signal s_centroid_features: point_array(NUM_FEATURES*NUM_CENTROIDS-1 downto 0);
     signal s_new_centroids: point_array(NUM_FEATURES*NUM_CENTROIDS-1 downto 0);
     
 begin
+
     gen_signals_centroids: 
     for i in 0 to NUM_FEATURES*NUM_CENTROIDS-1 generate
             s_centroid_features(i) <= signed(centroid_features(32*(i+1)-1 downto i*32));
@@ -91,14 +93,14 @@ begin
                 centroid => s_centroids(i)   
             );
             
---        demux_x: entity work.demux
---            generic map(
---                NUM_CENTROIDS => NUM_CENTROIDS
---            )
---            port map(
---                centroid => s_centroids(i),
---                enable => s_enable((i+1)*NUM_CENTROIDS-1 downto i*NUM_CENTROIDS)
---            );
+        demux_x: entity work.demux
+            generic map(
+                NUM_CENTROIDS => NUM_CENTROIDS
+            )
+            port map(
+                centroid => s_centroids(i),
+                enable => s_enable((i+1)*NUM_CENTROIDS-1 downto i*NUM_CENTROIDS)
+            );
     end generate;
     
     
@@ -129,6 +131,29 @@ begin
                 output => s_features_buffered
             );
 
+<<<<<<< HEAD
+    parallel_sum_gen: for i in 0 to NUM_CENTROIDS-1 generate
+
+        order_signals_gen: for j in 0 to NUM_PARALLEL-1 generate
+                s_enable_ordered(j+ i*NUM_PARALLEL) <= s_enable(j*NUM_CENTROIDS + i);
+        end generate;
+    
+    
+        parallel_sum_x: entity work.ParallelSum
+            generic map(
+                NUM_FEATURES => NUM_FEATURES,
+                NUM_PARALLEL => NUM_PARALLEL
+            )
+            port map(
+                clk => clk,
+                reset => reset,
+                slave_enable => enable,
+                enable => s_enable_ordered((i+1)*NUM_PARALLEL-1 downto i*NUM_PARALLEL),
+                finished => s_finished,
+                input => s_features_buffered,
+                output => s_new_centroids((i+1)*NUM_FEATURES-1 downto i*NUM_FEATURES)
+            );
+=======
 
     --parallel_sum_gen: for i in 0 to NUM_CENTROIDS-1 generate
 --        order_signals_gen: for j in 0 to NUM_PARALLEL-1 generate
@@ -152,6 +177,7 @@ begin
             input => s_features_buffered,
             output => s_new_centroids
         );
+>>>>>>> 2e4b397430723570ce499f61a7c3fdc21c2eb0fe
     
     --end generate;
 
