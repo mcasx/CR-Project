@@ -25,7 +25,7 @@ signal s_enable: std_logic := '0';
 signal s_pickCentroidEnable: std_logic_vector(1 downto 0) := ('0','0');
 signal s_finished: std_logic := '0';
 signal s_centroids: std_logic_vector(4*2*32-1 downto 0) := std_logic_vector(to_signed(1,32)) & std_logic_vector(to_signed(2,32)) & std_logic_vector(to_signed(3,32)) & std_logic_vector(to_signed(4,32)) & std_logic_vector(to_signed(50,32)) & std_logic_vector(to_signed(51,32)) & std_logic_vector(to_signed(52,32)) & std_logic_vector(to_signed(53,32));
-signal s_point: std_logic_vector(4*2*32-1 downto 0) := std_logic_vector(to_signed(4,32)) & std_logic_vector(to_signed(5,32)) & std_logic_vector(to_signed(6,32)) & std_logic_vector(to_signed(7,32)) & std_logic_vector(to_signed(33,32)) & std_logic_vector(to_signed(29,32)) & std_logic_vector(to_signed(30,32)) & std_logic_vector(to_signed(35,32));
+signal s_point: std_logic_vector(4*2*32-1 downto 0) := std_logic_vector(to_signed(4,32)) & std_logic_vector(to_signed(5,32)) & std_logic_vector(to_signed(6,32)) & std_logic_vector(to_signed(7,32)) & std_logic_vector(to_signed(40,32)) & std_logic_vector(to_signed(41,32)) & std_logic_vector(to_signed(42,32)) & std_logic_vector(to_signed(43,32));
 signal s_output: std_logic_vector(4*2*32-1 downto 0);
 
 
@@ -64,7 +64,7 @@ begin
         s_pickCentroidEnable <= ('1', '1');
         s_reset <= '0';
         wait for 20 ns;
-        s_point <= std_logic_vector(to_signed(4,32)) & std_logic_vector(to_signed(5,32)) & std_logic_vector(to_signed(6,32)) & std_logic_vector(to_signed(7,32)) & std_logic_vector(to_signed(33,32)) & std_logic_vector(to_signed(32,32)) & std_logic_vector(to_signed(30,32)) & std_logic_vector(to_signed(39,32));
+        s_point <= std_logic_vector(to_signed(7,32)) & std_logic_vector(to_signed(8,32)) & std_logic_vector(to_signed(9,32)) & std_logic_vector(to_signed(10,32)) & std_logic_vector(to_signed(42,32)) & std_logic_vector(to_signed(43,32)) & std_logic_vector(to_signed(44,32)) & std_logic_vector(to_signed(45,32));
         s_finished <= '1';
         wait for 20 ns;
         s_finished <= '0';
