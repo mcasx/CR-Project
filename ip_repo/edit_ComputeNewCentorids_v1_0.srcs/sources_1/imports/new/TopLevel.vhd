@@ -58,6 +58,7 @@ architecture Behavioral of TopLevel is
     signal s_enable: std_logic_vector(NUM_PARALLEL*NUM_CENTROIDS-1 DOWNTO 0);
     signal s_enable_ordered: std_logic_vector(NUM_PARALLEL*NUM_CENTROIDS-1 DOWNTO 0); 
     signal s_finished: std_logic;
+    signal s_slave_enable: std_logic;
     
     signal s_point_features: point_array(NUM_FEATURES*NUM_PARALLEL-1 downto 0);
     signal s_centroid_features: point_array(NUM_FEATURES*NUM_CENTROIDS-1 downto 0);
@@ -111,6 +112,8 @@ begin
         port map(
             clk => clk,
             input => s_point_features,
+            enable => enable,
+            enable_out => s_slave_enable,
             finished => finished,
             finished_out => s_finished,
             output => s_features_buffered
@@ -132,7 +135,7 @@ begin
             port map(
                 clk => clk,
                 reset => reset,
-                slave_enable => enable,
+                slave_enable => s_slave_enable,
                 enable => s_enable_ordered((i+1)*NUM_PARALLEL-1 downto i*NUM_PARALLEL),
                 finished => s_finished,
                 input => s_features_buffered,
@@ -140,5 +143,4 @@ begin
             );
     
     end generate;
-
 end Behavioral;

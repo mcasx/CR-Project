@@ -21,16 +21,12 @@ end component;
 
 signal s_clk: std_logic := '0';
 signal s_reset: std_logic := '1';
---signal s_centroid: integer := 0;
---signal s_enable: std_logic_vector(2-1 downto 0):= ('0', '0');
-signal s_finished: std_logic:= '0';
---signal s_input: point_array(4*2-1 downto 0):= (to_signed(1,16), to_signed(2,16), to_signed(3,16), to_signed(4,16), to_signed(50,16), to_signed(51,16), to_signed(52,16), to_signed(53,16));
---signal s_centroids: point_array(4*2-1 downto 0):= (to_signed(1,16), to_signed(2,16), to_signed(3,16), to_signed(4,16), to_signed(50,16), to_signed(51,16), to_signed(52,16), to_signed(53,16));
---signal s_point: point_array(4*2-1 downto 0) := (to_signed(4,16), to_signed(5,16), to_signed(6,16), to_signed(7,16), to_signed(33,16), to_signed(29,16), to_signed(30,16), to_signed(35,16));
---signal s_output: point_array(4*2-1 downto 0);
-signal s_centroids: std_logic_vector(4*2*point'length-1 downto 0):= std_logic_vector(to_signed(1,point'length) & to_signed(2,point'length) & to_signed(3,point'length) & to_signed(4,point'length) & to_signed(50,point'length) & to_signed(51,point'length) & to_signed(52,point'length) & to_signed(53,point'length));
-signal s_point: std_logic_vector(4*2*point'length-1 downto 0) := std_logic_vector(to_signed(4,point'length) & to_signed(5,point'length) & to_signed(6,point'length) & to_signed(7,point'length) & to_signed(33,point'length) & to_signed(29,point'length) & to_signed(30,point'length) & to_signed(35,point'length));
-signal s_output: std_logic_vector(4*2*point'length-1 downto 0);
+signal s_enable: std_logic := '0';
+signal s_pickCentroidEnable: std_logic_vector(1 downto 0) := ('0','0');
+signal s_finished: std_logic := '0';
+signal s_centroids: std_logic_vector(4*2*32-1 downto 0) := std_logic_vector(to_signed(1,32)) & std_logic_vector(to_signed(2,32)) & std_logic_vector(to_signed(3,32)) & std_logic_vector(to_signed(4,32)) & std_logic_vector(to_signed(50,32)) & std_logic_vector(to_signed(51,32)) & std_logic_vector(to_signed(52,32)) & std_logic_vector(to_signed(53,32));
+signal s_point: std_logic_vector(4*2*32-1 downto 0) := std_logic_vector(to_signed(4,32)) & std_logic_vector(to_signed(5,32)) & std_logic_vector(to_signed(6,32)) & std_logic_vector(to_signed(7,32)) & std_logic_vector(to_signed(33,32)) & std_logic_vector(to_signed(29,32)) & std_logic_vector(to_signed(30,32)) & std_logic_vector(to_signed(35,32));
+signal s_output: std_logic_vector(4*2*32-1 downto 0);
 
 
 begin
@@ -52,6 +48,8 @@ begin
         port map(
             clk => s_clk,
             reset=> s_reset,
+            enable => s_enable,
+            pickCentroidEnable => s_pickCentroidEnable,
             point_features => s_point,
             centroid_features=> s_centroids,
             new_centroids => s_output,
@@ -61,10 +59,12 @@ begin
     
     stimulus: process
     begin
-        wait for 100ns;
+        wait for 95ns;
+        s_enable <= '1';
+        s_pickCentroidEnable <= ('1', '1');
         s_reset <= '0';
         wait for 20 ns;
-        s_point <= (to_signed(4,16), to_signed(5,16), to_signed(6,16), to_signed(7,16), to_signed(33,16), to_signed(32,16), to_signed(30,16), to_signed(39,16));
+        s_point <= std_logic_vector(to_signed(4,32)) & std_logic_vector(to_signed(5,32)) & std_logic_vector(to_signed(6,32)) & std_logic_vector(to_signed(7,32)) & std_logic_vector(to_signed(33,32)) & std_logic_vector(to_signed(32,32)) & std_logic_vector(to_signed(30,32)) & std_logic_vector(to_signed(39,32));
         s_finished <= '1';
         wait for 20 ns;
         s_finished <= '0';
