@@ -77,7 +77,7 @@ begin
                 s_point_features(i) <= signed(point_features(32*(i+1)-1 downto 32*i));
     end generate;
     
-    pick_centroid_demux_gen: for i in 0 to NUM_PARALLEL-1 generate
+    pick_centroid_gen: for i in 0 to NUM_PARALLEL-1 generate
         pick_centroid_x: entity work.PickCentroid
             generic map(
                 NUM_FEATURES => NUM_FEATURES,
@@ -89,16 +89,7 @@ begin
                 enable => pickCentroidEnable(i),
                 features_in => s_point_features((i+1)*NUM_FEATURES-1 DOWNTO i*NUM_FEATURES),
                 centroids => s_centroid_features,
-                centroid => s_centroids(i)   
-            );
-            
-        demux_x: entity work.demux
-            generic map(
-                NUM_CENTROIDS => NUM_CENTROIDS
-            )
-            port map(
-                centroid => s_centroids(i),
-                enable => s_enable((i+1)*NUM_CENTROIDS-1 downto i*NUM_CENTROIDS)
+                enables_out => s_enable((i+1)*NUM_CENTROIDS-1 downto i*NUM_CENTROIDS)   
             );
     end generate;
     
@@ -119,13 +110,11 @@ begin
             output => s_features_buffered
         );
     
-    
     parallel_sum_gen: for i in 0 to NUM_CENTROIDS-1 generate
 
         order_signals_gen: for j in 0 to NUM_PARALLEL-1 generate
                 s_enable_ordered(j+ i*NUM_PARALLEL) <= s_enable(j*NUM_CENTROIDS + i);
-        end generate;
-    
+        end generate;   
     
         parallel_sum_x: entity work.ParallelSum
             generic map(

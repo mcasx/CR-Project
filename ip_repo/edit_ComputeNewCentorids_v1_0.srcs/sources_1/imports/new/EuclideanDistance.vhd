@@ -1,5 +1,6 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
+use ieee.numeric_std.ALL;
 use work.projectPackage.ALL;
 
 entity EuclideanDistance is
@@ -16,26 +17,16 @@ end EuclideanDistance;
 
 architecture Behavioral of EuclideanDistance is
 
-signal s_distance: int_array(NUM_FEATURES-1 downto 0);
-
 begin
-    DistanceCalculator_GEN:  for i in 0 to NUM_FEATURES-1 generate
-            DistanceCalculatorX: entity work.DistanceCalculator 
-                port map(
-                    clk => clk,
-                    feature => features(i),
-                    centroid_feature => centroid_features(i),
-                    distance => s_distance(i)
-                );
-    end generate DistanceCalculator_GEN;
-    
-    adder: entity work.Adder(Behavioral)
-        generic map(
-            NUM_FEATURES => NUM_FEATURES
-        )
-        port map(
-            clk => clk,
-            distances => s_distance,
-            total_distance => distance
-        );
+    process(clk)
+    variable s_total_distance: integer := 0;
+    begin
+        if rising_edge(clk) then
+            s_total_distance := 0;
+            for i in 0 to NUM_FEATURES-1 loop
+                s_total_distance := s_total_distance + to_integer(abs(features(i) - centroid_features(i)));
+            end loop;
+            distance <= s_total_distance;
+        end if;
+    end process;
 end Behavioral;

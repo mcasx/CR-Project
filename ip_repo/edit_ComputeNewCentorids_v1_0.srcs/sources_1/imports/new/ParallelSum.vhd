@@ -34,16 +34,20 @@ begin
                         s_count := 0;
                         hasFinished := '0';
                     elsif slave_enable = '1' then
-                        for j in 0 to NUM_PARALLEL-1 loop
-                            if enable(j) = '1' then
-                                s_output := s_output + input(j*NUM_FEATURES + i);
+                        --for j in 0 to NUM_PARALLEL-1 loop
+                            if enable(0) = '1' then
+                                s_output := s_output + input(0*NUM_FEATURES + i);
                                 s_count := s_count + 1;
                             end if;
-                            if finished = '1' then
-                                output(i) <= s_output / s_count;
-                                hasFinished := '1';
+                            if enable(1) = '1' then
+                                s_output := s_output + input(1*NUM_FEATURES + i);
+                                s_count := s_count + 1;
                             end if;
-                        end loop;
+                        --end loop;
+                        if finished = '1' and s_count > 0 then
+                            output(i) <= s_output / s_count;
+                            hasFinished := '1';
+                        end if;
                     end if;
                 end if;
             end process;
