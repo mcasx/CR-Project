@@ -75,34 +75,10 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/imports/new/EuclideanDistance.vhd">
-        <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/edit_ComputeNewCentorids_v1_0.srcs/sources_1/imports/new/EuclideanDistance.vhd"/>
-          <Attr Name="ImportTime" Val="1527687190"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PSRCDIR/sources_1/imports/new/PickSmallest.vhd">
-        <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/edit_ComputeNewCentorids_v1_0.srcs/sources_1/imports/new/PickSmallest.vhd"/>
-          <Attr Name="ImportTime" Val="1527865028"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
       <File Path="$PSRCDIR/sources_1/imports/new/PickCentroid.vhd">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/edit_ComputeNewCentorids_v1_0.srcs/sources_1/imports/new/PickCentroid.vhd"/>
           <Attr Name="ImportTime" Val="1527865028"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PSRCDIR/sources_1/imports/new/demux.vhd">
-        <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/edit_ComputeNewCentorids_v1_0.srcs/sources_1/imports/new/demux.vhd"/>
-          <Attr Name="ImportTime" Val="1527699248"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
@@ -137,6 +113,33 @@
       </File>
       <File Path="$PPRDIR/ComputeNewCentroids_1.0/hdl/ComputeNewCentroids_v1_0.vhd">
         <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/new/demux.vhd">
+        <FileInfo>
+          <Attr Name="AutoDisabled" Val="1"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/edit_ComputeNewCentorids_v1_0.srcs/sources_1/imports/new/demux.vhd"/>
+          <Attr Name="ImportTime" Val="1527699248"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/new/EuclideanDistance.vhd">
+        <FileInfo>
+          <Attr Name="AutoDisabled" Val="1"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/edit_ComputeNewCentorids_v1_0.srcs/sources_1/imports/new/EuclideanDistance.vhd"/>
+          <Attr Name="ImportTime" Val="1527687190"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/new/PickSmallest.vhd">
+        <FileInfo>
+          <Attr Name="AutoDisabled" Val="1"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/edit_ComputeNewCentorids_v1_0.srcs/sources_1/imports/new/PickSmallest.vhd"/>
+          <Attr Name="ImportTime" Val="1527865028"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>

@@ -52,6 +52,6 @@
 # #########################################################
 
 
-create_clock -period 100 -name LMB_Clk [get_ports LMB_Clk]
+create_clock -period 200 -name LMB_Clk [get_ports LMB_Clk]
 
 

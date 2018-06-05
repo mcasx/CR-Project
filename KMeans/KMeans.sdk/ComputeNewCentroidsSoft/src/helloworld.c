@@ -49,6 +49,13 @@
 #include "platform.h"
 #include "xil_printf.h"
 #include "mb_interface.h"
+
+
+#include "xstatus.h"
+#include "xgpio_l.h"
+#include "xintc_l.h"
+#include "xil_exception.h"
+#include "xparameters.h"
 #define N 16
 
 
@@ -59,22 +66,25 @@ int main()
 
 	init_platform();
 
+	//XGpio_WriteReg(XPAR_AXI_GPIO_RESET_BASEADDR, XGPIO_TRI_OFFSET, 0);
+
 	int numCentroids = 4;
 	int numPoints = 8;
 	int numFeatures = 2;
 
 	int centroids[] = {13,12, 100,102, 201,202, 301,302};
-	int points[] = {1,1, 100,100, 200,200, 300,300, 20,20, 120,120, 220,220, 320,320};
+	int points[] = {1,1,20,20, 100,100, 200,200, 300,300,120,120, 220,220, 320,320};
 	int new_centroids[numCentroids*numFeatures];
 
 	xil_printf("\n\rHello Stream Coprocessor\n\r");
+
 
 	xil_printf("\n\rSending Centroids to Coprocessor\n\r");
 
 	for (i = 0; i < numCentroids*numFeatures; i++)
 	{
 		v = centroids[i];
-		xil_printf("\r%d:%08x\n", i, v);
+		xil_printf("\r%d:%d -- %08x\n", i,v,v);
 		putfsl(v, 0);
 	}
 
@@ -83,18 +93,36 @@ int main()
 	for (i = 0; i < numPoints*numFeatures; i++)
 	{
 		v = points[i];
-		xil_printf("\r%d:%08x\n", i, v);
+		xil_printf("\r%d:%d -- %08x\n", i,v,v);
 		putfsl(v, 0);
 	}
 
 
-	xil_printf("\n\rGetting new points from coprocessor\n\r");
+
+
+	/*
+	xil_printf("\n\rGetting old points from coprocessor\n\r");
 	for (i = 0; i < numCentroids*numFeatures; i++)
 	{
 		getfsl(r, 0);
 		xil_printf("\r%d:%08x\n", i, r);
 		new_centroids[i] = r;
 	}
+	*/
+
+	xil_printf("\n\rGPIO FINISHED REG VALUE (Before write): %d!", XGpio_ReadReg(XPAR_AXI_GPIO_FINISHED_BASEADDR, XGPIO_DATA_OFFSET));
+
+	XGpio_WriteReg(XPAR_AXI_GPIO_FINISHED_BASEADDR, XGPIO_DATA_OFFSET, 0xFFFFFFFF);
+
+	xil_printf("\n\rGPIO FINISHED REG VALUE (After Write): %d!", XGpio_ReadReg(XPAR_AXI_GPIO_FINISHED_BASEADDR, XGPIO_DATA_OFFSET));
+
+	xil_printf("\n\rGetting new centroids from coprocessor\n\r");
+		for (i = 0; i < numCentroids*numFeatures; i++)
+		{
+			getfsl(r, 0);
+			xil_printf("\r%d:%4d -- %08x\n", i,r,r);
+			new_centroids[i] = r;
+		}
 
 	xil_printf("\n\rDone!");
 

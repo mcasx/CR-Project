@@ -1,7 +1,7 @@
 // Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2017.4 (lin64) Build 2086221 Fri Dec 15 20:54:30 MST 2017
-// Date        : Sun Jun  3 13:11:37 2018
+// Date        : Tue Jun  5 14:09:55 2018
 // Host        : david-Lenovo-U31-70 running 64-bit elementary OS 0.4.1 Loki
 // Command     : write_verilog -force -mode synth_stub
 //               /home/david/Documents/CR-Project/KMeans/KMeans.srcs/sources_1/bd/design_1/ip/design_1_rst_clk_wiz_1_100M_0/design_1_rst_clk_wiz_1_100M_0_stub.v

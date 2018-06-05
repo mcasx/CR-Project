@@ -2,8 +2,8 @@
 # Vivado v2017.4 (64-bit)
 # SW Build 2086221 on Fri Dec 15 20:54:30 MST 2017
 # IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
-# Start of session at: Sun Jun  3 13:07:10 2018
-# Process ID: 18275
+# Start of session at: Tue Jun  5 14:05:15 2018
+# Process ID: 17147
 # Current directory: /home/david/Documents/CR-Project/KMeans/KMeans.runs/design_1_microblaze_0_0_synth_1
 # Command line: vivado -log design_1_microblaze_0_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source design_1_microblaze_0_0.tcl
 # Log file: /home/david/Documents/CR-Project/KMeans/KMeans.runs/design_1_microblaze_0_0_synth_1/design_1_microblaze_0_0.vds
@@ -15,13 +15,13 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 18337 
+INFO: Helper process launched with PID 17239 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:24 ; elapsed = 00:00:34 . Memory (MB): peak = 1292.121 ; gain = 87.996 ; free physical = 122 ; free virtual = 10585
+Starting RTL Elaboration : Time (s): cpu = 00:00:24 ; elapsed = 00:00:35 . Memory (MB): peak = 1292.117 ; gain = 87.996 ; free physical = 265 ; free virtual = 9524
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'design_1_microblaze_0_0' [/home/david/Documents/CR-Project/KMeans/KMeans.srcs/sources_1/bd/design_1/ip/design_1_microblaze_0_0/synth/design_1_microblaze_0_0.vhd:143]
 	Parameter C_SCO bound to: 0 - type: integer 
-	Parameter C_FREQ bound to: 10000000 - type: integer 
+	Parameter C_FREQ bound to: 5000000 - type: integer 
 	Parameter C_USE_CONFIG_RESET bound to: 0 - type: integer 
 	Parameter C_NUM_SYNC_FF_CLK bound to: 2 - type: integer 
 	Parameter C_NUM_SYNC_FF_CLK_IRQ bound to: 1 - type: integer 
@@ -288,7 +288,7 @@ WARNING: [Synth 8-3331] design Debug has unconnected port RAM_Static[938]
 WARNING: [Synth 8-3331] design Debug has unconnected port RAM_Static[937]
 INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:43 ; elapsed = 00:01:02 . Memory (MB): peak = 1593.387 ; gain = 389.262 ; free physical = 225 ; free virtual = 10310
+Finished RTL Elaboration : Time (s): cpu = 00:00:43 ; elapsed = 00:01:04 . Memory (MB): peak = 1593.383 ; gain = 389.262 ; free physical = 218 ; free virtual = 8995
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -298,7 +298,7 @@ Report Check Netlist:
 |1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
 +------+------------------+-------+---------+-------+------------------+
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:44 ; elapsed = 00:01:04 . Memory (MB): peak = 1593.387 ; gain = 389.262 ; free physical = 372 ; free virtual = 10372
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:44 ; elapsed = 00:01:06 . Memory (MB): peak = 1593.383 ; gain = 389.262 ; free physical = 340 ; free virtual = 9119
 ---------------------------------------------------------------------------------
 INFO: [Netlist 29-17] Analyzing 596 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
@@ -329,23 +329,23 @@ INFO: [Project 1-111] Unisim Transformation Summary:
   MUXCY_L => MUXCY: 138 instances
   RAM32M => RAM32M (RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMS32, RAMS32): 16 instances
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00.19 ; elapsed = 00:00:00.18 . Memory (MB): peak = 1884.797 ; gain = 1.000 ; free physical = 985 ; free virtual = 10856
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.19 ; elapsed = 00:00:00.16 . Memory (MB): peak = 1884.793 ; gain = 0.000 ; free physical = 880 ; free virtual = 9550
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:01:37 ; elapsed = 00:02:25 . Memory (MB): peak = 1884.797 ; gain = 680.672 ; free physical = 721 ; free virtual = 10614
+Finished Constraint Validation : Time (s): cpu = 00:01:38 ; elapsed = 00:02:27 . Memory (MB): peak = 1884.793 ; gain = 680.672 ; free physical = 492 ; free virtual = 9281
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a100tcsg324-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:01:37 ; elapsed = 00:02:25 . Memory (MB): peak = 1884.797 ; gain = 680.672 ; free physical = 721 ; free virtual = 10614
+Finished Loading Part and Timing Information : Time (s): cpu = 00:01:38 ; elapsed = 00:02:27 . Memory (MB): peak = 1884.793 ; gain = 680.672 ; free physical = 492 ; free virtual = 9281
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 Applied set_property DONT_TOUCH = true for U0. (constraint file  /home/david/Documents/CR-Project/KMeans/KMeans.runs/design_1_microblaze_0_0_synth_1/dont_touch.xdc, line 9).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:01:37 ; elapsed = 00:02:25 . Memory (MB): peak = 1884.797 ; gain = 680.672 ; free physical = 723 ; free virtual = 10617
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:01:38 ; elapsed = 00:02:27 . Memory (MB): peak = 1884.793 ; gain = 680.672 ; free physical = 495 ; free virtual = 9284
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5544] ROM "EX_Pattern_Cmp_Sel" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
 INFO: [Synth 8-5546] ROM "ex_gpr_write" won't be mapped to RAM because it is too sparse
@@ -378,7 +378,7 @@ INFO: [Synth 8-5546] ROM "Command_Reg_En" won't be mapped to RAM because it is t
 INFO: [Synth 8-5546] ROM "which_pc" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5544] ROM "dbg_hit" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:01:43 ; elapsed = 00:02:32 . Memory (MB): peak = 1884.797 ; gain = 680.672 ; free physical = 738 ; free virtual = 10631
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:01:44 ; elapsed = 00:02:34 . Memory (MB): peak = 1884.793 ; gain = 680.672 ; free physical = 501 ; free virtual = 9291
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -929,7 +929,7 @@ INFO: [Synth 8-3886] merging instance 'U0/LOCKSTEP_Out_reg[294]' (FDR) to 'U0/LO
 INFO: [Synth 8-3886] merging instance 'U0/LOCKSTEP_Out_reg[290]' (FDR) to 'U0/LOCKSTEP_Out_reg[281]'
 INFO: [Synth 8-3886] merging instance 'U0/LOCKSTEP_Out_reg[284]' (FDR) to 'U0/LOCKSTEP_Out_reg[281]'
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:02:06 ; elapsed = 00:02:57 . Memory (MB): peak = 1884.797 ; gain = 680.672 ; free physical = 903 ; free virtual = 10800
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:02:07 ; elapsed = 00:03:01 . Memory (MB): peak = 1884.793 ; gain = 680.672 ; free physical = 651 ; free virtual = 9449
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -941,13 +941,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:02:21 ; elapsed = 00:03:17 . Memory (MB): peak = 1884.797 ; gain = 680.672 ; free physical = 469 ; free virtual = 10367
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:02:23 ; elapsed = 00:03:29 . Memory (MB): peak = 1884.793 ; gain = 680.672 ; free physical = 150 ; free virtual = 8585
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:02:32 ; elapsed = 00:03:29 . Memory (MB): peak = 1884.797 ; gain = 680.672 ; free physical = 337 ; free virtual = 10235
+Finished Timing Optimization : Time (s): cpu = 00:07:04 ; elapsed = 00:08:17 . Memory (MB): peak = 1884.793 ; gain = 680.672 ; free physical = 1357 ; free virtual = 10075
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -991,7 +991,7 @@ INFO: [Synth 8-3886] merging instance 'U0/MicroBlaze_Core_I/Performance.Core/Use
 INFO: [Synth 8-3886] merging instance 'U0/MicroBlaze_Core_I/Performance.Core/Use_Debug_Logic.Master_Core.Debug_Perf/Serial_Dbg_Intf.status_reg_reg[7]' (FDCE) to 'U0/MicroBlaze_Core_I/Performance.Core/Use_Debug_Logic.Master_Core.Debug_Perf/Serial_Dbg_Intf.status_reg_reg[13]'
 INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:02:36 ; elapsed = 00:03:33 . Memory (MB): peak = 1884.797 ; gain = 680.672 ; free physical = 275 ; free virtual = 10172
+Finished Technology Mapping : Time (s): cpu = 00:07:06 ; elapsed = 00:08:19 . Memory (MB): peak = 1884.793 ; gain = 680.672 ; free physical = 1355 ; free virtual = 10073
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1015,7 +1015,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:02:37 ; elapsed = 00:03:34 . Memory (MB): peak = 1884.797 ; gain = 680.672 ; free physical = 274 ; free virtual = 10172
+Finished IO Insertion : Time (s): cpu = 00:07:07 ; elapsed = 00:08:21 . Memory (MB): peak = 1884.793 ; gain = 680.672 ; free physical = 1355 ; free virtual = 10073
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -1028,7 +1028,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:02:37 ; elapsed = 00:03:34 . Memory (MB): peak = 1884.797 ; gain = 680.672 ; free physical = 274 ; free virtual = 10172
+Finished Renaming Generated Instances : Time (s): cpu = 00:07:08 ; elapsed = 00:08:21 . Memory (MB): peak = 1884.793 ; gain = 680.672 ; free physical = 1355 ; free virtual = 10073
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1040,25 +1040,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:02:38 ; elapsed = 00:03:35 . Memory (MB): peak = 1884.797 ; gain = 680.672 ; free physical = 293 ; free virtual = 10191
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:07:08 ; elapsed = 00:08:21 . Memory (MB): peak = 1884.793 ; gain = 680.672 ; free physical = 1355 ; free virtual = 10073
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:02:38 ; elapsed = 00:03:35 . Memory (MB): peak = 1884.797 ; gain = 680.672 ; free physical = 293 ; free virtual = 10191
+Finished Renaming Generated Ports : Time (s): cpu = 00:07:08 ; elapsed = 00:08:21 . Memory (MB): peak = 1884.793 ; gain = 680.672 ; free physical = 1355 ; free virtual = 10073
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:02:38 ; elapsed = 00:03:35 . Memory (MB): peak = 1884.797 ; gain = 680.672 ; free physical = 291 ; free virtual = 10189
+Finished Handling Custom Attributes : Time (s): cpu = 00:07:08 ; elapsed = 00:08:21 . Memory (MB): peak = 1884.793 ; gain = 680.672 ; free physical = 1354 ; free virtual = 10073
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:02:38 ; elapsed = 00:03:35 . Memory (MB): peak = 1884.797 ; gain = 680.672 ; free physical = 290 ; free virtual = 10188
+Finished Renaming Generated Nets : Time (s): cpu = 00:07:08 ; elapsed = 00:08:21 . Memory (MB): peak = 1884.793 ; gain = 680.672 ; free physical = 1354 ; free virtual = 10073
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -1785,11 +1785,11 @@ Report Instance Areas:
 |667   |        \Read_AXI_Performance.Gen_Bits[9].MEM_EX_Result_Inst                     |MB_FDRE_32                     |     2|
 +------+---------------------------------------------------------------------------------+-------------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:02:38 ; elapsed = 00:03:35 . Memory (MB): peak = 1884.797 ; gain = 680.672 ; free physical = 289 ; free virtual = 10187
+Finished Writing Synthesis Report : Time (s): cpu = 00:07:08 ; elapsed = 00:08:21 . Memory (MB): peak = 1884.793 ; gain = 680.672 ; free physical = 1354 ; free virtual = 10073
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 28130 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:02:03 ; elapsed = 00:02:36 . Memory (MB): peak = 1884.797 ; gain = 389.262 ; free physical = 338 ; free virtual = 10236
-Synthesis Optimization Complete : Time (s): cpu = 00:02:38 ; elapsed = 00:03:36 . Memory (MB): peak = 1884.805 ; gain = 680.672 ; free physical = 346 ; free virtual = 10244
+Synthesis Optimization Runtime : Time (s): cpu = 00:06:33 ; elapsed = 00:07:21 . Memory (MB): peak = 1884.793 ; gain = 389.262 ; free physical = 1406 ; free virtual = 10125
+Synthesis Optimization Complete : Time (s): cpu = 00:07:09 ; elapsed = 00:08:22 . Memory (MB): peak = 1884.801 ; gain = 680.672 ; free physical = 1412 ; free virtual = 10132
 INFO: [Project 1-571] Translating synthesized netlist
 INFO: [Netlist 29-17] Analyzing 543 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
@@ -1808,11 +1808,11 @@ INFO: [Project 1-111] Unisim Transformation Summary:
 INFO: [Common 17-83] Releasing license: Synthesis
 365 Infos, 100 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:02:45 ; elapsed = 00:03:41 . Memory (MB): peak = 1884.805 ; gain = 699.781 ; free physical = 339 ; free virtual = 10237
+synth_design: Time (s): cpu = 00:07:13 ; elapsed = 00:08:25 . Memory (MB): peak = 1884.801 ; gain = 699.781 ; free physical = 1438 ; free virtual = 10158
 INFO: [Common 17-1381] The checkpoint '/home/david/Documents/CR-Project/KMeans/KMeans.runs/design_1_microblaze_0_0_synth_1/design_1_microblaze_0_0.dcp' has been generated.
 INFO: [Coretcl 2-1482] Added synthesis output to IP cache for IP /home/david/Documents/CR-Project/KMeans/KMeans.srcs/sources_1/bd/design_1/ip/design_1_microblaze_0_0/design_1_microblaze_0_0.xci
 INFO: [Coretcl 2-1174] Renamed 666 cell refs.
 INFO: [Common 17-1381] The checkpoint '/home/david/Documents/CR-Project/KMeans/KMeans.runs/design_1_microblaze_0_0_synth_1/design_1_microblaze_0_0.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file design_1_microblaze_0_0_utilization_synth.rpt -pb design_1_microblaze_0_0_utilization_synth.pb
-report_utilization: Time (s): cpu = 00:00:00.18 ; elapsed = 00:00:00.23 . Memory (MB): peak = 1908.809 ; gain = 0.000 ; free physical = 215 ; free virtual = 10122
-INFO: [Common 17-206] Exiting Vivado at Sun Jun  3 13:11:31 2018...
+report_utilization: Time (s): cpu = 00:00:00.13 ; elapsed = 00:00:00.15 . Memory (MB): peak = 1908.805 ; gain = 0.000 ; free physical = 1439 ; free virtual = 10181
+INFO: [Common 17-206] Exiting Vivado at Tue Jun  5 14:14:15 2018...
